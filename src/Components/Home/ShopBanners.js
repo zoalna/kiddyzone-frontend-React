@@ -1,45 +1,42 @@
 import React, { Component } from "react";
 
-import "../App.css";
+import "../../App.css";
 
-export default function SmallShopBanner3() {
+export default function ShopBanners() {
   return (
-    <section id="mystery-boxes" className="small-shop-banner">
+    <section className="small-shop-banner">
       <div className="container">
         <div className="row">
           <div className="cms_banner">
             <div className="col-xs-12 col-md-6">
-              <div className="banner sub-hover off-sale">
+              <div id="subbanner1" className="banner sub-hover">
                 <a href="#">
                   <img
-                    src="image/banners4.png"
+                    src="image/banners/subbanner1.jpg"
                     alt="Sub Banner1"
                     className="img-responsive"
                   />
                 </a>
                 <div className="bannertext">
-                  <p className="upto">UPTO</p>
-                  <h2 className="text-white">50%</h2>
-                  <p className="off">OFF</p>
+                  <p>Save 35% - 45% OFF</p>
+                  <h2>Soft & Push Pull Toy</h2>
                   <button className="btn">Shop Now</button>
                 </div>
               </div>
             </div>
             <div className="col-xs-12 col-md-6">
-              <div className="banner sub-hover mystery">
+              <div id="subbanner2" className="banner sub-hover">
                 <a href="#">
                   <img
-                    src="image/mystery%20boxes.png"
+                    src="image/banners/subbanner2.jpg"
                     alt="Sub Banner2"
                     className="img-responsive"
                   />
                 </a>
                 <div className="bannertext">
-                  <p>Subscribe Now & Explore Our</p>
-                  <button className="btn bg-purple text-yellow">
-                    MYSTERY BOXES
-                  </button>
-                  <p>Don't Miss Out!</p>
+                  <p>New Arrivals</p>
+                  <h2>Toys That Make Playing </h2>
+                  <button className="btn">Shop Now</button>
                 </div>
               </div>
             </div>

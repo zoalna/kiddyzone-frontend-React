@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "../App.css";
+import "../../App.css";
 
 export default function DealDay() {
   return (
@@ -9,7 +9,7 @@ export default function DealDay() {
         <div className="row">
           <div className="col-xs-12 col-md-12">
             <div className="heading">
-              <h2 style={{ }}>
+              <h2 style={{}}>
                 Deal
                 <br /> Of The Day
               </h2>

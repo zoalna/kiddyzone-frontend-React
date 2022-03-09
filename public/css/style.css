@@ -564,6 +564,9 @@ span.account-ver-line {
 
 
 /* Menu */
+.link:focus {
+	text-decoration:  none;
+}
 nav {
 	float: left;
 }
@@ -1882,7 +1885,7 @@ h2.price {
     font-weight: bold;
     text-transform: capitalize;
 }
-#online-education .bannertext {;
+#online-education .bannertext {
     max-width: 260px;
     top: 10%;
     left: 8%;
@@ -3580,7 +3583,7 @@ article, .author {
 }
 .load-more-wrapper {
 	display: inline-block;
- text-align;
+ /* text-align; */
 	text-align: center;
 	width: 100%;
 }
@@ -4297,7 +4300,9 @@ margin-right: 10px;
 }
 
 .product-detail .nav-tabs>li>a{
-    background: #fff;box-shadow: 0 3px 30px rgb(0 0 0 / 26%);    border-radius: 24px;padding: 10px 20px;border:2px solid #fff;
+    background: #fff;
+	/* box-shadow: 0 3px 30px rgb(0 0 0 / 26%);     */
+	border-radius: 24px;padding: 10px 20px;border:2px solid #fff;
 }
 .product-detail .nav-tabs>li>a,
 .product-detail .nav-tabs>li>a:hover{background:#fff;}

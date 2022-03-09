@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-
-import "../App.css";
+import { Link, useNavigate } from "react-router-dom";
+import "../../App.css";
 
 function NavBar() {
   return (
@@ -17,14 +17,14 @@ function NavBar() {
         <div className="navbar-collapse">
           <ul className="main-navigation">
             <li>
-              <a href="index.html" className="parent">
-                Home
-              </a>{" "}
+              <Link to="/" className="parent link">
+                <span>Home</span>
+              </Link>
             </li>
             <li>
-              <a href="category.html" className="parent">
-                About Us
-              </a>{" "}
+              <Link to="/ProductDetail" className="parent link">
+                <span>About Us</span>
+              </Link>
             </li>
             <li>
               <a href="#" className="active parent">

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import "../App.css";
+import "../../App.css";
 
-export default function ShopBanners() {
+export default function SmallShopBanner2() {
   return (
     <section className="small-shop-banner">
       <div className="container">

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import "../App.css";
+import "../../App.css";
 import NavBar from "./NavBar";
 import { Link, useNavigate } from "react-router-dom";
 export default function Header() {
@@ -148,16 +148,16 @@ export default function Header() {
                   <div id="top-links" className="nav pull-right">
                     <ul className="list-inline">
                       <li className="account for-desktop">
-                        <a href="signin.html">
-                          <img src="image/header/user%20(1).svg" />
-                          <Link to="/Login">
-                            <span>Sign In</span>
-                          </Link>
-                        </a>
+                        <img src="image/header/user%20(1).svg" />
+                        <Link to="/Login">
+                          <span>Sign In</span>
+                        </Link>
+
                         <span className="account-ver-line">|</span>
-                        <a href="signup.html">
+
+                        <Link to="/SignUp">
                           <span>Sign Up</span>
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <a href="#" id="shopping-cart" title="Wish List (0)">
