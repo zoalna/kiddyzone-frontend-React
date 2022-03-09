@@ -429,6 +429,412 @@ export default function ProductDetails() {
           </div>
         </div>
       </section>
+
+      <section class="product-reviews content pt-100 pb-100" style={{backgroun:'#efefef'}}>
+    
+    <div class="container">
+        <h1>All reviews (456)</h1><hr />
+        <div class="reviews row">
+            <div class="customer-reviews col-md-6">
+                
+                <div class="review">
+                <div class="author"><img class="text-center" src="image/user-img.png"/><span class="name text-center">d****t</span><span class="date text-center">Nov 8, 2021</span></div>
+                <div class="description">
+                <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,</p>    
+                </div>
+                
+                </div>
+                <div class="review">
+                <div class="author"><img class="text-center" src="image/user-img.png"/><span class="name text-center">d****t</span><span class="date text-center">Nov 8, 2021</span></div>
+                <div class="description">
+                <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,</p>    
+                </div>
+                
+                </div>
+                <div class="review">
+                <div class="author"><img class="text-center" src="image/user-img.png"/><span class="name text-center">d****t</span><span class="date text-center">Nov 8, 2021</span></div>
+                <div class="description">
+                <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock,</p>    
+                </div>
+                
+                </div>
+                
+                
+            </div>
+            
+            
+            
+            <div class="reviews-rating col-md-6">
+                
+                <div class="row">
+			<div class="col-sm-3">
+				<div class="rating-block">
+					<h2 class="bold padding-bottom-7">4.6</h2>
+                    <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                    <h4>Average Rating</h4>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="pull-left">
+					<div class="pull-left" style={{width:35,lineHeight:1}}>
+						<div style={{height:15, margin:20 -20}}>5 <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span></div>
+					</div>
+					<div class="pull-left" style={{width:180}}>
+						<div class="progress" style={{ height:15, margin:8}}>
+						  <div class="progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style={{width: '70%'}}>
+							<span class="sr-only">80% Complete (danger)</span>
+						  </div>
+						</div>
+					</div>
+					<div class="pull-right" style={{marginLeft:10}}>188</div>
+				</div>
+				<div class="pull-left">
+					<div class="pull-left" style={{width:35,lineHeight:1}}>
+						<div style={{height:15, margin:20 -20}}>4 <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span></div>
+					</div>
+					<div class="pull-left" style={{width:180}}>
+						<div class="progress" style={{ height:15, margin:8}}>
+						  <div class="progress-bar" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style={{width: '50%'}}>
+							<span class="sr-only">80% Complete (danger)</span>
+						  </div>
+						</div>
+					</div>
+					<div class="pull-right" style={{marginLeft:10}}>56</div>
+				</div>
+				<div class="pull-left">
+					<div class="pull-left" style={{width:35,lineHeight:1}}>
+						<div style={{height:15, margin:20 -20}}>3 <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span></div>
+					</div>
+					<div class="pull-left" style={{width:180}}>
+						<div class="progress" style={{ height:15, margin:8}}>
+						  <div class="progress-bar" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style={{width: '30%'}}>
+							<span class="sr-only">80% Complete (danger)</span>
+						  </div>
+						</div>
+					</div>
+					<div class="pull-right" style={{marginLeft:10}}>24</div>
+				</div>
+				<div class="pull-left">
+					<div class="pull-left" style={{width:35,lineHeight:1}}>
+						<div style={{height:15, margin:20 -20}}>2 <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span></div>
+					</div>
+					<div class="pull-left" style={{width:180}}>
+						<div class="progress" style={{ height:15, margin:8}}>
+						  <div class="progress-bar" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style={{width: '10%'}}>
+							<span class="sr-only">80% Complete (danger)</span>
+						  </div>
+						</div>
+					</div>
+					<div class="pull-right" style={{marginLeft:10}}>16</div>
+				</div>
+				<div class="pull-left">
+					<div class="pull-left" style={{width:35,lineHeight:1}}>
+						<div style={{height:15, margin:20 -20}}>1 <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span></div>
+					</div>
+					<div class="pull-left" style={{width:180}}>
+						<div class="progress" style={{ height:15, margin:8}}>
+						  <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style={{width: '0%'}}>
+							<span class="sr-only">80% Complete (danger)</span>
+						  </div>
+						</div>
+					</div>
+					<div class="pull-right" style={{marginLeft:10}}>8</div>
+				</div>
+			</div>			
+		</div>
+                
+            </div>
+
+        </div>
+     </div>
+    
+    
+</section>
+
+<section id="top-products" class="content hot-sellers ">
+    <div class="container-fluid">
+        <div class="row">
+        	<div class="col-xs-12 col-md-12">
+            	<div class="heading">
+                	<h2>Top Products</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="item">
+                <div class="product-thumb">
+                <div class="sale-tag"><div class="btn bg-blue">SALE</div><div class="btn percent bg-yellow">20% OFF</div></div>
+                  <div class="image product-imageblock"> <a href="product.html"><img src="image/product/toy-1.png" alt="iPod Classic" title="iPod Classic" class="img-responsive" /></a>
+                    <ul class="button-group">
+                      <li>
+                        <button type="button" class="addtocart-btn bg-green" title="Add to Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                      </li>
+                      <li>
+                        <button type="button" class="wishlist bg-purple" data-toggle="tooltip" data-placement="top" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
+                      </li>
+                      <li>
+                        <button type="button" class="quick-view bg-blue" data-toggle="tooltip" data-placement="top" title="Quick View" ><i class="fa fa-eye"></i></button>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                  <div class="caption product-detail">
+                   <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">High Speed Magic Toy</a></h4>
+                    <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> </div>
+                    <p class="price product-price">$122.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="item">
+                <div class="product-thumb">
+                <div class="sale-tag"><div class="btn bg-blue">SALE</div><div class="btn percent bg-yellow">20% OFF</div></div>
+                  <div class="image product-imageblock"> <a href="product.html"><img src="image/product/toy-2.png" alt="iPod Classic" title="iPod Classic" class="img-responsive" /></a>
+                    <ul class="button-group">
+                      <li>
+                        <button type="button" class="addtocart-btn bg-green" title="Add to Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                      </li>
+                      <li>
+                        <button type="button" class="wishlist bg-purple" data-toggle="tooltip" data-placement="top" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
+                      </li>
+                      <li>
+                        <button type="button" class="quick-view bg-blue" data-toggle="tooltip" data-placement="top" title="Quick View" ><i class="fa fa-eye"></i></button>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                  <div class="caption product-detail">
+                   <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">High Speed Magic Toy</a></h4>
+                    <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                    <p class="price product-price">$122.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="item">
+                <div class="product-thumb">
+                <div class="sale-tag"><div class="btn bg-blue">SALE</div><div class="btn percent bg-yellow">20% OFF</div></div>
+                  <div class="image product-imageblock"> <a href="product.html"><img src="image/product/toy-3.png" alt="iPod Classic" title="iPod Classic" class="img-responsive" /></a>
+                    <ul class="button-group">
+                      <li>
+                        <button type="button" class="addtocart-btn bg-green" title="Add to Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                      </li>
+                      <li>
+                        <button type="button" class="wishlist bg-purple" data-toggle="tooltip" data-placement="top" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
+                      </li>
+                      <li>
+                        <button type="button" class="quick-view bg-blue" data-toggle="tooltip" data-placement="top" title="Quick View" ><i class="fa fa-eye"></i></button>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                  <div class="caption product-detail">
+                   <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">High Speed Magic Toy</a></h4>
+                    <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                    <p class="price product-price">$122.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="item">
+                <div class="product-thumb">
+                <div class="sale-tag"><div class="btn bg-blue">SALE</div><div class="btn percent bg-yellow">20% OFF</div></div>
+                  <div class="image product-imageblock"> <a href="product.html"><img src="image/product/toy-4.png" alt="iPod Classic" title="iPod Classic" class="img-responsive" /></a>
+                    <ul class="button-group">
+                      <li>
+                        <button type="button" class="addtocart-btn bg-green" title="Add to Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                      </li>
+                      <li>
+                        <button type="button" class="wishlist bg-purple" data-toggle="tooltip" data-placement="top" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
+                      </li>
+                      <li>
+                        <button type="button" class="quick-view bg-blue" data-toggle="tooltip" data-placement="top" title="Quick View" ><i class="fa fa-eye"></i></button>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                  <div class="caption product-detail">
+                   <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">High Speed Magic Toy</a></h4>
+                    <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                    <p class="price product-price">$122.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="row">
+            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="item">
+                <div class="product-thumb">
+                <div class="sale-tag"><div class="btn bg-blue">SALE</div><div class="btn percent bg-yellow">20% OFF</div></div>
+                  <div class="image product-imageblock"> <a href="product.html"><img src="image/product/toy-1.png" alt="iPod Classic" title="iPod Classic" class="img-responsive" /></a>
+                    <ul class="button-group">
+                      <li>
+                        <button type="button" class="addtocart-btn bg-green" title="Add to Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                      </li>
+                      <li>
+                        <button type="button" class="wishlist bg-purple" data-toggle="tooltip" data-placement="top" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
+                      </li>
+                      <li>
+                        <button type="button" class="quick-view bg-blue" data-toggle="tooltip" data-placement="top" title="Quick View" ><i class="fa fa-eye"></i></button>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                  <div class="caption product-detail">
+                   <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">High Speed Magic Toy</a></h4>
+                    <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> </div>
+                    <p class="price product-price">$122.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="item">
+                <div class="product-thumb">
+                <div class="sale-tag"><div class="btn bg-blue">SALE</div><div class="btn percent bg-yellow">20% OFF</div></div>
+                  <div class="image product-imageblock"> <a href="product.html"><img src="image/product/toy-2.png" alt="iPod Classic" title="iPod Classic" class="img-responsive" /></a>
+                    <ul class="button-group">
+                      <li>
+                        <button type="button" class="addtocart-btn bg-green" title="Add to Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                      </li>
+                      <li>
+                        <button type="button" class="wishlist bg-purple" data-toggle="tooltip" data-placement="top" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
+                      </li>
+                      <li>
+                        <button type="button" class="quick-view bg-blue" data-toggle="tooltip" data-placement="top" title="Quick View" ><i class="fa fa-eye"></i></button>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                  <div class="caption product-detail">
+                   <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">High Speed Magic Toy</a></h4>
+                    <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                    <p class="price product-price">$122.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="item">
+                <div class="product-thumb">
+                <div class="sale-tag"><div class="btn bg-blue">SALE</div><div class="btn percent bg-yellow">20% OFF</div></div>
+                  <div class="image product-imageblock"> <a href="product.html"><img src="image/product/toy-3.png" alt="iPod Classic" title="iPod Classic" class="img-responsive" /></a>
+                    <ul class="button-group">
+                      <li>
+                        <button type="button" class="addtocart-btn bg-green" title="Add to Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                      </li>
+                      <li>
+                        <button type="button" class="wishlist bg-purple" data-toggle="tooltip" data-placement="top" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
+                      </li>
+                      <li>
+                        <button type="button" class="quick-view bg-blue" data-toggle="tooltip" data-placement="top" title="Quick View" ><i class="fa fa-eye"></i></button>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                  <div class="caption product-detail">
+                   <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">High Speed Magic Toy</a></h4>
+                    <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                    <p class="price product-price">$122.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="item">
+                <div class="product-thumb">
+                <div class="sale-tag"><div class="btn bg-blue">SALE</div><div class="btn percent bg-yellow">20% OFF</div></div>
+                  <div class="image product-imageblock"> <a href="product.html"><img src="image/product/toy-4.png" alt="iPod Classic" title="iPod Classic" class="img-responsive" /></a>
+                    <ul class="button-group">
+                      <li>
+                        <button type="button" class="addtocart-btn bg-green" title="Add to Cart"> <i class="fa fa-shopping-cart"></i> </button>
+                      </li>
+                      <li>
+                        <button type="button" class="wishlist bg-purple" data-toggle="tooltip" data-placement="top" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
+                      </li>
+                      <li>
+                        <button type="button" class="quick-view bg-blue" data-toggle="tooltip" data-placement="top" title="Quick View" ><i class="fa fa-eye"></i></button>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                  <div class="caption product-detail">
+                   <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">High Speed Magic Toy</a></h4>
+                    <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
+                    <p class="price product-price">$122.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</section> 
+
+<section id="features" class="content our-features ">
+    <div class="container">
+        <div class="row">
+        	<div class="col-xs-12 col-md-12">
+            	<div class="heading">
+                	<h2>Our Features</h2>
+                </div>
+            </div>
+        </div>
+        <div class="features row">
+            <div class="col-md-4">
+                <div class="feautes">
+                <div class="icon"><img class="text-center" src="image/delivery-truck.png"/></div>
+                <div class="description">
+                <h1>Worldwide Delivery</h1>    
+                <p>On order over $150-7 days</p>    
+                </div>
+                </div>
+                <div class="feautes">
+                <div class="icon"><img class="text-center" src="image/gift-box.png"/></div>
+                <div class="description">
+                <h1>Great Saving</h1>    
+                <p>How to save money?</p>    
+                </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="icon"><img class="text-center" src="image/train-toy.png"/></div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="feautes">
+                <div class="icon"><img class="text-center" src="image/gift-box.png"/></div>
+                <div class="description">
+                <h1>Money Back Guarantee</h1>    
+                <p>Send within 30 days</p>    
+                </div>
+                </div>
+                <div class="feautes">
+                <div class="icon"><img class="text-center" src="image/support.png"/></div>
+                <div class="description">
+                <h1>24x7 Support</h1>    
+                <p>Call us 24/7 at 000-123-456</p>    
+                </div>
+                </div>
+
+            </div>
+            
+            
+          </div>
+    </div>
+</section> 
+
+
+
+
       {/* <section
         className="product-reviews content pt-100 pb-100"
         style={{ backgroundColor: "#efefef" }}

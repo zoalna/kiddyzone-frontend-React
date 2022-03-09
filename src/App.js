@@ -11,6 +11,15 @@ import Login from "./Pages/Login";
 import Home from "./Pages/Home";
 import SignUp from "./Pages/SignUp";
 import ProductDetails from "./Pages/ProductDetails";
+import AboutUs from "./Pages/AboutUs";
+import GiftCards from "./Pages/GiftCards";
+import StoreLocator from './Pages/StoreLocator'
+import ProductListing from "./Pages/ProductListing";
+import About from "./Pages/About";
+import Elarning from "./Pages/Elarning";
+import Dashboard from "./Pages/Dashboard";
+import Cart from "./Pages/Cart";
+import Checkout from './Pages/Checkout'
 
 class App extends Component {
   render() {
@@ -23,6 +32,16 @@ class App extends Component {
             <Route exact path="/Login" element={<Login />} />
             <Route exact path="/SignUp" element={<SignUp />} />
             <Route exact path="/ProductDetail" element={<ProductDetails />} />
+            <Route exact path="/AboutUs" element={<AboutUs />} />
+            <Route exact path="/GiftCards" element={<GiftCards />} />
+            <Route exact path="/StoreLocator" element={<StoreLocator />} />
+            <Route exact path="/ProductListing" element={<ProductListing />} />
+            <Route exact path="/About" element={<About />} />
+            <Route exact path="/Elarning" element={<Elarning />} />
+            <Route exact path="/Dashboard" element={<Dashboard />} />
+            <Route exact path="/Cart" element={<Cart />} />
+            <Route exact path="/Checkout" element={<Checkout />} />
+            
             {/* <Route exact path="/" element={isSignIn ? <Home /> : <Home />} /> */}
             {/* <Route path="/signUp" element={<SignUp />} />
             <Route path="/login" element={<SignIn />} /> */}

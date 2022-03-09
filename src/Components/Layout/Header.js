@@ -239,7 +239,11 @@ export default function Header() {
               <div className="helpful-text-links help-store-loc for-desktop">
                 <ul className="list-inline">
                   <li>
-                    <a href="">
+                  <Link to="/StoreLocator" className="parent link">
+                    <img src="image/header/location-pin.svg" />
+                <span>Store Locator</span>
+              </Link>
+                    <a href="/StoreLocator">
                       <img src="image/header/location-pin.svg" />
                       Store Locator
                     </a>

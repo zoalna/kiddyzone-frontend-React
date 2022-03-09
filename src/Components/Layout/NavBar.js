@@ -22,7 +22,7 @@ function NavBar() {
               </Link>
             </li>
             <li>
-              <Link to="/ProductDetail" className="parent link">
+              <Link to="/About" className="parent link">
                 <span>About Us</span>
               </Link>
             </li>
@@ -61,20 +61,20 @@ function NavBar() {
               </ul>
             </li>
             <li>
-              <a href="category.html" className="parent">
-                Mystery Box
-              </a>{" "}
+            <Link to="/AboutUs" className="parent link">
+                <span>Mystery Box</span>
+              </Link>
             </li>
             <li>
-              <a href="category.html" className="parent">
-                E-Learning
-              </a>{" "}
+            <Link to="/Elarning" className="parent link">
+                <span>E-Learning</span>
+              </Link>
             </li>
 
             <li>
-              <a href="blog.html" className="parent">
-                Gift Cards
-              </a>
+            <Link to="/GiftCards" className="parent link">
+                <span>GiftCards</span>
+              </Link>
             </li>
             <li>
               <a href="about-us.html">Rewards & Giveaways</a>
@@ -83,9 +83,9 @@ function NavBar() {
               <a href="contact.html">Promotions</a>{" "}
             </li>
             <li className="help-store-loc for-mobile">
-              <a href="#">
+            <Link to="/StoreLocator" className="parent link">
                 <span>Store Locator</span>
-              </a>
+              </Link>
             </li>
             <li className="help-store-loc for-mobile">
               <a href="#">
