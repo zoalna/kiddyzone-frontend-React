@@ -51,7 +51,7 @@
     
 @media screen and (max-width: 1440px) {
 
-#logo a img {top: 45px;width: 300px;}    
+#logo a img {top: 55px;width: 300px;}    
 #top-links li {padding: 0 5px;}
 #top-links .account {margin-right: 5px;}
 #top-links .account a, .currency button strong, .language .btn-group > .btn {font-size: 18px;}
