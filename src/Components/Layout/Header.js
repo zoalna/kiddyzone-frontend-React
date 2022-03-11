@@ -10,7 +10,7 @@ export default function Header() {
         <img src="image/loader.gif" alt="#" />
       </div> */}
       <div className="announcements">
-        <svg
+        {/* <svg
           xmlns="http://www.w3.org/2000/svg"
           width="54.945"
           height="47.477"
@@ -78,7 +78,10 @@ export default function Header() {
               fill="#e20025"
             />
           </g>
-        </svg>{" "}
+        </svg>{" "} */}
+        <div className="main-upper-header">
+          <img src="image/truck-icon.svg" />
+          </div>
         <span>Free Shipping 99 QR</span>
       </div>
       <header>
@@ -184,7 +187,7 @@ export default function Header() {
             className="header-inner"
             style={{ paddingTop: 30, paddingBottom: 30 }}
           >
-            <div id="logo" style={{ position: "absolute", top: 0 }}>
+            <div id="logo">
               <a href="index.html">
                 <img
                   src="image/logo.svg"
@@ -243,10 +246,7 @@ export default function Header() {
                     <img src="image/header/location-pin.svg" />
                 <span>Store Locator</span>
               </Link>
-                    <a href="/StoreLocator">
-                      <img src="image/header/location-pin.svg" />
-                      Store Locator
-                    </a>
+        
                   </li>
                   <li>
                     <a href="">

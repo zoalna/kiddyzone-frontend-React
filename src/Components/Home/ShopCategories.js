@@ -5,11 +5,11 @@ import "../../App.css";
 export default function ShopCategories() {
   return (
     <section id="shop-categories" className="shop-by-category">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-xs-12 col-md-12">
             <div className="heading">
-              <h2>
+              <h2 style={{fontSize:'16px'}}>  
                 Shop By
                 <br /> Category
               </h2>
@@ -28,7 +28,7 @@ export default function ShopCategories() {
             </div>
           </div>
           <div className="col-xs-12 age-block">
-            <img src="image/4years.png" />
+            <img src="image/4years.png"  className="age-by-img"/>
             <div className="age-text">
               <h2>
                 <a href="#" className="text-blue">

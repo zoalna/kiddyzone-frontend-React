@@ -19,8 +19,8 @@ export default function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-sm-3 footer-block">
-            <h5 className="footer-title">Information</h5>
-            <hr />
+            <h5 className="footer-title"><span className="info">Information</span></h5>
+            {/* <hr /> */}
             <ul className="list-unstyled ul-wrapper footer-list">
               <li>
                 <a href="#">About Us</a>
@@ -45,10 +45,10 @@ export default function Footer() {
               <img src="image/Qatat-logo.svg" />
             </div>
           </div>
-          <div className="col-sm-3 footer-block footer-list">
-            <h5 className="footer-title">Policies</h5>
-            <hr />
-            <ul className="list-unstyled ul-wrapper">
+          <div className="col-sm-3 footer-block">
+          <h5 className="footer-title"><span className="policy">Policy</span></h5>
+            {/* <hr /> */}
+            <ul className="list-unstyled ul-wrapper footer-list">
               <li>
                 <a href="#">Return Policy</a>
               </li>
@@ -69,10 +69,10 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-sm-3 footer-block footer-list">
-            <h5 className="footer-title">Account</h5>
-            <hr />
-            <ul className="list-unstyled ul-wrapper">
+          <div className="col-sm-3 footer-block ">
+          <h5 className="footer-title"><span className="account-footer">Account</span></h5>
+            {/* <hr /> */}
+            <ul className="list-unstyled ul-wrapper footer-list">
               <li>
                 <a href="#">My Account</a>
               </li>
@@ -85,7 +85,7 @@ export default function Footer() {
             <div className="content_footercms_right">
               <div className="footer-contact footer-list">
                 <h5 className="contact-title footer-title">Contact</h5>
-                <hr />
+                {/* <hr /> */}
                 <ul className="ul-wrapper">
                   <li>
                     <img src="image/CALL.svg" />

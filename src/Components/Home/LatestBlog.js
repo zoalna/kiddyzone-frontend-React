@@ -5,11 +5,11 @@ import "../../App.css";
 export default function LatestBlog() {
   return (
     <section id="latest-Blog">
-      <div className="container">
+      <div className="container-fluid">
         <div className="content">
           <div className="blog">
             <div className="heading">
-              <h2>
+              <h2 style={{fontSize:'16px'}}>
                 Our Latest
                 <br /> Blogs
               </h2>
@@ -43,6 +43,7 @@ export default function LatestBlog() {
                       </a>{" "}
                     </div>
                   </div>
+                  
                 </li>
                 <li className="item blog-slider-item">
                   <div className="blog1 blog">

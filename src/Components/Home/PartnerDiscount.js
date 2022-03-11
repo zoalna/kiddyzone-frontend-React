@@ -6,7 +6,7 @@ export default function PartnerDiscount() {
   return (
     <div id="partners-discount" className="container-fluid">
       <div className="heading">
-        <h2 style={{ top: "50%" }}>
+        <h2 style={{fontSize:'16px'}}>
           Our Partners
           <br /> Discount
         </h2>

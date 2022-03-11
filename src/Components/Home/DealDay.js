@@ -5,18 +5,18 @@ import "../../App.css";
 export default function DealDay() {
   return (
     <section id="single-product" className="content card">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-xs-12 col-md-12">
             <div className="heading">
-              <h2 style={{}}>
+              <h2 style={{fontSize:'20px'}}>
                 Deal
                 <br /> Of The Day
               </h2>
             </div>
           </div>
         </div>
-        <div className="row bg-yellow">
+        <div className="row bg-yellow" style={{background:'#f7f7f7'}}>
           <div className="preview col-md-6">
             <div className="preview-pic tab-content">
               <div className="tab-pane active" id="pic-1">
@@ -56,7 +56,7 @@ export default function DealDay() {
             </ul>
           </div>
           <div className="details col-md-6">
-            <div className="rating">
+            <div className="rating" style={{display:'none'}}>
               {" "}
               <span className="fa fa-stack">
                 <i className="fa fa-star-o fa-stack-2x"></i>
@@ -78,12 +78,12 @@ export default function DealDay() {
                 <i className="fa fa-star-o fa-stack-2x"></i>
               </span>{" "}
             </div>
-            <h3 className="product-title">Aroma Mocha BabyToy</h3>
-            <h4 className="price">
+            <h3 className="product-title" style={{textAlign:'left'}}>Aroma Mocha BabyToy</h3>
+            <h4 className="price"  style={{textAlign:'left'}}>
               <span>$50.00</span>
               <del>$60.00</del>
             </h4>
-            <p className="product-description">
+            <p className="product-description"  style={{textAlign:'left', fontSize:'13px', marginBottom:'20px'}}>
               Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
               nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
               erat, sed diam voluptua. At vero eos et accusam et justo duo
@@ -92,7 +92,7 @@ export default function DealDay() {
               elitr, sed diam no
             </p>
 
-            <h5 className="sizes">
+            <h5 className="sizes"  style={{textAlign:'left'}}>
               sizes:
               <span className="size" data-toggle="tooltip" title="small">
                 s
@@ -107,7 +107,7 @@ export default function DealDay() {
                 xl
               </span>
             </h5>
-            <h5 className="colors">
+            <h5 className="colors"  style={{textAlign:'left'}}>
               colors:
               <span
                 className="color orange not-available"
@@ -119,7 +119,7 @@ export default function DealDay() {
             </h5>
 
             <div className="row">
-              <div className="col-lg-12 offset-3">
+              <div className="col-lg-12 offset-3" style={{display:'flex'}}>
                 <div className="timer">
                   <div className="days-block">
                     <span className="days counting" id="day"></span>
@@ -141,7 +141,7 @@ export default function DealDay() {
                 </div>
               </div>
             </div>
-            <div className="action">
+            <div className="action" style={{display:'flex'}}>
               <button className="btn btn-default bg-green" type="button">
                 <span className="fa fa-eye"></span>
               </button>
