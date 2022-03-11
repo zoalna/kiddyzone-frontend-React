@@ -1,7 +1,9 @@
 @import url("../fonts/stylesheet.css");
 
 /* check out start */
-
+*{
+	font-family: '29LT Azer';
+}
 body {
 	font-family: '29LT Azer';
 	font-weight: 400;
@@ -730,6 +732,54 @@ nav {
     left: 8%;
 	max-width: 200px;
 }
+/* .banner{
+	background-image: url('../image/banners/banners4.png');
+} */
+.banner2 .bannertext{
+	position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%);
+}
+.banner1 .bannertext{
+	position: absolute;
+    top: 35%;
+    left: 20%;
+    transform: translate(-50%);
+}
+.banner1 .bannertext .upto-text{
+	text-align: left;
+	font-size: 12px;
+}
+.banner1 .bannertext  .fifty-percent{
+	text-align: left;
+	font-size: 48px !important;
+    text-shadow: 2px 2px #333;
+    margin: 0;
+    line-height: 0.8em;
+}
+.banner2 .bannertext .Subscribe_Now{
+	font-size: 20px !important;
+	text-align: center;
+	color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.banner2 .bannertext h2{
+	color: white;
+}
+.banner2 .bannertext .MYSTERY_BOXES{
+	color: #FED654;
+	background: #ca3099;
+	border: none;
+	font-size: 20px;
+	margin: 0 0 10px;
+	padding: 10px 30px;
+	font-weight: 600;
+	border-radius: 50px;
+}
+
 #subbanner1 .bannertext .btn {
     background: #FED654;
     color: #000;

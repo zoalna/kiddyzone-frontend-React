@@ -9,34 +9,39 @@ export default function ShopBanners() {
         <div className="row">
           <div className="cms_banner">
             <div className="col-xs-12 col-md-6">
-              <div id="subbanner1" className="banner sub-hover">
+              <div id="subbanner1" className="banner1 sub-hover">
                 <a href="#">
                   <img
-                    src="image/banners/mystery-boxes.jpg"
+                  src="image/banners/banners4.png"
                     alt="Sub Banner1"
                     className="img-responsive"
                   />
                 </a>
                 <div className="bannertext">
-                  <p>Save 35% - 45% OFF</p>
-                  <h2>Soft & Push Pull Toy</h2>
+                  <p className="upto-text"> UPTO</p>
+                  <p className="fifty-percent">50%</p>
+                  <p>OFF</p>
+                  {/* <h2>Soft & Push Pull Toy</h2> */}
                   <button className="btn">Shop Now</button>
                 </div>
               </div>
             </div>
             <div className="col-xs-12 col-md-6">
-              <div id="subbanner2" className="banner sub-hover">
+              <div id="subbanner2" className="banner2 sub-hover">
                 <a href="#">
                   <img
-                    src="image/banners/subbanner2.jpg"
+                    src="image/banners/mystery-boxes.png"
+
+                   
                     alt="Sub Banner2"
                     className="img-responsive"
                   />
                 </a>
                 <div className="bannertext">
-                  <p>New Arrivals</p>
+                  <p className="Subscribe_Now"><b>Subscribe Now & Explore Our</b></p>
+                  <button className="MYSTERY_BOXES">MYSTERY BOXES</button>
                   <h2>Toys That Make Playing </h2>
-                  <button className="btn">Shop Now</button>
+              
                 </div>
               </div>
             </div>
