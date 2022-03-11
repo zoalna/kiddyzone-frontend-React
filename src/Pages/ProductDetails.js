@@ -593,8 +593,13 @@ export default function ProductDetails() {
             <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div class="item">
                 <div class="product-thumb">
-                <div class="sale-tag"><div class="btn bg-blue">SALE</div><div class="btn percent bg-yellow">20% OFF</div></div>
+                {/* <div class="sale-tag">
+               
+                </div> */}
                   <div class="image product-imageblock"> <a href="product.html"><img src="image/product/toy-2.png" alt="iPod Classic" title="iPod Classic" class="img-responsive" /></a>
+                   
+                  <div class="btn bg-blue">SALE</div>
+                <div class="btn percent bg-yellow">20% OFF</div>
                     <ul class="button-group">
                       <li>
                         <button type="button" class="addtocart-btn bg-green" title="Add to Cart"> <i class="fa fa-shopping-cart"></i> </button>

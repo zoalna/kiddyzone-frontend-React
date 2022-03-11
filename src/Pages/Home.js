@@ -12,6 +12,8 @@ import {
 
 import MainBanner from "../Components/Home/MainBanner";
 import ShopBanners from "../Components/Home/ShopBanners";
+import SaleBanners from "../Components/Home/SaleBanner";
+
 import HotSellers from "../Components/Home/HotSellers";
 import ShopByAge from "../Components/Home/ShopByAge";
 import ShopCategories from "../Components/Home/ShopCategories";
@@ -42,6 +44,7 @@ class Home extends Component {
         <RecentlyViewed />
         <SmallShopBanner2 />
         <DealDay />
+        <SaleBanners />
         <GiftFinder />
         <LatestBlog />
         <BrowseByBrand />
