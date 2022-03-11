@@ -5,7 +5,7 @@ import "../../App.css";
 export default function SmallShopBanner() {
   return (
     <section id="cards" className="small-shop-banner">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="cms_banner">
             <div className="col-xs-12 col-md-6">

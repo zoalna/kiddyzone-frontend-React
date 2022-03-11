@@ -5,11 +5,11 @@ import "../../App.css";
 export default function GiftFinder() {
   return (
     <section id="gift-finder" className="content">
-      <div className="container">
+      <div className="container-fluid">
         <div className="row">
           <div className="col-xs-12 col-md-12">
             <div className="heading">
-              <h2>Gift Finder</h2>
+              <h2 style={{fontSize:'20px'}}>Gift Finder</h2>
             </div>
           </div>
         </div>
