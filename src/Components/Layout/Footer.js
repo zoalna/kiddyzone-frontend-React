@@ -27,7 +27,7 @@ export default function Footer() {
             </h5>
             {/* <hr /> */}
             <ul className="list-unstyled ul-wrapper footer-list">
-              <li>
+              <li > 
                 <a href="#">About Us</a>
               </li>
               <li>
