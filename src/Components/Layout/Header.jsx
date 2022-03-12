@@ -157,13 +157,13 @@ export default function Header() {
                       <li className="account for-desktop">
                         <img src="image/header/user%20(1).svg" />
                         <Link to="/Login">
-                          <span>Sign In</span>
+                          <span>Login</span>
                         </Link>
 
                         <span className="account-ver-line">|</span>
 
                         <Link to="/SignUp">
-                          <span>Sign Up</span>
+                          <span>Register</span>
                         </Link>
                       </li>
                       <li>
