@@ -1139,7 +1139,7 @@ button.proceed-checkout {
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-align: center;
 }
 .shop-by-category .age-block:nth-child(1) .age-text h2 {
