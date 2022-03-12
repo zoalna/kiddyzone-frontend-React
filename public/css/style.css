@@ -205,7 +205,7 @@ span.hidden-xs, span.hidden-sm, span.hidden-md, span.hidden-lg {
 	background-color: rgba(255, 255, 255, 0);
 }
 .currency .btn-group .btn {
-    border-right: 3px solid #fff;
+    border-right: 1px solid #fff;
     border-radius: 0;
     margin-right: 30px;
     padding-left: 32px;
@@ -304,15 +304,16 @@ header {
     color: #00b4e3;
 }
 .helpful-text-links li a img {
-    margin: 0 15px;
+    margin: 0 10px;
     filter: brightness(0) invert(1);
-    height: 35px;
+    height: 25px;
 }
 .header-top, #logo-header {
     padding: 0px 0px;
 }
 button.head-gift-btn {
     border: 2px solid #DC272D;
+	height: 50px;
     border-radius: 20px;
     background: #ffffff;
     color: #DC272D;
@@ -378,6 +379,9 @@ span.account-ver-line {
 }
 
 #logo {
+	position: absolute;
+	top: 0;
+	left: 30px;
 	margin: 0;
 }
 #logo a img {
@@ -388,8 +392,8 @@ span.account-ver-line {
 }
 /* search */
 .header-right #search .input-lg {
-    height: 50px;
-    width: 23vw;
+    height: 50px!important;
+    width: 15vw;
     line-height: 48px;
     border-radius: 20px 0 0 20px;
     border-right: 0;
@@ -401,6 +405,7 @@ span.account-ver-line {
     background: #fffcd5;
     border-radius: 0 18px 18px 0;
     border: 0;
+	height: 50px;
     color: #e20025;
     margin: 0px;
 }
@@ -899,6 +904,7 @@ background: #000;
 
 .heading {
     position: relative;
+	margin-bottom: -40px;
 }
 .heading h2 {
     position: absolute;
@@ -1101,7 +1107,6 @@ button.proceed-checkout {
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
-    text-decoration: underline;
     text-align: center;
 }
 .shop-by-age .age-block:nth-child(1) .age-text h2 {
@@ -1228,18 +1233,23 @@ footer {
 #footer .ftr-logo {
     margin-top: 20px;
     margin-bottom: 10px;
-    max-width: 300px;
+    max-width: 340px;
 }
 #footer .cms_searvice p {
     font-size: 22px;
     text-align: justify;
+}
+.list-unstyled{
+	text-align: start!important;
 }
 .footer-block {
     padding: 0;
 }
 #bottom-footer {padding: 20px 0 50px;}
 #bottom-footer .copyright {font-size: 16px;}
-#bottom-footer .copyright.right {text-align: right;}
+#bottom-footer .copyright.right {position: absolute;
+    bottom: 22%;
+    right: 13%;text-align: right;}
 .footer-link > li:first-child {border: medium none;}
 .footer-link > li {
 	display: inline-block;
@@ -1247,13 +1257,33 @@ footer {
 	list-style: outside none none;
 	padding: 0 5px;
 }
-.footer-contact ul li img {width: 25px;}
+.copyright__message {position: absolute;top: -750%;left: -20%;}
+.footer-contact ul li img {width: 25px;filter: invert(1);}
 .footer-contact ul.contact-list li img {filter: invert(1);}
-.footer-contact .social-media img {width: 40px;}
+.footer-contact .social-media img {filter: unset;}
 .footer-contact .social-media {
     margin-top: 15px;
     text-align: center;
     width: 200px;
+	margin-bottom: 60px;
+}
+.qatar-logo {
+    padding: 5px 0px;
+}
+h5.contact-title.footer-title::after {
+    position: absolute;
+    content: '';
+    width: 150px;
+    height: 2px;
+    background: #fff;
+    top: 30px;
+    left: 0;
+}
+.payment__method {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .footer-contact .social-media .footer-link {
     background: #fff;
@@ -1292,7 +1322,7 @@ footer, footer a, .footer-bottom a {
 footer a:hover {
 	color: #d9272e;
 }
-.whatsapp img {width: 100px;}
+.whatsapp img {width: 70px;}
 .whatsapp {position: fixed;right: 3%; bottom: 5%;}
 /* footer cms start */
 footer h5 {
@@ -3126,14 +3156,15 @@ button.btn.btn-default.btn-lg span {
 /* end*/
 
 #scrollup {
-	background: url("../image/scroll.png") no-repeat;
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	position: fixed;
-	bottom: 20px;
-	right: 20px;
+	bottom: 55px;
+	right: 10%;
 	display: none;
-	text-indent: -9999px;
+	background-color: #fff;
+	border-radius: 50%;
+	/* text-indent: -9999px; */
 	cursor: pointer;
 	z-index: 9999;
 }
@@ -5560,26 +5591,29 @@ text-decoration: line-through;
     content:'';
     width:150px;
     height:2px;
-    background:red;
+    background: #fff;
     left:0;
-    top:20px
+    top:30px
+}
+ul.ul-wrapper {
+    text-align: start;
 }
 .policy::after {
     position:absolute;
     content:'';
     width:150px;
     height:2px;
-    background:red;
+    background: #fff;
     left:0;
-    top:20px
+    top:30px
 }
 .account-footer::after {
     position: absolute;
     content: '';
     width: 150px;
     height: 2px;
-    background: red;
-    top: 20px;
+    background: #fff;
+    top: 30px;
     left: 0;
 }
 .ul-wrapper a{
