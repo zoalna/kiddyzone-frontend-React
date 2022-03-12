@@ -119,15 +119,28 @@ span.hidden-xs, span.hidden-sm, span.hidden-md, span.hidden-lg {
 }
 /* top */
 .announcements {
-    background:#a9e1f7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	background: #a9e1f7;
+    width: 100%;
+    overflow: hidden;
 }
+.animation{
+	animation: slider 22s infinite;
+	align-items: center;
+	display: flex;
+}
+@keyframes slider {
+	0%{
+		transform: translateY(0);
+	  }
+	  100%{
+		transform: translateX(102%);
+	  }
+}
+
 .announcements svg {width: 65px;}
 .announcements span {
     color: #E20025;
-    font-size: 26px;
+    font-size: 23px;
     font-weight: bold;
     margin-left: 10px;
 }
@@ -205,7 +218,7 @@ span.hidden-xs, span.hidden-sm, span.hidden-md, span.hidden-lg {
 	background-color: rgba(255, 255, 255, 0);
 }
 .currency .btn-group .btn {
-    border-right: 3px solid #fff;
+    border-right: 1px solid #fff;
     border-radius: 0;
     margin-right: 30px;
     padding-left: 32px;
@@ -294,6 +307,7 @@ header {
 }
 .helpful-text-links {
     float: right;
+	padding-right: 40px;
 }
 .helpful-text-links li a {
     font-size: 24px;
@@ -304,15 +318,16 @@ header {
     color: #00b4e3;
 }
 .helpful-text-links li a img {
-    margin: 0 15px;
+    margin: 0 10px;
     filter: brightness(0) invert(1);
-    height: 35px;
+    height: 22px;
 }
 .header-top, #logo-header {
     padding: 0px 0px;
 }
 button.head-gift-btn {
     border: 2px solid #DC272D;
+	height: 50px;
     border-radius: 20px;
     background: #ffffff;
     color: #DC272D;
@@ -372,12 +387,17 @@ span.account-ver-line {
 .pt-100{padding-top: 10rem;}
 .pb-100{padding-bottom: 10rem;}
 /* logo */
-
+div#top-links {
+    padding-right: 40px;
+}
 #logo-header {
     padding: 0 0px;
 }
 
 #logo {
+	position: absolute;
+	top: 0;
+	left: 50px;
 	margin: 0;
 }
 #logo a img {
@@ -388,8 +408,8 @@ span.account-ver-line {
 }
 /* search */
 .header-right #search .input-lg {
-    height: 50px;
-    width: 23vw;
+    height: 50px!important;
+    width: 15vw;
     line-height: 48px;
     border-radius: 20px 0 0 20px;
     border-right: 0;
@@ -401,6 +421,7 @@ span.account-ver-line {
     background: #fffcd5;
     border-radius: 0 18px 18px 0;
     border: 0;
+	height: 50px;
     color: #e20025;
     margin: 0px;
 }
@@ -899,13 +920,17 @@ background: #000;
 
 .heading {
     position: relative;
+	margin-bottom: -35px;
+}
+.item.text-center {
+    margin: 0px 10px;
 }
 .heading h2 {
     position: absolute;
-    left: 6%;
+    left: 7.3%;
     right: 0;
     text-align: center;
-    top: 38%;
+    top: 50%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -932,10 +957,16 @@ background: #000;
     /*background: url('../image/heading-bg.png') no-repeat;*/    
 	background-size: 100%;
     background-position: center;
-    width: 230px;
+    width: 330px;
     height: 200px;
     display: block;
     margin: 30px auto;
+}
+.card{
+	margin: 0!important;
+}
+.col-xs-12.col-md-12 {
+    margin-top: -2%!important;
 }
 #shop-by-age .heading:after {
     background: url('../image/shop-by-age.png') no-repeat;
@@ -976,10 +1007,16 @@ background: #000;
 }
 #gift-finder .heading h2,
 #partners-discount .heading h2 {left: 5%;}
-#browse-brand .heading h2 {left: 3%; }
+#browse-brand .heading h2 {left: 5%;top: 62%; }
 #latest-Blog .heading:after {
     background: url('../image/latest-blogs.png') no-repeat;
     background-size: 100%;
+}
+.heading.brand{
+	margin-bottom: -20px;
+}
+.heading.hotSeller {
+    margin-bottom: -10px;
 }
 #browse-brand .heading:after {
     background: url('../image/browse-brand.png') no-repeat;
@@ -1091,6 +1128,7 @@ button.proceed-checkout {
 }
 .age-block img{
 	transition: 0.8s all;
+	width: 75%;
 }
 .shop-by-age .agebox {
     padding: 50px;
@@ -1101,7 +1139,6 @@ button.proceed-checkout {
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
-    text-decoration: underline;
     text-align: center;
 }
 .shop-by-age .age-block:nth-child(1) .age-text h2 {
@@ -1131,7 +1168,7 @@ button.proceed-checkout {
     margin-top: 20px;
     font-size: 20px;
     font-weight: bold;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-align: center;
 }
 .shop-by-category .age-block:nth-child(1) .age-text h2 {
@@ -1228,18 +1265,24 @@ footer {
 #footer .ftr-logo {
     margin-top: 20px;
     margin-bottom: 10px;
-    max-width: 300px;
+    max-width: 450px;
 }
 #footer .cms_searvice p {
     font-size: 22px;
     text-align: justify;
 }
+.list-unstyled{
+	text-align: start!important;
+}
 .footer-block {
     padding: 0;
+	margin-bottom: 20px;
 }
 #bottom-footer {padding: 20px 0 50px;}
 #bottom-footer .copyright {font-size: 16px;}
-#bottom-footer .copyright.right {text-align: right;}
+#bottom-footer .copyright.right {position: absolute;
+    bottom: 22%;
+    right: 13%;text-align: right;}
 .footer-link > li:first-child {border: medium none;}
 .footer-link > li {
 	display: inline-block;
@@ -1247,13 +1290,33 @@ footer {
 	list-style: outside none none;
 	padding: 0 5px;
 }
-.footer-contact ul li img {width: 25px;}
+.copyright__message {position: absolute;top: -750%;left: -20%;}
+.footer-contact ul li img {width: 25px;filter: invert(1);}
 .footer-contact ul.contact-list li img {filter: invert(1);}
-.footer-contact .social-media img {width: 40px;}
+.footer-contact .social-media img {filter: unset;}
 .footer-contact .social-media {
     margin-top: 15px;
     text-align: center;
     width: 200px;
+	margin-bottom: 60px;
+}
+.qatar-logo {
+    padding: 5px 0px;
+}
+h5.contact-title.footer-title::after {
+    position: absolute;
+    content: '';
+    width: 150px;
+    height: 2px;
+    background: #fff;
+    top: 30px;
+    left: 0;
+}
+.payment__method {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .footer-contact .social-media .footer-link {
     background: #fff;
@@ -1292,7 +1355,7 @@ footer, footer a, .footer-bottom a {
 footer a:hover {
 	color: #d9272e;
 }
-.whatsapp img {width: 100px;}
+.whatsapp img {width: 70px;}
 .whatsapp {position: fixed;right: 3%; bottom: 5%;}
 /* footer cms start */
 footer h5 {
@@ -1312,7 +1375,7 @@ footer ul li {
 	padding: 0;
 }
 .footer-list a {
-    font-size: 16px;
+    font-size: 1.7vmax;
     line-height: 30px;
 	font-weight:300;
 }
@@ -1380,7 +1443,7 @@ footer ul li {
 
 .viewmore {
 	overflow: hidden;
-	text-align: right;margin-bottom: 32px;
+	text-align: right;margin-bottom: -20px;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -1570,7 +1633,7 @@ footer ul li {
 	transition: none;
 }
 .product-thumb {
-	margin: 60px 0;
+	margin: 25px 0;
 	overflow: hidden;
 	text-align: center;background: #fff;
     border-radius: 15px;
@@ -1880,10 +1943,10 @@ h2.price {
 */
 #hot-Sellers .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 4%;
     right: 0;
     text-align: center;
-    top: 38%;
+    top: 55%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -1944,6 +2007,18 @@ h2.price {
     box-shadow: 0 0 15px #c1c1c1;
     color: #000;
 }
+.btn.new.bg-red {
+    width: 148px;
+    transform: rotate(50deg);
+    right: -46px;
+	color: #fff;
+	height: 37px;
+	font-size: 1.2vmax;
+}
+.btn.new.bg-blue:hover{
+	font-size: 1.2vmax!important;
+	background-color: red!important;
+}
 .btn.arrow{position: relative;}
 .join-club-btn .btn{position: relative;margin:10px 0 40px; padding: 15px 70px;}
 #mystery-boxes .cms_banner {
@@ -1958,7 +2033,7 @@ h2.price {
 #online-education .banner {
     background: #fff;
     box-shadow: 0px 0px 20px #c5c4c4;
-    min-height: 292px;
+    min-height: 23.4vmax;
     margin: 0;
     display: table;
     width: 100%;
@@ -1967,6 +2042,7 @@ h2.price {
 #online-education .online-edu {
     display: table-cell;
     vertical-align: middle;
+	text-align: start;
 }
 #online-education .online-edu img {
     margin-left: auto;
@@ -2116,6 +2192,7 @@ h2.price {
 }
 .finder-form .input-group, .finder-form .input-group select {
     width: 100%;
+	text-align: start;
 }
 #gift-finder .finder-form h2 {
     font-size: 30px;
@@ -2828,7 +2905,7 @@ p.list-group-item {
 .product-thumb .product-name a {
 	font-size: 18px;
 	color: #000;
-	font-weight: bold;
+	font-weight: 500;
 }
 .product-list .product-thumb .product-name a {
 	font-size: 15px;
@@ -3126,14 +3203,15 @@ button.btn.btn-default.btn-lg span {
 /* end*/
 
 #scrollup {
-	background: url("../image/scroll.png") no-repeat;
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	position: fixed;
-	bottom: 20px;
-	right: 20px;
+	bottom: 55px;
+	right: 10%;
 	display: none;
-	text-indent: -9999px;
+	background-color: #fff;
+	border-radius: 50%;
+	/* text-indent: -9999px; */
 	cursor: pointer;
 	z-index: 9999;
 }
@@ -3203,7 +3281,7 @@ button.btn.btn-default.btn-lg span {
 	border: 1px solid #e6e6e6;
 }
 .newslatter .btn.btn-large.btn-primary {
-	padding: 18px 40px;
+	padding: 21px 40px;
     font-size: 19px;
     margin-left: -80px;
     color: #fff;
@@ -5215,6 +5293,9 @@ button.single-pro.add-to-cart:hover {
     align-items: center;
     justify-content: center;
 }
+button.btn.btn-link.dropdown-toggle {
+    font-size: 23px;
+}
 #gift-cards-products .single-product .btn {width: 100%;}
 #gift-cards-products .single-product .btn:hover {background: #d9272e;}
 
@@ -5508,14 +5589,34 @@ display: flex;
 .new:hover{
 	transform: rotate(45deg);
     position: absolute;
-    top: 13px;
+    /* top: 13px; */
     right: -38px;
-	padding: 10px 50px;
+	/* padding: 10px 50px; */
 	border-radius: 0;
 	font-size: 13px;
 	color: #000;
-	background-color: #00B4E3;
+	background-color: #FF0000;
 
+}
+.btn.percent.bg-yellow {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 13px;
+    left: -35px;
+    padding: 10px 40px;
+    border-radius: 0;
+    font-size: 13px;
+    color: #fff;
+    background-color: #FED654;
+}
+.btn.percent.bg-yellow {
+    width: 136px;
+    height: 41px;
+    font-size: 19px;
+}
+p.discount{
+	text-decoration: line-through;
+	color: #00b352;
 }
 .percent{
 	transform: rotate(-45deg);
@@ -5560,26 +5661,29 @@ text-decoration: line-through;
     content:'';
     width:150px;
     height:2px;
-    background:red;
+    background: #fff;
     left:0;
-    top:20px
+    top:30px
+}
+ul.ul-wrapper {
+    text-align: start;
 }
 .policy::after {
     position:absolute;
     content:'';
     width:150px;
     height:2px;
-    background:red;
+    background: #fff;
     left:0;
-    top:20px
+    top:30px
 }
 .account-footer::after {
     position: absolute;
     content: '';
     width: 150px;
     height: 2px;
-    background: red;
-    top: 20px;
+    background: #fff;
+    top: 30px;
     left: 0;
 }
 .ul-wrapper a{
@@ -5587,10 +5691,10 @@ text-decoration: line-through;
 }
 #shop-categories .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 8%;
     right: 0;
     text-align: center;
-    top: 38%;
+    top: 51%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -5603,10 +5707,10 @@ text-decoration: line-through;
 }
 #shop-by-age .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 5.8%;
     right: 0;
     text-align: center;
-    top: 35%;
+    top: 50.2%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -5623,10 +5727,10 @@ text-decoration: line-through;
 }
 #recently-veiw-products .heading h2, #top-products .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 5%;
     right: 0;
     text-align: center;
-    top: 35%;
+    top: 58%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -5639,10 +5743,10 @@ text-decoration: line-through;
 }
 #single-product .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 8%;
     right: 0;
     text-align: center;
-    top: 35%;
+    top: 53%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -5653,12 +5757,15 @@ text-decoration: line-through;
     text-transform: uppercase;
     font-size: 24px;
 }
+.preview-pic{
+	border: none!important;
+}
 #latest-Blog .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 6%;
     right: 0;
     text-align: center;
-    top: 25%;
+    top: 32%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -5671,10 +5778,10 @@ text-decoration: line-through;
 }
 #partners-discount .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 6%;
     right: 0;
     text-align: center;
-    top: 35%;
+    top: 45%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -5690,7 +5797,7 @@ text-decoration: line-through;
     left: 3%;
     right: 0;
     text-align: center;
-    top: 38%;
+    top: 58%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;

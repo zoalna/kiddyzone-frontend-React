@@ -6,9 +6,8 @@ export default function PartnerDiscount() {
   return (
     <div id="partners-discount" className="container-fluid">
       <div className="heading">
-        <h2 style={{fontSize:'16px'}}>
-          Our Partners
-          <br /> Discount
+        <h2 style={{fontSize:'1.4vmax'}}>
+          Our Partners Discount
         </h2>
       </div>
       <div id="brand_carouse" className="owl-carousel brand-logo">
