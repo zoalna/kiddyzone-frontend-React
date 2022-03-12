@@ -294,6 +294,7 @@ header {
 }
 .helpful-text-links {
     float: right;
+	padding-right: 40px;
 }
 .helpful-text-links li a {
     font-size: 24px;
@@ -306,7 +307,7 @@ header {
 .helpful-text-links li a img {
     margin: 0 10px;
     filter: brightness(0) invert(1);
-    height: 25px;
+    height: 22px;
 }
 .header-top, #logo-header {
     padding: 0px 0px;
@@ -373,7 +374,9 @@ span.account-ver-line {
 .pt-100{padding-top: 10rem;}
 .pb-100{padding-bottom: 10rem;}
 /* logo */
-
+div#top-links {
+    padding-right: 40px;
+}
 #logo-header {
     padding: 0 0px;
 }
@@ -381,7 +384,7 @@ span.account-ver-line {
 #logo {
 	position: absolute;
 	top: 0;
-	left: 30px;
+	left: 50px;
 	margin: 0;
 }
 #logo a img {

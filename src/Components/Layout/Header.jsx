@@ -175,12 +175,12 @@ export default function Header() {
                       <a href="#" id="notification" title="Wish List (0)">
                         <img src="image/header/bell.svg" />
                       </a>
-                    </li>
+                    </li> */}
                     <li>
                       <a href="#" id="wishlist-total" title="Wish List (0)">
                         <img src="image/header/like.svg" />
                       </a>
-                    </li> */}
+                    </li>
                     </ul>
                   </div>
                 </div>
@@ -248,12 +248,12 @@ export default function Header() {
                   <li>
                   <Link to="/StoreLocator" className="parent link">
                     <img src="image/header/location-pin.svg" />
-                <span>Store Locator</span>
+                <span style={{fontSize:"20px"}}>Store Locator</span>
               </Link>
         
                   </li>
                   <li>
-                    <a href="">
+                    <a href="" style={{fontSize:"20px"}}>
                       <img src="image/header/help.svg" />
                       Help
                     </a>
