@@ -196,7 +196,7 @@ export default function Header() {
             <div id="logo">
               <a href="index.html">
                 <img
-                  src="image/logo.svg"
+                  src="image/header/logo.svg"
                   title="E-Commerce"
                   alt="E-Commerce"
                   className="img-responsive"
@@ -229,7 +229,7 @@ export default function Header() {
                 <input
                   type="text"
                   name="search"
-                  placeholder="Search Store"
+                  placeholder="Search products here"
                   className="form-control input-lg"
                   style={{ height: "123%" }}
                 />

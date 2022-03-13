@@ -9,7 +9,7 @@ export default function LatestProduct() {
         <div className="row">
           <div className="col-xs-12 col-md-12">
             <div className="heading">
-              <h2 style={{fontSize:'1.4vmax'}}>
+              <h2 style={{fontSize:'1.2vmax'}}>
                 Our Latest Products
               </h2>
             </div>
@@ -17,6 +17,7 @@ export default function LatestProduct() {
         </div>
       </div>
       
+      <div className="bg-dark- " style={{background:'#f7f7f7'}}>
       <div className="arrow__navigation" style={{
           display:"flex",
           alignItems:"center",
@@ -49,8 +50,6 @@ export default function LatestProduct() {
             <span style={{color:"red",fontSize:"1.3vmax",marginTop:"5px",marginLeft:"5px"}}>▶</span>
           </div>
         </div>
-
-      <div className="bg-dark- " style={{background:'#f7f7f7'}}>
         <div className="container-fluid">
           <div className="row">
             <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">

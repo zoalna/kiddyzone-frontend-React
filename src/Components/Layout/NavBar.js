@@ -18,12 +18,12 @@ function NavBar() {
           <ul className="main-navigation">
             <li>
               <Link to="/" className="parent link">
-                <span>Home</span>
+                <span className="nav__items">Home</span>
               </Link>
             </li>
             <li>
               <Link to="/About" className="parent link">
-                <span>About Us</span>
+                <span className="nav__items">About Us</span>
               </Link>
             </li>
             <li>
@@ -44,7 +44,7 @@ function NavBar() {
                   <a href="blog.html">Blog Page</a>
                 </li>
                 <li>
-                  <a href="single-blog.html">Singale Blog Page</a>
+                  <a href="single-blog.html">Single Blog Page</a>
                 </li>
                 <li>
                   <a href="register.html">Register Page</a>
@@ -62,18 +62,18 @@ function NavBar() {
             </li>
             <li>
             <Link to="/AboutUs" className="parent link">
-                <span>Mystery Box</span>
+                <span className="nav__items">Mystery Box</span>
               </Link>
             </li>
             <li>
             <Link to="/Elarning" className="parent link">
-                <span>E-Learning</span>
+                <span className="nav__items">E-Learning</span>
               </Link>
             </li>
 
             <li>
             <Link to="/GiftCards" className="parent link">
-                <span>GiftCards</span>
+                <span className="nav__items">GiftCards</span>
               </Link>
             </li>
             <li>
@@ -84,22 +84,22 @@ function NavBar() {
             </li>
             <li className="help-store-loc for-mobile">
             <Link to="/StoreLocator" className="parent link">
-                <span>Store Locator</span>
+                <span className="nav__items">Store Locator</span>
               </Link>
             </li>
             <li className="help-store-loc for-mobile">
               <a href="#">
-                <span>Help</span>
+                <span className="nav__items">Help</span>
               </a>
             </li>
             <li className="account for-mobile">
               <a href="#">
-                <span>Sign In</span>
+                <span className="nav__items">Sign In</span>
               </a>
             </li>
             <li className="account for-mobile">
               <a href="#">
-                <span>Sign Up</span>
+                <span className="nav__items">Sign Up</span>
               </a>
             </li>
           </ul>
