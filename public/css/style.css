@@ -119,15 +119,28 @@ span.hidden-xs, span.hidden-sm, span.hidden-md, span.hidden-lg {
 }
 /* top */
 .announcements {
-    background:#a9e1f7;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	background: #a9e1f7;
+    width: 100%;
+    overflow: hidden;
 }
+.animation{
+	animation: slider 22s infinite;
+	align-items: center;
+	display: flex;
+}
+@keyframes slider {
+	0%{
+		transform: translateY(0);
+	  }
+	  100%{
+		transform: translateX(102%);
+	  }
+}
+
 .announcements svg {width: 65px;}
 .announcements span {
     color: #E20025;
-    font-size: 26px;
+    font-size: 23px;
     font-weight: bold;
     margin-left: 10px;
 }
@@ -185,7 +198,7 @@ span.hidden-xs, span.hidden-sm, span.hidden-md, span.hidden-lg {
 	background: none;
 }
 .list-inline {
-	margin: 5px -5px 0;
+	/* margin: 5px -5px 0; */
 	float: none;
 	display: inline-block;
 	vertical-align: top;
@@ -289,6 +302,8 @@ header {
 	padding: 0;
 	float: right;
 	width: auto;
+	display: flex;
+	align-items: center;
 
 /*	margin: 45px 0;*/
 }
@@ -354,9 +369,9 @@ li.woocommerce-icon a img {height: 32px;}
     /* margin-right: 15px; */
 }
 #top-links .account {
-    border-left: 3px solid #fff;
-    padding: 0 15px;
-    margin-right: 120px;
+    border-left: 1px solid #fff;
+    padding: 0 10px;
+    /* margin-right: 120px; */
 }
 span.account-ver-line {
     color: #fff;
@@ -383,24 +398,25 @@ div#top-links {
 
 #logo {
 	position: absolute;
-	top: 0;
-	left: 50px;
+	top: -5px;
+	left: 5%;
 	margin: 0;
 }
 #logo a img {
-    width: 200px !important;
+    width: 230px !important;
     position: relative;
-  
+  object-fit: contain;
     z-index: 1;
 }
 /* search */
 .header-right #search .input-lg {
-    height: 50px!important;
+    height: 48px!important;
     width: 15vw;
     line-height: 48px;
     border-radius: 20px 0 0 20px;
     border-right: 0;
     font-size: 16px;
+	margin-top: -3px;
 }
 .header-right #search .btn-lg {
     padding: 17px 25px;
@@ -408,9 +424,10 @@ div#top-links {
     background: #fffcd5;
     border-radius: 0 18px 18px 0;
     border: 0;
-	height: 50px;
+	height: 48px;
     color: #e20025;
     margin: 0px;
+	margin-top: -3px;
 }
 #search {
 	float: left;
@@ -904,17 +921,22 @@ background: #000;
 	transform: translate3d(0, 0, 0);
 	transform: translateX(-50%);
 }
-
+.copyright__message {
+    font-size: 1.2vmax;
+}
 .heading {
     position: relative;
-	margin-bottom: -40px;
+	margin-bottom: -14px;
+}
+.item.text-center {
+    margin: 0px 10px;
 }
 .heading h2 {
     position: absolute;
-    left: 6%;
+    left: 7.3%;
     right: 0;
     text-align: center;
-    top: 38%;
+    top: 50%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -941,10 +963,16 @@ background: #000;
     /*background: url('../image/heading-bg.png') no-repeat;*/    
 	background-size: 100%;
     background-position: center;
-    width: 230px;
+    width: 330px;
     height: 200px;
     display: block;
     margin: 30px auto;
+}
+.card{
+	margin: 0!important;
+}
+.col-xs-12.col-md-12 {
+    margin-top: -2%!important;
 }
 #shop-by-age .heading:after {
     background: url('../image/shop-by-age.png') no-repeat;
@@ -985,10 +1013,16 @@ background: #000;
 }
 #gift-finder .heading h2,
 #partners-discount .heading h2 {left: 5%;}
-#browse-brand .heading h2 {left: 3%; }
+#browse-brand .heading h2 {left: 5%;top: 62%; }
 #latest-Blog .heading:after {
     background: url('../image/latest-blogs.png') no-repeat;
     background-size: 100%;
+}
+.heading.brand{
+	margin-bottom: -20px;
+}
+.heading.hotSeller {
+    margin-bottom: -10px;
 }
 #browse-brand .heading:after {
     background: url('../image/browse-brand.png') no-repeat;
@@ -1100,6 +1134,7 @@ button.proceed-checkout {
 }
 .age-block img{
 	transition: 0.8s all;
+	width: 75%;
 }
 .shop-by-age .agebox {
     padding: 50px;
@@ -1236,7 +1271,7 @@ footer {
 #footer .ftr-logo {
     margin-top: 20px;
     margin-bottom: 10px;
-    max-width: 340px;
+    max-width: 450px;
 }
 #footer .cms_searvice p {
     font-size: 22px;
@@ -1247,6 +1282,7 @@ footer {
 }
 .footer-block {
     padding: 0;
+	margin-bottom: 20px;
 }
 #bottom-footer {padding: 20px 0 50px;}
 #bottom-footer .copyright {font-size: 16px;}
@@ -1260,7 +1296,7 @@ footer {
 	list-style: outside none none;
 	padding: 0 5px;
 }
-.copyright__message {position: absolute;top: -750%;left: -20%;}
+.copyright__message {}
 .footer-contact ul li img {width: 25px;filter: invert(1);}
 .footer-contact ul.contact-list li img {filter: invert(1);}
 .footer-contact .social-media img {filter: unset;}
@@ -1343,15 +1379,16 @@ footer ul {
 }
 footer ul li {
 	padding: 0;
+	font-size: 1.4vmax;
 }
 .footer-list a {
-    font-size: 16px;
+    font-size: 1.7vmax;
     line-height: 30px;
 	font-weight:300;
 }
 .qatar-logo img {
-    width: 200px;
-    margin-top: 30px;
+    width: 100%;
+    /* margin-top: 30px; */
 }
 /* breadcrumb */
 .breadcrumb {
@@ -1413,7 +1450,8 @@ footer ul li {
 
 .viewmore {
 	overflow: hidden;
-	text-align: right;margin-bottom: 32px;
+	text-align: right;
+	margin-bottom: 12px;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -1603,7 +1641,7 @@ footer ul li {
 	transition: none;
 }
 .product-thumb {
-	margin: 60px 0;
+	margin: 25px 0;
 	overflow: hidden;
 	text-align: center;background: #fff;
     border-radius: 15px;
@@ -1913,10 +1951,10 @@ h2.price {
 */
 #hot-Sellers .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 4%;
     right: 0;
     text-align: center;
-    top: 38%;
+    top: 55%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -1977,6 +2015,18 @@ h2.price {
     box-shadow: 0 0 15px #c1c1c1;
     color: #000;
 }
+.btn.new.bg-red {
+    width: 148px;
+    transform: rotate(50deg);
+    right: -46px;
+	color: #fff;
+	height: 37px;
+	font-size: 1.2vmax;
+}
+.btn.new.bg-blue:hover{
+	font-size: 1.2vmax!important;
+	background-color: red!important;
+}
 .btn.arrow{position: relative;}
 .join-club-btn .btn{position: relative;margin:10px 0 40px; padding: 15px 70px;}
 #mystery-boxes .cms_banner {
@@ -1991,7 +2041,7 @@ h2.price {
 #online-education .banner {
     background: #fff;
     box-shadow: 0px 0px 20px #c5c4c4;
-    min-height: 292px;
+    min-height: 23.4vmax;
     margin: 0;
     display: table;
     width: 100%;
@@ -2000,6 +2050,7 @@ h2.price {
 #online-education .online-edu {
     display: table-cell;
     vertical-align: middle;
+	text-align: start;
 }
 #online-education .online-edu img {
     margin-left: auto;
@@ -2149,6 +2200,7 @@ h2.price {
 }
 .finder-form .input-group, .finder-form .input-group select {
     width: 100%;
+	text-align: start;
 }
 #gift-finder .finder-form h2 {
     font-size: 30px;
@@ -2610,16 +2662,25 @@ h2.price {
 	top: -60px;
 }
 /* CSS for Menu start */ 
-
-.main-navigation > li::before {
-	content: "";
-	font-family: fontawesome;
-	font-size: 14px;
-	color: #fff;
-	background: #00B4E3;
+.row{
+	overflow: hidden!important;
+}
+.col-sm-12 {margin-left: 1.2%;overflow: hidden;}
+.main-navigation li:hover .main-navigation > li::before{
+	/* content: ""; */
+    background: green;
 }
 .main-navigation > li:first-child::before {
 	content: none;
+}
+span.nav__items {
+    font-size: 1.5vmax;
+}
+a.active.parent {
+    font-size: 1.5vmax;
+}
+li.level-top.hiden_menu.menu-last {
+    font-size: 1.5vmax;
 }
 .main-navigation > li {
 	display: inline-block;
@@ -2628,9 +2689,7 @@ h2.price {
 	position: relative;
 	padding: 3px 0;
 }
-.main-navigation > li:hover {
-	background: #fed654;
-}
+
 /* CSS for Menu level-1 */ 
 .main-navigation li a {
     color: #fff;
@@ -2643,9 +2702,6 @@ h2.price {
 	font-family: '29LT Azer';
 	font-size: 18px;
     font-weight: 600;
-}
-.main-navigation li a:hover {
-	color: #000;
 }
 .main-navigation li > a {
     padding: 0 28px;
@@ -2861,7 +2917,7 @@ p.list-group-item {
 .product-thumb .product-name a {
 	font-size: 18px;
 	color: #000;
-	font-weight: bold;
+	font-weight: 500;
 }
 .product-list .product-thumb .product-name a {
 	font-size: 15px;
@@ -3237,7 +3293,7 @@ button.btn.btn-default.btn-lg span {
 	border: 1px solid #e6e6e6;
 }
 .newslatter .btn.btn-large.btn-primary {
-	padding: 18px 40px;
+	padding: 21px 40px;
     font-size: 19px;
     margin-left: -80px;
     color: #fff;
@@ -5249,6 +5305,9 @@ button.single-pro.add-to-cart:hover {
     align-items: center;
     justify-content: center;
 }
+button.btn.btn-link.dropdown-toggle {
+    font-size: 23px;
+}
 #gift-cards-products .single-product .btn {width: 100%;}
 #gift-cards-products .single-product .btn:hover {background: #d9272e;}
 
@@ -5542,14 +5601,34 @@ display: flex;
 .new:hover{
 	transform: rotate(45deg);
     position: absolute;
-    top: 13px;
+    /* top: 13px; */
     right: -38px;
-	padding: 10px 50px;
+	/* padding: 10px 50px; */
 	border-radius: 0;
 	font-size: 13px;
 	color: #000;
-	background-color: #00B4E3;
+	background-color: #FF0000;
 
+}
+.btn.percent.bg-yellow {
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 13px;
+    left: -35px;
+    padding: 10px 40px;
+    border-radius: 0;
+    font-size: 13px;
+    color: #fff;
+    background-color: #FED654;
+}
+.btn.percent.bg-yellow {
+    width: 136px;
+    height: 41px;
+    font-size: 19px;
+}
+p.discount{
+	text-decoration: line-through;
+	color: #00b352;
 }
 .percent{
 	transform: rotate(-45deg);
@@ -5624,10 +5703,10 @@ ul.ul-wrapper {
 }
 #shop-categories .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 7%;
     right: 0;
     text-align: center;
-    top: 38%;
+    top: 51%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -5640,10 +5719,10 @@ ul.ul-wrapper {
 }
 #shop-by-age .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 5.8%;
     right: 0;
     text-align: center;
-    top: 35%;
+    top: 50.2%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -5660,10 +5739,10 @@ ul.ul-wrapper {
 }
 #recently-veiw-products .heading h2, #top-products .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 5%;
     right: 0;
     text-align: center;
-    top: 35%;
+    top: 58%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -5676,10 +5755,10 @@ ul.ul-wrapper {
 }
 #single-product .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 8%;
     right: 0;
     text-align: center;
-    top: 35%;
+    top: 53%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -5690,12 +5769,15 @@ ul.ul-wrapper {
     text-transform: uppercase;
     font-size: 24px;
 }
+.preview-pic{
+	border: none!important;
+}
 #latest-Blog .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 6%;
     right: 0;
     text-align: center;
-    top: 25%;
+    top: 32%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -5708,10 +5790,10 @@ ul.ul-wrapper {
 }
 #partners-discount .heading h2{
 	position: absolute;
-    left: 3%;
+    left: 6%;
     right: 0;
     text-align: center;
-    top: 35%;
+    top: 45%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -5727,7 +5809,7 @@ ul.ul-wrapper {
     left: 3%;
     right: 0;
     text-align: center;
-    top: 38%;
+    top: 58%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;

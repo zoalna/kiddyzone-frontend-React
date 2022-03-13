@@ -8,10 +8,11 @@ export default function LatestBlog() {
       <div className="container-fluid">
         <div className="content">
           <div className="blog">
-            <div className="heading">
-              <h2 style={{fontSize:'16px'}}>
-                Our Latest
-                <br /> Blogs
+            <div className="heading" style={{
+              marginBottom:"-93px"
+            }}>
+              <h2 style={{fontSize:'1.7vmax'}}>
+                Our Latest Blogs
               </h2>
             </div>
             <div className="blog-inner box">
