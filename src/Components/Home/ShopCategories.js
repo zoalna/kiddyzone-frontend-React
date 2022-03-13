@@ -9,7 +9,7 @@ export default function ShopCategories() {
         <div className="row">
           <div className="col-xs-12 col-md-12">
             <div className="heading">
-              <h2 style={{fontSize:'1.6vmax'}}>  
+              <h2 style={{fontSize:'1.4vmax'}}>  
                 Shop By Category
               </h2>
             </div>

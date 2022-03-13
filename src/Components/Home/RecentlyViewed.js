@@ -8,15 +8,18 @@ export default function RecentlyViewed() {
       <div className="container-fluid">
         <div className="row">
           <div className="col-xs-12 col-md-12">
-            <div className="heading">
-              <h2 style={{fontSize:'1.3vmax'}}>
+            <div className="heading recently__viewed">
+              <h2 style={{fontSize:'1.1vmax'}}>
                 Recently Viewed Products
               </h2>
             </div>
            
           </div>
         </div>
-        <div className="arrow__navigation" style={{
+
+      </div>
+      <div className="bg-yellow" style={{background:'#f7f7f7'}}>
+      <div className="arrow__navigation" style={{
           display:"flex",
           alignItems:"center",
           justifyContent:"flex-end"
@@ -48,8 +51,6 @@ export default function RecentlyViewed() {
             <span style={{color:"red",fontSize:"1.3vmax",marginTop:"5px",marginLeft:"5px"}}>▶</span>
           </div>
         </div>
-      </div>
-      <div className="bg-yellow" style={{background:'#f7f7f7'}}>
         <div className="container-fluid">
           <div className="row">
           
