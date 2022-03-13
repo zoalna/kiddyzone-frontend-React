@@ -54,7 +54,7 @@
 #logo a img {top: 40px;width: 300px;}    
 #top-links li {padding: 0 5px;}
 #top-links .account {margin-right: 5px;}
-#top-links .account a, .currency button strong, .language .btn-group > .btn {font-size: 18px;}
+#top-links .account a, .currency button strong, .language .btn-group > .btn {font-size: 20px;}
 .currency .btn.btn-link.dropdown-toggle, .currency .btn.btn-link {padding: 0px 0px 0px 15px;}     
 .language .btn.btn-link.dropdown-toggle, .currency .btn.btn-link {padding: 0px 25px 0px 5px;}     
 .currency .btn-group .btn {margin-right: 15px;}        
@@ -75,7 +75,7 @@
 #online-education .bannertext > h2 {font-size: 26px;} 
 #online-education .bannertext {max-width: 260px;top: 16%;}
 #online-education .kid-gallery .bannertext {top: 26%;}     
-#online-education .kid-gallery .bannertext > h2 {font-size: 42px;}    
+#online-education .kid-gallery .bannertext > h2 {font-size: 2.4vmax;}    
 .viewmore .btn {font-size: 18px; padding: 6px 35px;}    
 #browse-brand .brand-logo li img {width: 13.2vw;}
 #latest-Blog .blog-name > a {font-size: 19px;}

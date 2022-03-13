@@ -9,15 +9,47 @@ export default function LatestProduct() {
         <div className="row">
           <div className="col-xs-12 col-md-12">
             <div className="heading">
-              <h2 style={{fontSize:'16px'}}>
-                Our Latest
-                <br /> Products
+              <h2 style={{fontSize:'1.4vmax'}}>
+                Our Latest Products
               </h2>
             </div>
-            
           </div>
         </div>
       </div>
+      
+      <div className="arrow__navigation" style={{
+          display:"flex",
+          alignItems:"center",
+          justifyContent:"flex-end"
+        }}>
+          <div className="right__arow" style={{
+            width:"40px",
+            height:"40px",
+            borderRadius:"100%",
+            backgroundColor:"#00B4E3",
+            marginRight:"1px",
+            cursor:"pointer",
+            display:"flex",
+            justifyContent:"center",
+            alignItems:"center",
+            opacity:.5
+          }}>
+            <span style={{color:"red",fontSize:"1.3vmax",marginTop:"5px",marginLeft:"0px"}}>◀</span>
+          </div>
+          <div className="left__arow" style={{
+            width:"40px",
+            height:"40px",
+            borderRadius:"100%",
+            backgroundColor:"#00B4E3",
+            cursor:"pointer",
+            display:"flex",
+            justifyContent:"center",
+            alignItems:"center"
+          }}>
+            <span style={{color:"red",fontSize:"1.3vmax",marginTop:"5px",marginLeft:"5px"}}>▶</span>
+          </div>
+        </div>
+
       <div className="bg-dark- " style={{background:'#f7f7f7'}}>
         <div className="container-fluid">
           <div className="row">
@@ -31,9 +63,8 @@ export default function LatestProduct() {
                     <div className="btn percent bg-yellow">20% OFF</div>
                   </div> */}
                   <div className="image product-imageblock">
-                  <span className="btn new bg-blue">SALE</span>
-                    <span className="btn percent bg-yellow">20% OFF</span>
-                    {" "}
+                  <div className="btn new bg-red">20% OFF</div>
+                    <div className="btn percent bg-yellow">New</div>{" "}
                     <a href="product.html">
                       <img
                         src="image/product/toy-1.png"
@@ -106,7 +137,31 @@ export default function LatestProduct() {
                         <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
                     </div>
-                    <p className="price product-price">$122.00</p>
+                    <div
+                      className="price__box"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        className="discount"
+                        style={{
+                          fontSize: "1.4vmax",
+                          paddingRight: "10px",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        AED 200
+                      </p>
+                      <p
+                        className="price product-price"
+                        style={{ fontSize: "1.8vmax" }}
+                      >
+                        AED 122.00
+                      </p>
+                    </div>
                     <div className="btn-shooping-cart">
                       
                       <button
@@ -156,9 +211,8 @@ export default function LatestProduct() {
                     <div className="btn percent bg-yellow">20% OFF</div>
                   </div> */}
                   <div className="image product-imageblock">
-                  <span className="btn new bg-blue">SALE</span>
-                    <span className="btn percent bg-yellow">20% OFF</span>
-                    {" "}
+                  <div className="btn new bg-red">20% OFF</div>
+                    <div className="btn percent bg-yellow">New</div>{" "}
                     <a href="product.html">
                       <img
                         src="image/product/toy-1.png"
@@ -231,7 +285,31 @@ export default function LatestProduct() {
                         <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
                     </div>
-                    <p className="price product-price">$122.00</p>
+                    <div
+                      className="price__box"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        className="discount"
+                        style={{
+                          fontSize: "1.4vmax",
+                          paddingRight: "10px",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        AED 200
+                      </p>
+                      <p
+                        className="price product-price"
+                        style={{ fontSize: "1.8vmax" }}
+                      >
+                        AED 122.00
+                      </p>
+                    </div>
                     <div className="btn-shooping-cart">
                       
                       <button
@@ -280,9 +358,8 @@ export default function LatestProduct() {
                     <div className="btn percent bg-yellow">20% OFF</div>
                   </div> */}
                   <div className="image product-imageblock">
-                  <span className="btn new bg-blue">SALE</span>
-                    <span className="btn percent bg-yellow">20% OFF</span>
-                    {" "}
+                  <div className="btn new bg-red">20% OFF</div>
+                    <div className="btn percent bg-yellow">New</div>{" "}
                     <a href="product.html">
                       <img
                         src="image/product/toy-1.png"
@@ -355,7 +432,31 @@ export default function LatestProduct() {
                         <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
                     </div>
-                    <p className="price product-price">$122.00</p>
+                    <div
+                      className="price__box"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        className="discount"
+                        style={{
+                          fontSize: "1.4vmax",
+                          paddingRight: "10px",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        AED 200
+                      </p>
+                      <p
+                        className="price product-price"
+                        style={{ fontSize: "1.8vmax" }}
+                      >
+                        AED 122.00
+                      </p>
+                    </div>
                     <div className="btn-shooping-cart">
                       
                       <button
@@ -406,9 +507,8 @@ export default function LatestProduct() {
                   <div className="btn percent bg-yellow">20% OFF</div>
                 </div> */}
                 <div className="image product-imageblock">
-                <span className="btn new bg-blue">SALE</span>
-                  <span className="btn percent bg-yellow">20% OFF</span>
-                  {" "}
+                <div className="btn new bg-red">20% OFF</div>
+                    <div className="btn percent bg-yellow">New</div>{" "}
                   <a href="product.html">
                     <img
                       src="image/product/toy-1.png"
@@ -481,7 +581,31 @@ export default function LatestProduct() {
                       <i className="fa fa-star fa-stack-2x"></i>
                     </span>{" "}
                   </div>
-                  <p className="price product-price">$122.00</p>
+                  <div
+                      className="price__box"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        className="discount"
+                        style={{
+                          fontSize: "1.4vmax",
+                          paddingRight: "10px",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        AED 200
+                      </p>
+                      <p
+                        className="price product-price"
+                        style={{ fontSize: "1.8vmax" }}
+                      >
+                        AED 122.00
+                      </p>
+                    </div>
                   <div className="btn-shooping-cart">
                     
                     <button

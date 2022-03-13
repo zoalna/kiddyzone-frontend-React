@@ -9,7 +9,7 @@ export default function GiftFinder() {
         <div className="row">
           <div className="col-xs-12 col-md-12">
             <div className="heading">
-              <h2 style={{fontSize:'20px'}}>Gift Finder</h2>
+              <h2 style={{fontSize:'2vmax'}}>Gift Finder</h2>
             </div>
           </div>
         </div>

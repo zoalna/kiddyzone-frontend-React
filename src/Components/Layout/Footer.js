@@ -27,7 +27,7 @@ export default function Footer() {
             </h5>
             {/* <hr /> */}
             <ul className="list-unstyled ul-wrapper footer-list">
-              <li > 
+              <li> 
                 <a href="#">About Us</a>
               </li>
               <li>
@@ -40,6 +40,18 @@ export default function Footer() {
                 <a href="#">FAQs</a>
               </li>
               <li>
+                <a href="#">Mystery Box </a>
+              </li>
+              <li>
+                <a href="#">Gift Cards </a>
+              </li>
+              <li>
+                <a href="#">Loyalty Programm Terms </a>
+              </li>
+              <li>
+                <a href="#">Subscription and card</a>
+              </li>
+              <li>
                 <a href="#">Advertise with us</a>
               </li>
               <li>
@@ -49,7 +61,7 @@ export default function Footer() {
           </div>
           <div className="col-sm-3 footer-block">
             <h5 className="footer-title">
-              <span className="policy">Policy</span>
+              <span className="policy">Policies</span>
             </h5>
             {/* <hr /> */}
             <ul className="list-unstyled ul-wrapper footer-list">
@@ -58,6 +70,15 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#">UAE Store</a>
+              </li>
+              <li>
+                <a href="#">Help Center</a>
+              </li>
+              <li>
+                <a href="#">Videos</a>
               </li>
               <li>
                 <a href="#">Security Policy</a>
