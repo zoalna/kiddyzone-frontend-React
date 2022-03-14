@@ -57,6 +57,12 @@ export default function Footer() {
               <li>
                 <a href="#">Join us</a>
               </li>
+              <div className="copyright__message">
+                  <div className="qatar-logo">
+                    <img src="image/Qatat-logo.svg" />
+                  </div>{" "}
+                  Copyright © Kiddy Zone
+                </div>
             </ul>
           </div>
           <div className="col-sm-3 footer-block">
@@ -169,7 +175,7 @@ export default function Footer() {
                     </li>
                   </ul>
                   <div className="qrCode">
-                    <img src="http://206.189.138.26/themes/kiddyzone/assets/images/ftr-QR-code.jpg" />
+                    <img src="image/footer/ftr-QR-code.jpg" />
                   </div>
                 </div>
 
@@ -188,12 +194,6 @@ export default function Footer() {
           <div className="row">
             <div id="bottom-footer">
               <div className="col-md-6 copyright left">
-                <div className="copyright__message">
-                  <div className="qatar-logo">
-                    <img src="image/Qatat-logo.svg" />
-                  </div>{" "}
-                  Copyright © Kiddy Zone
-                </div>
               </div>
               <div className="col-md-6 copyright right">
                 {" "}
@@ -201,13 +201,13 @@ export default function Footer() {
               </div>
             </div>
             <div className="payment__method">
-              <img src="http://206.189.138.26/themes/kiddyzone/assets/images/cart/payment-method.png" />
+              <img src="image/footer/payment-method.png" />
             </div>
           </div>
         </div>
       </div>
       <a id="scrollup">
-        <img src="https://cdn-icons.flaticon.com/png/512/3426/premium/3426635.png?token=exp=1647041816~hmac=c112d7acb9f2ce52bc4b10724c12d829"
+        <img src="image/footer/top.png"
         style={{
           width:"30px",
           height:"30px",

@@ -14,6 +14,9 @@ export default function HotSellers() {
           </div>
         </div>
 
+      </div>
+      <div className="bg-blue" style={{ background: "#f7f7f7" }}>
+        <div className="container-fluid">
         <div className="arrow__navigation" style={{
           display:"flex",
           alignItems:"center",
@@ -46,10 +49,6 @@ export default function HotSellers() {
             <span style={{color:"red",fontSize:"1.3vmax",marginTop:"5px",marginLeft:"5px"}}>▶</span>
           </div>
         </div>
-
-      </div>
-      <div className="bg-blue" style={{ background: "#f7f7f7" }}>
-        <div className="container-fluid">
           <div className="row">
             <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div className="item">
@@ -631,9 +630,7 @@ export default function HotSellers() {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="viewmore">
+            <div className="viewmore">
             <a
               href="#"
               className="btn"
@@ -643,6 +640,7 @@ export default function HotSellers() {
             >
               View All
             </a>
+          </div>
           </div>
         </div>
       </div>
