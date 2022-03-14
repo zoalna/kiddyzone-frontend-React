@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "../../App.css";
 
-export default function BrowseByBrand() {
+export default function BrowseByBrand(props) {
   return (
     <section id="browse-brand">
       <div className="container-fluid">
@@ -13,42 +13,22 @@ export default function BrowseByBrand() {
         </div>
         <div className="brand-logo">
           <ul>
+
+
+          {
+        props.data.map((item, i) => {     
+          
+           return (
+
+
             <li>
               {" "}
               <a href="#">
-                <img src="image/smart-games.png" />
-              </a>{" "}
+                <img src={item.image_url} />
+              </a>
             </li>
-            <li>
-              {" "}
-              <a href="#">
-                <img src="image/Marvel.png" />
-              </a>{" "}
-            </li>
-            <li>
-              {" "}
-              <a href="#">
-                <img src="image/chicco.png" />
-              </a>{" "}
-            </li>
-            <li>
-              {" "}
-              <a href="#">
-                <img src="image/sparkle-girls.png" />
-              </a>{" "}
-            </li>
-            <li>
-              {" "}
-              <a href="#">
-                <img src="image/smart-games.png" />
-              </a>{" "}
-            </li>
-            <li>
-              {" "}
-              <a href="#">
-                <img src="image/Marvel.png" />
-              </a>{" "}
-            </li>
+) 
+})}
           </ul>
         </div>
       </div>
