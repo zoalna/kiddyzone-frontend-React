@@ -9,6 +9,9 @@
   #top-links .account {
 	  margin-left: -9%;
   }
+  .css-1f8sh1y {
+    height: 34vmax!important;
+}
   #logo a img {
     top: 35px;
 }
@@ -35,6 +38,9 @@
   #top-links li img {
     width: 32px;
   }
+  .css-1f8sh1y {
+    height: 38vmax!important;
+}
   .heading.recently__viewed{
 	margin-bottom: -12px;
   }
@@ -148,6 +154,9 @@
 	#top-links .account {
 		margin-left: 0%;
 	}
+  .css-1f8sh1y {
+    height: 43vmax!important;
+}
   #logo a img {
     top: 40px;
     width: 300px;
@@ -293,6 +302,9 @@
   button.head-gift-btn img {
     width: 25px;
   }
+  .css-1f8sh1y {
+    height: 44vmax!important;
+}
   #logo a img {
     top: 40px;
     width: 270px;
@@ -440,6 +452,9 @@
     margin: 0 10px;
     width: 3.5vh;
   }
+  .css-1f8sh1y {
+    height: 45vmax!important;
+}
   .helpful-text-links li:first-child a img {
     width: 1.7vw;
   }
@@ -617,6 +632,9 @@
   .newslatter input {
     width: 320px !important;
   }
+  .css-1f8sh1y {
+    height: 47vmax!important;
+}
   #subs-newsletter .newslatter input {
     font-size: 18px;
   }
@@ -630,6 +648,9 @@
   #sign-in .social-media .icons a {
     margin: 0 5px;
   }
+  .css-1f8sh1y {
+    height: 48vmax!important;
+}
 
   /* Column */
   .col-2 .column-left,
