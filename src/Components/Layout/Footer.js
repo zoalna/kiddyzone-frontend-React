@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="text-center">
                 <img
                   className="ftr-logo"
-                  src="http://206.189.138.26/themes/kiddyzone/assets/images/footer-logo.png"
+                  src="image/footer/footer-logo.png"
                 />
               </div>
             </div>
@@ -192,16 +192,17 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <div className="row">
+          <div className="payment__method">
+              <img src="image/footer/payment-method.png" />
+            </div>
             <div id="bottom-footer">
+            {/* <span>©٢٠٢٢ - All Rights Reserved</span> */}
               <div className="col-md-6 copyright left">
               </div>
               <div className="col-md-6 copyright right">
-                {" "}
-                ©2020 - All Rights Reserved
+                {/* {" "}
+                ©2020 - All Rights Reserved */}
               </div>
-            </div>
-            <div className="payment__method">
-              <img src="image/footer/payment-method.png" />
             </div>
           </div>
         </div>
