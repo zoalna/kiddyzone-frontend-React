@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
-import "../App.css";
+import '../App.css'
 
 export default function SignUp() {
   return (
@@ -12,7 +12,7 @@ export default function SignUp() {
           </div>
           <div
             className="col-md-7 sign-form"
-            style={{ backgroundColor: "#EEEEEE" }}
+            style={{ backgroundColor: '#EEEEEE' }}
           >
             <form role="form" autocomplete="off" className="form" method="post">
               <div className="col-md-12">
@@ -66,7 +66,7 @@ export default function SignUp() {
               <div className="col-md-6">
                 <div className="account-link">
                   <p>
-                    Already Have An Account{" "}
+                    Already Have An Account{' '}
                     <a href="#" className="text-green">
                       Login
                     </a>
@@ -77,15 +77,15 @@ export default function SignUp() {
                 <div className="form-group checkbox">
                   <input type="checkbox" id="html" />
                   <label for="html">
-                    Yes, I understand and agree to{" "}
+                    Yes, I understand and agree to{' '}
                     <a href="#" className="text-green">
                       kiddy Zone Terms of service,
-                    </a>{" "}
-                    incliding the{" "}
+                    </a>{' '}
+                    incliding the{' '}
                     <a href="#" className="text-green">
                       user agreement
-                    </a>{" "}
-                    and{" "}
+                    </a>{' '}
+                    and{' '}
                     <a href="#" className="text-green">
                       privacy policy
                     </a>
@@ -97,5 +97,5 @@ export default function SignUp() {
         </div>
       </div>
     </section>
-  );
+  )
 }

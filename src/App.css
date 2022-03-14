@@ -30,19 +30,3 @@
     transform: rotate(360deg);
   }
 }
-
-.singIn-listing-cover {
-  display: flex;
-  align-items: center;
-  padding-left: 319px;
-  object-fit: cover;
-  background-image: url("/public/image/banners/listing.png");
-  text-align: start;
-  height: 160px;
-  width: 100%;
-}
-
-.signIn-heading {
-  color: #fff;
-  font-size: 46px;
-}
