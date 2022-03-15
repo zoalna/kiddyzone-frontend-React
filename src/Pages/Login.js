@@ -1,7 +1,10 @@
 import { Box, Button, Grid, InputBase, Link, Typography } from '@mui/material'
-import React, { Component } from 'react'
+import React from 'react'
+import StyleInputField from '../Components/StyleInputField'
+import { useForm, Controller } from 'react-hook-form'
 
 export default function Login() {
+  const { handleSubmit, control } = useForm()
   const muiStyledInput = (placeholder, inputType) => {
     return (
       <Box
@@ -57,7 +60,7 @@ export default function Login() {
             <Grid container>
               <Grid item xs={12} lg={5}>
                 <Box
-                  height={{ xs: '300px', md: '431px' }}
+                  height={{ xs: '300px', md: '439px' }}
                   p={{ xs: 4, md: '80px 40px' }}
                   borderRadius={{ xs: '36px 36px 0px 0', md: '36px 0 0 36px' }}
                   display={'flex'}
@@ -104,171 +107,98 @@ export default function Login() {
                       aliqua.
                     </Typography>
                   </Box>
-                  <Box mt={1}>{muiStyledInput('Email Address', 'email')}</Box>
-                  <Box mt={1}>{muiStyledInput('Password', 'password')}</Box>
-                  <Box mt={1} display={'flex'} justifyContent={'end'}>
-                    <Link
-                      sx={{
-                        cursor: 'pointer',
-                        color: '#595959',
-                        textDecoration: 'none'
-                      }}
-                    >
-                      Forget password?
-                    </Link>
-                  </Box>
-
-                  <Box
-                    mb={2}
-                    mt={1}
-                    display={'flex'}
-                    flexDirection={{ xs: 'column', md: 'row' }}
-                    alignItems={'center'}
-                    justifyContent={'space-between'}
-                  >
-                    <Button
-                      sx={{
-                        background: '#e20025',
-                        fontSize: '18px',
-                        fontWeight: 'bold',
-                        width: { xs: '100%', md: '200px' },
-                        '&:hover': {
-                          background: '#e20025'
-                        }
-                      }}
-                      variant="contained"
-                    >
-                      login
-                    </Button>
-                    <Box mt={{ xs: 2, md: 0 }}>
-                      <Typography
+                  <form onSubmit={handleSubmit((data) => console.log(data))}>
+                    <Box mt={1}>
+                      <Controller
+                        control={control}
+                        name="emailAddress"
+                        render={({ field: { onChange, value } }) => (
+                          <StyleInputField
+                            inputValue={value}
+                            placeholder="Email Address"
+                            inputType="email"
+                            onInputChange={(value) => onChange(value)}
+                          />
+                        )}
+                      />
+                    </Box>
+                    <Box mt={1}>
+                      <Controller
+                        control={control}
+                        name="password"
+                        render={({ field: { onChange, value } }) => (
+                          <StyleInputField
+                            inputValue={value}
+                            placeholder="Password"
+                            inputType="password"
+                            onInputChange={(value) => onChange(value)}
+                          />
+                        )}
+                      />
+                    </Box>
+                    <Box mt={1} display={'flex'} justifyContent={'end'}>
+                      <Link
                         sx={{
-                          fontSize: '20px',
-                          fontWeight: 'bold',
-                          color: '#000',
-                          fontStyle: 'italic'
+                          cursor: 'pointer',
+                          color: '#595959',
+                          textDecoration: 'none'
                         }}
                       >
-                        Create An Account{' '}
-                        <span
-                          style={{
-                            cursor: 'pointer',
-                            color: '#00B353'
+                        Forget password?
+                      </Link>
+                    </Box>
+
+                    <Box
+                      mb={2}
+                      mt={1}
+                      display={'flex'}
+                      flexDirection={{ xs: 'column', md: 'row' }}
+                      alignItems={'center'}
+                      justifyContent={'space-between'}
+                    >
+                      <Button
+                        type="submit"
+                        sx={{
+                          background: '#e20025',
+                          fontSize: '18px',
+                          fontWeight: 'bold',
+                          width: { xs: '100%', md: '200px' },
+                          '&:hover': {
+                            background: '#e20025'
+                          }
+                        }}
+                        variant="contained"
+                      >
+                        login
+                      </Button>
+                      <Box mt={{ xs: 2, md: 0 }}>
+                        <Typography
+                          sx={{
+                            fontSize: '20px',
+                            fontWeight: 'bold',
+                            color: '#000',
+                            fontStyle: 'italic'
                           }}
                         >
-                          Sign up
-                        </span>
-                      </Typography>
+                          Create An Account{' '}
+                          <span
+                            style={{
+                              cursor: 'pointer',
+                              color: '#00B353'
+                            }}
+                          >
+                            Sign up
+                          </span>
+                        </Typography>
+                      </Box>
                     </Box>
-                  </Box>
+                  </form>
                 </Box>
               </Grid>
             </Grid>
           </Box>
         </Box>
       </Box>
-      {/* <div className="singIn-listing-cover">
-        <h1 className="signIn-heading">Sign In</h1>
-      </div>
-      <section id="sign-in" className="content account">
-        <div className="container">
-          <div className="row">
-            <div
-              className="col-md-5 img-col bg-blue text-center"
-              style={{ backgroundColor: "#02b0ed" }}
-            >
-              <img src="image/login-logo.png" />
-            </div>
-            <div
-              className="col-md-7 sign-form"
-              style={{ backgroundColor: "#EEEEEE" }}
-            >
-              <form
-                role="form"
-                autocomplete="off"
-                className="form"
-                method="post"
-              >
-                <div className="col-md-12">
-                  <div className="form-group">
-                    <h2>Login Now !</h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
-                    </p>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="form-group">
-                    <div className="input-group">
-                      <input type="email" placeholder="Email Address" />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="form-group">
-                    <div className="input-group">
-                      <input type="password" placeholder="Password" />
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <p
-                    href="#"
-                    style={{
-                      textAlign: "end",
-                    }}
-                  >
-                    forget password
-                  </p>
-                </div>
-                <div className="col-md-4">
-                  <button
-                    style={{
-                      marginLeft: "5px",
-                      background: "#e20025",
-                    }}
-                    className="submit"
-                  >
-                    Login
-                  </button>
-                </div>
-                <div className="col-md-8">
-                  <div className="account-link">
-                    <p
-                      style={{
-                        textAlign: "end",
-                      }}
-                    >
-                      Create An Account{" "}
-                      <a href="#" className="text-green">
-                        Sign up
-                      </a>
-                    </p>
-                  </div>
-                </div>
-                <div className="col-md-12">
-                  <div className="form-group social-media">
-                    <span>Login With :-</span>
-                    <div className="icons">
-                      <a href="#">
-                        <img src="image/Group%204083.svg" />
-                      </a>
-                      <a href="#">
-                        <img src="image/Group%204082.svg" />
-                      </a>
-                      <a href="#">
-                        <img src="image/Group%204081.svg" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section> */}
     </>
   )
 }
