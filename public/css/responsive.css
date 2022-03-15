@@ -7,30 +7,31 @@
     width: 13.2vw;
   }
   #top-links .account {
-	  margin-left: -9%;
+    margin-left: -9%;
   }
   .css-1f8sh1y {
-    height: 34vmax!important;
-}
+    height: 34vmax !important;
+  }
   #logo a img {
     top: 35px;
-}
-.col-sm-12{
-	margin-left: -0.7%;
-	padding: 0% 5%;
-}
-.currency button strong, .language .btn-group > .btn{
-	font-size: 1.4vmax;
-}
-.header-inner{
-	padding: 0% 3%;
-}
-  .header-right #search{
-	  margin: 0 15px;
-	  margin-left: 5px;
   }
-  .currency .btn-group .btn{
-	  margin-right: 0;
+  .col-sm-12 {
+    margin-left: -0.7%;
+    padding: 0% 5%;
+  }
+  .currency button strong,
+  .language .btn-group > .btn {
+    font-size: 1.4vmax;
+  }
+  .header-inner {
+    padding: 0% 3%;
+  }
+  .header-right #search {
+    margin: 0 15px;
+    margin-left: 5px;
+  }
+  .currency .btn-group .btn {
+    margin-right: 0;
   }
 }
 
@@ -39,14 +40,14 @@
     width: 32px;
   }
   .css-1f8sh1y {
-    height: 38vmax!important;
-}
-  .heading.recently__viewed{
-	margin-bottom: -12px;
+    height: 38vmax !important;
   }
-  .col-sm-12{
-	margin-left: 4.8%;
-	padding: 0% 5%;
+  .heading.recently__viewed {
+    margin-bottom: -12px;
+  }
+  .col-sm-12 {
+    margin-left: 4.8%;
+    padding: 0% 5%;
   }
   .currency .btn-group .btn .down-arrow {
     width: auto;
@@ -151,12 +152,12 @@
 }
 
 @media screen and (max-width: 1440px) {
-	#top-links .account {
-		margin-left: 0%;
-	}
+  #top-links .account {
+    margin-left: 0%;
+  }
   .css-1f8sh1y {
-    height: 43vmax!important;
-}
+    height: 43vmax !important;
+  }
   #logo a img {
     top: 40px;
     width: 300px;
@@ -303,8 +304,8 @@
     width: 25px;
   }
   .css-1f8sh1y {
-    height: 44vmax!important;
-}
+    height: 44vmax !important;
+  }
   #logo a img {
     top: 40px;
     width: 270px;
@@ -453,8 +454,8 @@
     width: 3.5vh;
   }
   .css-1f8sh1y {
-    height: 45vmax!important;
-}
+    height: 45vmax !important;
+  }
   .helpful-text-links li:first-child a img {
     width: 1.7vw;
   }
@@ -633,8 +634,8 @@
     width: 320px !important;
   }
   .css-1f8sh1y {
-    height: 47vmax!important;
-}
+    height: 47vmax !important;
+  }
   #subs-newsletter .newslatter input {
     font-size: 18px;
   }
@@ -649,8 +650,8 @@
     margin: 0 5px;
   }
   .css-1f8sh1y {
-    height: 48vmax!important;
-}
+    height: 48vmax !important;
+  }
 
   /* Column */
   .col-2 .column-left,
