@@ -98,6 +98,7 @@ export default function SignUp() {
                     If you are new to our store, we glad to have you as member.
                   </Typography>
                 </Box>
+                //TODO: add function here to get form value
                 <form onSubmit={handleSubmit((data) => console.log(data))}>
                   <Box>
                     <Grid container spacing={2}>
