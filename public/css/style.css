@@ -2679,6 +2679,9 @@ span.nav__items {
 a.active.parent {
     font-size: 1.5vmax;
 }
+.css-1f8sh1y {
+    height: 44vmax!important;
+}
 li.level-top.hiden_menu.menu-last {
     font-size: 1.5vmax;
 }
