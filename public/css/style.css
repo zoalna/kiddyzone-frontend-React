@@ -4667,7 +4667,7 @@ margin-right: 10px;
 
 /* Product Detail page Start */
 
-#product-accordion .btn-link span {font-size: 20px;color: #000;font-weight: 700;margin-left: 8px;}
+#product-accordion .btn-link span {font-size: 18px;color: #000;font-weight: 700;}
 #product-accordion .btn-link span.fa {color: #fff;font-weight: inherit;}
 #product-accordion .btn-link:hover, #product-accordion .btn-link:focus {text-decoration: none;}
 .product-detail .product-title {
@@ -6042,4 +6042,53 @@ section.product-reviews.content {
 }
 section.content.hot-sellers.details__part {
     padding-bottom: 0rem;
+}
+hr.offer{
+	margin: 0!important;
+	padding: 0!important;
+}
+div#headingFour {
+    padding-top: 15px;
+}
+.nav__menu {
+    width: 90vmax !important;
+    display: flex;
+    height: 70vh;
+    background: #fff;
+    position: absolute;
+	justify-content: space-between;
+    left: -30vmax;
+    top: 3vmax;
+    z-index: 10000;
+}
+.first__varse {
+    padding: 20px 40px;
+	display: flex;
+    flex-direction: column
+}
+a.banner__name {
+	font-size: 2vmax!important;
+	color: #00B3E3!important;
+	border-bottom: 2px solid #eee;
+	text-align: start;
+	margin-left: -6px;
+}
+a.baneer__items {
+    color: #000 !important;
+    margin-left: -7px;
+    opacity: .8;
+	text-align: start;
+}
+.d__flex{
+	display: flex;
+}
+.image__navbar {
+    position: absolute;
+    bottom: -17%;
+    left: -33%;
+}
+.image__navbar > img {
+    width: 7%;
+    object-fit: contain;
+    margin: 5px 10px;
 }

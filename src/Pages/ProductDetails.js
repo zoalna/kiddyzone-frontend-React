@@ -279,9 +279,8 @@ export default function ProductDetails() {
                   {/* <div className="accordion-header" id="headingTwo">
                      
                   </div> */}
-                  <hr />
-
                   <div className="accordion-header" id="headingFour">
+                    <hr className="offer" />
                     <div className="gurranty__box">
                       <div className="free__shipping">
                         <h5>
@@ -293,7 +292,7 @@ export default function ProductDetails() {
                             aria-controls="collapseFour"
                           >
                             <img src="image/black-truck.png" />{" "}
-                            <span>Free Shipping</span>
+                            <span className="text__style">Free Shipping</span>
                             <span className="fa fa-angle-down rotate-icon"></span>
                           </button>
                         </h5>
@@ -309,7 +308,7 @@ export default function ProductDetails() {
                             aria-controls="collapseFour"
                           >
                             <img src="image/rotate-box.png" />{" "}
-                            <span>30 Days Return Policy</span>
+                            <span className="text__style">30 Days Return Policy</span>
                             <span className="fa fa-angle-down rotate-icon"></span>
                           </button>
                         </h5>
@@ -325,12 +324,13 @@ export default function ProductDetails() {
                             aria-controls="collapseFour"
                           >
                             <img src="image/secure-payment.png" />{" "}
-                            <span>100% Secured Payment</span>
+                            <span className="text__style">100% Secured Payment</span>
                             <span className="fa fa-angle-down rotate-icon"></span>
                           </button>
                         </h5>
                       </div>
                     </div>
+                    <hr className="offer"/>
                   </div>
                   <div
                     id="collapseFour"
