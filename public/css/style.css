@@ -5115,20 +5115,9 @@ input#min-amount {
 
 /* Product Detail page Start */
 
-#product-accordion .btn-link span {
-  font-size: 20px;
-  color: #000;
-  font-weight: 700;
-  margin-left: 8px;
-}
-#product-accordion .btn-link span.fa {
-  color: #fff;
-  font-weight: inherit;
-}
-#product-accordion .btn-link:hover,
-#product-accordion .btn-link:focus {
-  text-decoration: none;
-}
+#product-accordion .btn-link span {font-size: 18px;color: #000;font-weight: 700;}
+#product-accordion .btn-link span.fa {color: #fff;font-weight: inherit;}
+#product-accordion .btn-link:hover, #product-accordion .btn-link:focus {text-decoration: none;}
 .product-detail .product-title {
   font-size: 36px;
   font-weight: 700;
@@ -6709,7 +6698,6 @@ ul.ul-wrapper {
   top: 30px;
 }
 .account-footer::after {
-<<<<<<< HEAD
     position: absolute;
     content: '';
     width: 150px;
@@ -7043,136 +7031,4 @@ section.product-reviews.content {
 }
 section.content.hot-sellers.details__part {
     padding-bottom: 0rem;
-}
-=======
-  position: absolute;
-  content: "";
-  width: 150px;
-  height: 2px;
-  background: #fff;
-  top: 30px;
-  left: 0;
-}
-.ul-wrapper a {
-  text-align: left;
-}
-#shop-categories .heading h2 {
-  position: absolute;
-  left: 7%;
-  right: 0;
-  text-align: center;
-  top: 51%;
-  transform: translate(0, -50%);
-  margin-bottom: 0;
-  line-height: 22px;
-  margin-top: 0;
-  font-family: "29LT Azer";
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 24px;
-}
-#shop-by-age .heading h2 {
-  position: absolute;
-  left: 5.8%;
-  right: 0;
-  text-align: center;
-  top: 50.2%;
-  transform: translate(0, -50%);
-  margin-bottom: 0;
-  line-height: 22px;
-  margin-top: 0;
-  font-family: "29LT Azer";
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 24px;
-}
-.age-text a {
-  color: #e20025;
-  text-decoration: none !important;
-}
-#recently-veiw-products .heading h2,
-#top-products .heading h2 {
-  position: absolute;
-  left: 5%;
-  right: 0;
-  text-align: center;
-  top: 58%;
-  transform: translate(0, -50%);
-  margin-bottom: 0;
-  line-height: 22px;
-  margin-top: 0;
-  font-family: "29LT Azer";
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 24px;
-}
-#single-product .heading h2 {
-  position: absolute;
-  left: 8%;
-  right: 0;
-  text-align: center;
-  top: 53%;
-  transform: translate(0, -50%);
-  margin-bottom: 0;
-  line-height: 22px;
-  margin-top: 0;
-  font-family: "29LT Azer";
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 24px;
-}
-.preview-pic {
-  border: none !important;
-}
-#latest-Blog .heading h2 {
-  position: absolute;
-  left: 6%;
-  right: 0;
-  text-align: center;
-  top: 32%;
-  transform: translate(0, -50%);
-  margin-bottom: 0;
-  line-height: 22px;
-  margin-top: 0;
-  font-family: "29LT Azer";
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 24px;
-}
-#partners-discount .heading h2 {
-  position: absolute;
-  left: 6%;
-  right: 0;
-  text-align: center;
-  top: 45%;
-  transform: translate(0, -50%);
-  margin-bottom: 0;
-  line-height: 22px;
-  margin-top: 0;
-  font-family: "29LT Azer";
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 24px;
-}
-#gift-finder .heading h2 {
-  position: absolute;
-  left: 3%;
-  right: 0;
-  text-align: center;
-  top: 58%;
-  transform: translate(0, -50%);
-  margin-bottom: 0;
-  line-height: 22px;
-  margin-top: 0;
-  font-family: "29LT Azer";
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 24px;
 }
