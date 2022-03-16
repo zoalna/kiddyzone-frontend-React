@@ -5798,7 +5798,7 @@ td.complete__green{
   color: #00b353;
 }
 .eye__icon > a > img {
-  width: 25px;
+  width: 25px!important;
   height: 25px;
   object-fit: contain;
 }
@@ -7136,7 +7136,7 @@ div#brand_carousel {
 	z-index: 999999999;
 }
 img.img-responsive.logo{
-  width: 17vmax!important;
+  width: 16vmax!important;
   top: 37px!important;
   left: 20px!important;
 }
@@ -7152,9 +7152,6 @@ img.img-responsive.logo.active {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-}
-.dashboard__header__content {
-  padding: 0px 4%;
 }
 .dashboard__header__content > h1 {
   font-size: 3vmax;

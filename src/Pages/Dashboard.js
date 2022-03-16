@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import '../App.css'
 import PartnerDiscount from '../Components/Home/PartnerDiscount'
 
@@ -7,8 +6,10 @@ export default function Dashboard() {
   return (
     <>
       <div className="dashboard__header">
+        <div className='container'>
         <div className="dashboard__header__content">
           <h1>My Account</h1>
+        </div>
         </div>
       </div>
 
@@ -190,7 +191,7 @@ export default function Dashboard() {
                               <td className="td-actions">
                                 <div className="eye__icon">
                                   <a href="#">
-                                    <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/274535960_337281638447609_3293699536389554616_n.png?stp=dst-png_p206x206&_nc_cat=105&ccb=1-5&_nc_sid=aee45a&_nc_eui2=AeGSda-UJHJ4EwL0w8ivRHsnsUwDD_UjXuKxTAMP9SNe4kWmmZ79ec_k6C43O2F1aIGrCtmyerxD4UHYCqO290gk&_nc_ohc=_VI0SQtqi0EAX9C0Bza&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKi2_QcAR5ZD3iSW0di8HrBxwpsFisbx54tO2nBoANPVg&oe=625755DD" />
+                                    <img src="image/dashboard/Icon-awesome-eye.svg" />
                                   </a>
                                 </div>
                               </td>
@@ -203,7 +204,7 @@ export default function Dashboard() {
                               <td className="td-actions">
                               <div className="eye__icon">
                                   <a href="#">
-                                    <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/274535960_337281638447609_3293699536389554616_n.png?stp=dst-png_p206x206&_nc_cat=105&ccb=1-5&_nc_sid=aee45a&_nc_eui2=AeGSda-UJHJ4EwL0w8ivRHsnsUwDD_UjXuKxTAMP9SNe4kWmmZ79ec_k6C43O2F1aIGrCtmyerxD4UHYCqO290gk&_nc_ohc=_VI0SQtqi0EAX9C0Bza&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKi2_QcAR5ZD3iSW0di8HrBxwpsFisbx54tO2nBoANPVg&oe=625755DD" />
+                                  <img src="image/dashboard/Icon-awesome-eye.svg" />
                                   </a>
                                 </div>
                               </td>
@@ -216,7 +217,7 @@ export default function Dashboard() {
                               <td className="td-actions">
                               <div className="eye__icon">
                                   <a href="#">
-                                    <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/274535960_337281638447609_3293699536389554616_n.png?stp=dst-png_p206x206&_nc_cat=105&ccb=1-5&_nc_sid=aee45a&_nc_eui2=AeGSda-UJHJ4EwL0w8ivRHsnsUwDD_UjXuKxTAMP9SNe4kWmmZ79ec_k6C43O2F1aIGrCtmyerxD4UHYCqO290gk&_nc_ohc=_VI0SQtqi0EAX9C0Bza&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKi2_QcAR5ZD3iSW0di8HrBxwpsFisbx54tO2nBoANPVg&oe=625755DD" />
+                                  <img src="image/dashboard/Icon-awesome-eye.svg" />
                                   </a>
                                 </div>
                               </td>
@@ -229,7 +230,7 @@ export default function Dashboard() {
                               <td className="td-actions">
                               <div className="eye__icon">
                                   <a href="#">
-                                    <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/274535960_337281638447609_3293699536389554616_n.png?stp=dst-png_p206x206&_nc_cat=105&ccb=1-5&_nc_sid=aee45a&_nc_eui2=AeGSda-UJHJ4EwL0w8ivRHsnsUwDD_UjXuKxTAMP9SNe4kWmmZ79ec_k6C43O2F1aIGrCtmyerxD4UHYCqO290gk&_nc_ohc=_VI0SQtqi0EAX9C0Bza&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKi2_QcAR5ZD3iSW0di8HrBxwpsFisbx54tO2nBoANPVg&oe=625755DD" />
+                                  <img src="image/dashboard/Icon-awesome-eye.svg" />
                                   </a>
                                 </div>
                               </td>
@@ -242,7 +243,7 @@ export default function Dashboard() {
                               <td className="td-actions">
                               <div className="eye__icon">
                                   <a href="#">
-                                    <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/274535960_337281638447609_3293699536389554616_n.png?stp=dst-png_p206x206&_nc_cat=105&ccb=1-5&_nc_sid=aee45a&_nc_eui2=AeGSda-UJHJ4EwL0w8ivRHsnsUwDD_UjXuKxTAMP9SNe4kWmmZ79ec_k6C43O2F1aIGrCtmyerxD4UHYCqO290gk&_nc_ohc=_VI0SQtqi0EAX9C0Bza&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVKi2_QcAR5ZD3iSW0di8HrBxwpsFisbx54tO2nBoANPVg&oe=625755DD" />
+                                  <img src="image/dashboard/Icon-awesome-eye.svg" />
                                   </a>
                                 </div>
                               </td>
