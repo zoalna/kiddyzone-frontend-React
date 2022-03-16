@@ -1,18 +1,26 @@
-import React, { Component } from 'react'
-
-import '../App.css'
-import PartnerDiscount from '../Components/Home/PartnerDiscount'
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Grid,
+  Radio,
+  RadioGroup,
+  Typography
+} from '@mui/material'
+import React, { useState } from 'react'
+import CheckoutForm from '../Components/checkoutForms'
 
 export default function About() {
+  const [showShippingField, setShowShippingField] = useState(false)
   return (
     <>
-      <div class="container">
+      <Box px={{ xs: '30px', md: '77px' }}>
         <ol class="breadcrumb">
           <li>
             <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Page</a>
           </li>
           <li>
             <a href="#">Shop</a>
@@ -21,273 +29,389 @@ export default function About() {
             <a href="#">Checkout</a>
           </li>
         </ol>
-      </div>
 
-      <section id="checkout-sec" class="cart-checkout">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 col-md-8">
-              <form id="contact-form" method="post" action="" role="form">
-                <h2>BILLING DETAILS</h2>
-                <div class="messages"></div>
-                <div class="controls">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="form_name">
-                          First Name <span class="text-red">*</span>
-                        </label>
-                        <input
-                          id="form_name"
-                          type="text"
-                          name="name"
-                          class="form-control"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="form_lastname">
-                          Last Name <span class="text-red">*</span>
-                        </label>
-                        <input
-                          id="form_lastname"
-                          type="text"
-                          name="surname"
-                          class="form-control"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label for="form_email">
-                          Email Address <span class="text-red">*</span>
-                        </label>
-                        <input
-                          id="form_email"
-                          type="email"
-                          name="email"
-                          class="form-control"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label for="form_gps-location">
-                          GPS Location <span class="text-red">*</span>
-                        </label>
-                        <input
-                          id="form_gps-location"
-                          type="text"
-                          placeholder="Location"
-                          name="gps-location"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="gps-location">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.3012030251!2d54.9475610883428!3d25.076381466775658!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2sDubai%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2s!4v1642426034582!5m2!1sen!2s"></iframe>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label for="form_postcode_zip">
-                          Postcode / Zip <span class="text-red">*</span>
-                        </label>
-                        <input
-                          id="form_postcode_zip"
-                          type="text"
-                          name="postcode_zip"
-                          placeholder="Postcode / Zip"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <label for="form_town_city">
-                          Town / City <span class="text-red">*</span>
-                        </label>
-                        <input
-                          id="form_town_city"
-                          type="text"
-                          name="town_city"
-                          placeholder="Town / City"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12 select-mobile">
-                      <div class="form-group">
-                        <label for="form_mobile">
-                          Mobile Number <span class="text-red">*</span>
-                        </label>
-                        <select>
-                          <option value="0">
-                            <img src="image/flag.png" /> +971
-                          </option>
-                          <option value="0">
-                            <img src="image/flag.png" /> +972
-                          </option>
-                          <option value="0">
-                            <img src="image/flag.png" /> +973
-                          </option>
-                          <option value="0">
-                            <img src="image/flag.png" /> +974
-                          </option>
-                        </select>
-                        <input
-                          id="form_mobile"
-                          type="tel"
-                          placeholder="Mobile Number"
-                          name="mobile"
-                          class="form-control"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
+        <Box>
+          {/* //TODO: add function here to get form value */}
+          <Typography
+            sx={{ fontSize: '24px', fontWeight: 500, color: '#232323' }}
+          >
+            BILLING ADDRESS
+          </Typography>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={7}>
+              <CheckoutForm />
 
-            <div class="col-md-4 subtotal">
-              <div class="order-edit">
-                <h3>Review your order</h3>
-                <a href="#">Edit Cart</a>
-              </div>
-              <table
-                id="checkout-edit-cart"
-                class="table table-hover table-right"
+              <Box display={'flex'} alignItems={'center'} my={2}>
+                <Box>
+                  <Checkbox
+                    onClick={() => {
+                      setShowShippingField(!showShippingField)
+                    }}
+                    checked={showShippingField}
+                    sx={{
+                      '& .MuiSvgIcon-root': { fontSize: 28 }
+                    }}
+                  />
+                </Box>
+                <Typography
+                  sx={{
+                    ml: '10px',
+                    color: '#3E3E3E',
+                    fontSize: '16px'
+                  }}
+                >
+                  ship to this address
+                </Typography>
+              </Box>
+              {showShippingField && (
+                <>
+                  <Typography
+                    sx={{ fontSize: '24px', fontWeight: 500, color: '#232323' }}
+                  >
+                    SHIPPING ADDRESS
+                  </Typography>
+                  <CheckoutForm isShipping />
+                </>
+              )}
+            </Grid>
+            <Grid item xs={12} md={5}>
+              <Box
+                sx={{
+                  padding: '20px',
+                  borderRadius: '8px',
+                  border: '1px solid #A3A2A3'
+                }}
               >
-                <tr>
-                  <td>
-                    <div class="media">
-                      <a class="thumbnail pull-left" href="#">
-                        {' '}
-                        <img
-                          class="media-object"
-                          src="image/cart/product-image.png"
-                        />{' '}
-                      </a>
-                      <div class="media-body">
-                        <h4 class="media-heading">High Speed Magic Toy</h4>
-                        <h3 class="media-qty">Qty : 1</h3>
-                        <div class="amount-discount">
-                          <h3>AED 4.50</h3>
-                          <h3>
-                            <b>Discount:</b> AED 0.00
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="media">
-                      <a class="thumbnail pull-left" href="#">
-                        {' '}
-                        <img
-                          class="media-object"
-                          src="image/cart/product-image.png"
-                        />{' '}
-                      </a>
-                      <div class="media-body">
-                        <h4 class="media-heading">High Speed Magic Toy</h4>
-                        <h3 class="media-qty">Qty : 1</h3>
-                        <div class="amount-discount">
-                          <h3>AED 4.50</h3>
-                          <h3>
-                            <b>Discount:</b> AED 0.00
-                          </h3>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                </tr>
-              </table>
-              <hr />
-              <table class="table table-hover table-right">
-                <tr>
-                  <td>
-                    <h5>Estimate VAT%</h5>
-                  </td>
-                  <td class="text-right">
-                    <h5>
-                      <strong>AED 0.00</strong>
-                    </h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Items Discount (you saved)</h5>
-                  </td>
-                  <td class="text-right">
-                    <h5>
-                      <strong>AED 0.00</strong>
-                    </h5>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <h5>Shipping</h5>
-                  </td>
-                  <td class="text-right">
-                    <h5>
-                      <strong>AED 0.00</strong>
-                    </h5>
-                  </td>
-                </tr>
-                <tr class="total-amount">
-                  <td>
-                    <h5>Total</h5>
-                  </td>
-                  <td class="text-right">
-                    <h5>AED 400</h5>
-                  </td>
-                </tr>
-              </table>
+                <Box mb={4}>
+                  <Typography
+                    sx={{
+                      fontSize: '24px',
+                      fontWeight: 500,
+                      color: 'black'
+                    }}
+                  >
+                    YOUR ORDER
+                  </Typography>
+                </Box>
+                <Box
+                  display={'flex'}
+                  alignItems={'center'}
+                  justifyContent={'space-between'}
+                >
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontSize: '17px',
+                        color: '#121212',
+                        fontWeight: 600
+                      }}
+                    >
+                      Product
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontSize: '16px',
+                        color: '#121212'
+                      }}
+                    >
+                      Total
+                    </Typography>
+                  </Box>
+                </Box>
 
-              {/* <hr>
-                <div class="payment-cards"><h3>Payment Method:-</h3><img src="image/cart/payment-method.png"/></div>
-                <div class="checkbox-right-side">
-                    <form>
-                        <div class="form-group">
-                        <input type="checkbox" id="cash-on-delivery" />
-                        <label for="cash-on-delivery">Cash on delivery</label>
-                        </div>
-                        <div class="form-group">
-                        <input type="checkbox" id="credit-card" />
-                        <label for="credit-card">Pay by Credit/Debit Card</label>
-                        </div>
-                        <div class="form-group">
-                        <input type="checkbox" id="loyalty-points" />
-                        <label for="loyalty-points">Pay by loyalty Points: 201 points</label>
-                        </div>
-                    </form>
-                </div>
-                <div class="coupon">
-                    <input type="text" placeholder="Enter a coupon" />
-                    <button class="bg-green" type="button">Apply</button>
-                </div>
-                </hr> */}
-            </div>
-            <div class="col-sm-12 cart-btn">
-              <button type="button" class="btn bg-green place-order text-white">
-                Place Order
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+                <Box
+                  marginTop="1rem"
+                  marginBottom="1rem"
+                  border={0}
+                  borderTop="2px solid rgba(0,0,0,.1)"
+                />
+
+                <Box
+                  display={'flex'}
+                  alignItems={'center'}
+                  justifyContent={'space-between'}
+                >
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontSize: '17px',
+                        color: '#121212',
+                        fontWeight: 600
+                      }}
+                    >
+                      Sprit Toy
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontSize: '16px',
+                        color: '#121212'
+                      }}
+                    >
+                      AED 2,000
+                    </Typography>
+                  </Box>
+                </Box>
+
+                <Box
+                  marginTop="1rem"
+                  marginBottom="1rem"
+                  border={0}
+                  borderTop="2px solid rgba(0,0,0,.1)"
+                />
+
+                <Box
+                  display={'flex'}
+                  alignItems={'center'}
+                  justifyContent={'space-between'}
+                >
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontSize: '17px',
+                        color: '#121212',
+                        fontWeight: 600
+                      }}
+                    >
+                      Sub Total
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontSize: '16px',
+                        color: '#121212'
+                      }}
+                    >
+                      AED 2,000
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box
+                  mt={2}
+                  display={'flex'}
+                  alignItems={'center'}
+                  justifyContent={'space-between'}
+                >
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontSize: '17px',
+                        color: '#121212',
+                        fontWeight: 600
+                      }}
+                    >
+                      Tax 0 %
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontSize: '16px',
+                        color: '#121212'
+                      }}
+                    >
+                      AED 0
+                    </Typography>
+                  </Box>
+                </Box>
+
+                <Box
+                  marginTop="1rem"
+                  marginBottom="1rem"
+                  border={0}
+                  borderTop="2px solid rgba(0,0,0,.1)"
+                />
+
+                <Box
+                  display={'flex'}
+                  alignItems={'center'}
+                  justifyContent={'space-between'}
+                >
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontSize: '17px',
+                        color: '#121212',
+                        fontWeight: 600
+                      }}
+                    >
+                      Grand Total
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontSize: '16px',
+                        color: '#121212'
+                      }}
+                    >
+                      AED 2,000
+                    </Typography>
+                  </Box>
+                </Box>
+
+                <Box
+                  marginTop="1rem"
+                  marginBottom="1rem"
+                  border={0}
+                  borderTop="2px solid rgba(0,0,0,.1)"
+                />
+
+                <FormControl>
+                  <FormLabel
+                    sx={{
+                      fontSize: '18px',
+                      fontWeight: 700,
+                      color: 'black'
+                    }}
+                  >
+                    Gender
+                  </FormLabel>
+                  <RadioGroup defaultValue="female" name="radio-buttons-group">
+                    <FormControlLabel
+                      value="female"
+                      control={<Radio />}
+                      label={
+                        <>
+                          <Typography
+                            sx={{
+                              fontSize: '16px',
+                              color: '#232323'
+                            }}
+                          >
+                            AED 20
+                          </Typography>{' '}
+                          <Typography
+                            sx={{
+                              fontSize: '16px',
+                              color: '#232323'
+                            }}
+                          >
+                            Flat Rate - Flat Rate Shipping
+                          </Typography>
+                        </>
+                      }
+                    />
+                    <Box my={1} />
+
+                    <FormControlLabel
+                      value="male"
+                      control={<Radio />}
+                      label={
+                        <>
+                          <Typography
+                            sx={{
+                              fontSize: '16px',
+                              color: '#232323'
+                            }}
+                          >
+                            AED 0
+                          </Typography>{' '}
+                          <Typography
+                            sx={{
+                              fontSize: '16px',
+                              color: '#232323'
+                            }}
+                          >
+                            Free shipping - Free shipping
+                          </Typography>
+                        </>
+                      }
+                    />
+                  </RadioGroup>
+                </FormControl>
+
+                <FormControl>
+                  <FormLabel
+                    sx={{
+                      fontSize: '18px',
+                      fontWeight: 700,
+                      color: 'black'
+                    }}
+                  >
+                    Select Payment Method
+                  </FormLabel>
+                  <RadioGroup defaultValue="female" name="radio-buttons-group">
+                    <FormControlLabel
+                      value="female"
+                      control={<Radio />}
+                      label={
+                        <>
+                          <Typography
+                            sx={{
+                              fontSize: '16px',
+                              color: '#232323'
+                            }}
+                          >
+                            Cash On Delivery
+                          </Typography>{' '}
+                          <Typography
+                            sx={{
+                              fontSize: '16px',
+                              color: '#232323'
+                            }}
+                          >
+                            Cash On Delivery
+                          </Typography>
+                        </>
+                      }
+                    />
+                    <Box my={1} />
+                    <FormControlLabel
+                      value="male"
+                      control={<Radio />}
+                      label={
+                        <>
+                          <Typography
+                            sx={{
+                              fontSize: '16px',
+                              color: '#232323'
+                            }}
+                          >
+                            Money Transfer
+                          </Typography>{' '}
+                          <Typography
+                            sx={{
+                              fontSize: '16px',
+                              color: '#232323'
+                            }}
+                          >
+                            Money Transfer
+                          </Typography>
+                        </>
+                      }
+                    />
+                  </RadioGroup>
+                </FormControl>
+
+                <Box my={2}>
+                  <img alt="" src="image/footer/payment-method.png" />
+                </Box>
+              </Box>
+              <Box mt={2} display={'flex'} justifyContent={'end'}>
+                <Button
+                  sx={{
+                    fontWeight: 600,
+                    padding: '10px',
+                    background: '#26a37c',
+                    '&:hover': {
+                      background: '#26a37c'
+                    }
+                  }}
+                  variant="contained"
+                >
+                  {' '}
+                  place order
+                </Button>
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+      </Box>
 
       <section id="create-account" class="checkout-account bg-yellow">
         <div class="container">
