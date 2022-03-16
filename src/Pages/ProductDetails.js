@@ -661,11 +661,11 @@ export default function ProductDetails() {
         </div>
       </section>
 
-      <section id="top-products" class="content hot-sellers ">
+      <section id="top-products" class="content hot-sellers details__part">
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-12 col-md-12">
-              <div class="heading">
+              <div class="heading problem">
                 <h2>Top Products</h2>
               </div>
             </div>
@@ -1868,7 +1868,7 @@ export default function ProductDetails() {
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-md-12">
-              <div class="heading">
+              <div class="heading features">
                 <h2>Our Features</h2>
               </div>
             </div>

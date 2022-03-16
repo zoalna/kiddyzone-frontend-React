@@ -47,7 +47,7 @@ export default function OnlineEducation() {
         </div>
         <div className="row kid-gallery">
           <div className="cms_banner">
-            <div className="col-sm-12">
+            <div className="col-sm-12 problem__wala">
               <div className="banner">
                 <a href="#">
                   <img

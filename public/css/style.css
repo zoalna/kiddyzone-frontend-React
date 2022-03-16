@@ -936,7 +936,7 @@ background: #000;
     left: 6.3%;
     right: 0;
     text-align: center;
-    top: 37%;
+    top: 50%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -1266,7 +1266,7 @@ button.proceed-checkout {
     padding-bottom: 20px;
 }
 footer {
-	margin-top: 100px;
+	margin-top: -70px;
 }
 #footer .ftr-logo {
     margin-top: 20px;
@@ -4852,6 +4852,7 @@ button.single-pro.add-to-cart:hover {
 .features.row {
     display: flex;
     align-items: center;
+	margin-top: -6%;
 }
 .feautes .description {margin-left: 20px;}
 .feautes .description h1 {text-transform: capitalize;}
@@ -5760,7 +5761,7 @@ ul.ul-wrapper {
     left: 5%;
     right: 0;
     text-align: center;
-    top: 43%;
+    top: 57%;
     transform: translate(0,-50%);
     margin-bottom: 0;
     line-height: 22px;
@@ -6010,7 +6011,7 @@ span.fa.fa-angle-down.rotate-icon {
     align-items: center;
 }
 section.content{
-	padding-bottom: 5rem;
+	/* padding-bottom: 5rem; */
 }
 .description {
     text-align: start;
@@ -6029,4 +6030,16 @@ section.content{
 }
 section.product-reviews.content {
     padding: 3rem 0;
+}
+.col-sm-12.problem__wala {
+    margin: 0;
+}
+.heading.problem > h2 {
+	top: 43%!important;
+}
+.heading.features > h2 {
+    top: 37%!important;
+}
+section.content.hot-sellers.details__part {
+    padding-bottom: 0rem;
 }
