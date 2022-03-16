@@ -51,26 +51,28 @@ export default function SignUp() {
       <Box px={{ xs: 0, md: '312px' }} mt={8}>
         <Box>
           <Grid container>
-            <Grid item xs={12} lg={5}>
-              <Box
-                height={{ xs: '300px', md: '512px' }}
-                p={{ xs: 4, md: '80px 40px' }}
-                borderRadius={{ xs: '36px 36px 0px 0', md: '36px 0 0 36px' }}
-                display={'flex'}
-                alignItems={'center'}
-                justifyContent={'center'}
-                bgcolor={'#F15076'}
-              >
+            <Grid
+              item
+              xs={12}
+              md={5}
+              p={{ xs: 4, md: '80px 40px' }}
+              borderRadius={{ xs: '36px 36px 0px 0', md: '36px 0 0 36px' }}
+              display={'flex'}
+              alignItems={'center'}
+              justifyContent={'center'}
+              bgcolor={'#F15076'}
+            >
+              <Box>
                 <Box>
                   <img
                     width={'100%'}
-                    height={'100%'}
+                    height={{ xs: '300px', md: '512px' }}
                     src="image/login-logo.png"
                   />
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} lg={7}>
+            <Grid item xs={12} md={7}>
               <Box
                 padding={{ xs: 4, md: '40px 50px' }}
                 borderRadius={{

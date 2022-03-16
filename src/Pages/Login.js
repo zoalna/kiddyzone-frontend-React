@@ -5,30 +5,7 @@ import { useForm, Controller } from 'react-hook-form'
 
 export default function Login() {
   const { handleSubmit, control } = useForm()
-  const muiStyledInput = (placeholder, inputType) => {
-    return (
-      <Box
-        sx={{
-          display: 'flex',
-          height: '50px',
-          padding: '15px',
-          background: '#DEDEDE',
-          borderRadius: '6px'
-        }}
-      >
-        <InputBase
-          type={inputType}
-          sx={{
-            fontWeight: 'bold',
-            fontSize: '16px',
-            color: '#595959'
-          }}
-          fullWidth
-          placeholder={placeholder}
-        />
-      </Box>
-    )
-  }
+
   return (
     <>
       <Box>
@@ -58,26 +35,28 @@ export default function Login() {
         <Box px={{ xs: 0, md: '312px' }} mt={8}>
           <Box>
             <Grid container>
-              <Grid item xs={12} lg={5}>
-                <Box
-                  height={{ xs: '300px', md: '439px' }}
-                  p={{ xs: 4, md: '80px 40px' }}
-                  borderRadius={{ xs: '36px 36px 0px 0', md: '36px 0 0 36px' }}
-                  display={'flex'}
-                  alignItems={'center'}
-                  justifyContent={'center'}
-                  bgcolor={'#1DB0ED'}
-                >
+              <Grid
+                item
+                xs={12}
+                md={5}
+                p={{ xs: 4, md: '80px 40px' }}
+                borderRadius={{ xs: '36px 36px 0px 0', md: '36px 0 0 36px' }}
+                bgcolor={'#1DB0ED'}
+                display={'flex'}
+                alignItems={'center'}
+                justifyContent={'center'}
+              >
+                <Box>
                   <Box>
                     <img
                       width={'100%'}
-                      height={'100%'}
+                      height={{ xs: '300px', md: '439px' }}
                       src="image/login-logo.png"
                     />
                   </Box>
                 </Box>
               </Grid>
-              <Grid item xs={12} lg={7}>
+              <Grid item xs={12} md={7}>
                 <Box
                   padding={{ xs: 4, md: '40px 50px' }}
                   borderRadius={{
