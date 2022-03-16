@@ -1,0 +1,76 @@
+.details__box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    height: 50px;
+    background: #e5e5e5;
+    z-index: 1000;
+}
+.name{
+    height: 40px;
+}
+.name > span{
+    font-size: 1.5vmax;
+    color: black;
+}
+.d__flex{
+    display: flex;
+    align-items: center;
+}
+button.input__btn.black::before{
+    content: "\2212";
+}
+button.glyphicon.glyphicon-minus.black{
+    background: #000;
+    width: 25px;
+    height: 20px;
+    border-radius: 5px;
+}
+button.glyphicon.glyphicon-plus.black{
+    background: #000;
+    width: 25px;
+    height: 20px;
+    border-radius: 5px;
+}
+.quantity__box{
+    margin:0px 8%;
+}
+span.bottom__quantity {
+    width: 30px;
+    height: 20px;
+    background: #fff;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+}
+.button {
+    display: inline-block;
+    background: #E20025;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    color: #FFF;
+    margin-right: 15px;
+}
+p.product__text {
+    margin-top: 8%;
+}
+.main__part.d__flex {
+    width: 80%;
+}
+.cross__option {
+    margin-left: 14%;
+}
+.cross__option > span{
+    color: #E20025;
+    font-size: 35px;
+    cursor: pointer;
+}
+.name.d__flex {
+    margin-left: 15%;
+}
