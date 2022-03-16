@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "../../App.css";
 
-export default function PartnerDiscount() {
+export default function PartnerDiscount(props) {
   return (
     <div id="partners-discount" className="container-fluid">
       <div className="heading">
@@ -11,76 +11,26 @@ export default function PartnerDiscount() {
         </h2>
       </div>
       <div id="brand_carouse" className="owl-carousel brand-logo">
+
+        
+      {
+        props.data.map((item, i) => {     
+          
+           return (
+
+
         <div className="item text-center">
-          {" "}
+         
           <a href="#">
             <img
-              src="image/brand/brand1.png"
-              alt="Disney"
+              src={item.image_url}
+              alt={item.name}
               className="img-responsive"
             />
           </a>{" "}
         </div>
-        <div className="item text-center">
-          {" "}
-          <a href="#">
-            <img
-              src="image/brand/brand2.png"
-              alt="Dell"
-              className="img-responsive"
-            />
-          </a>{" "}
-        </div>
-        <div className="item text-center">
-          {" "}
-          <a href="#">
-            <img
-              src="image/brand/brand3.png"
-              alt="Harley"
-              className="img-responsive"
-            />
-          </a>{" "}
-        </div>
-        <div className="item text-center">
-          {" "}
-          <a href="#">
-            <img
-              src="image/brand/brand4.png"
-              alt="Canon"
-              className="img-responsive"
-            />
-          </a>{" "}
-        </div>
-        <div className="item text-center">
-          {" "}
-          <a href="#">
-            <img
-              src="image/brand/brand5.png"
-              alt="Canon"
-              className="img-responsive"
-            />
-          </a>{" "}
-        </div>
-        <div className="item text-center">
-          {" "}
-          <a href="#">
-            <img
-              src="image/brand/brand6.png"
-              alt="Canon"
-              className="img-responsive"
-            />
-          </a>{" "}
-        </div>
-        <div className="item text-center">
-          {" "}
-          <a href="#">
-            <img
-              src="image/brand/brand7.png"
-              alt="Canon"
-              className="img-responsive"
-            />
-          </a>{" "}
-        </div>
+) 
+})}
       </div>
     </div>
   );

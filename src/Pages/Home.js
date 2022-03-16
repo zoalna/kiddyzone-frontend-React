@@ -28,28 +28,57 @@ import LatestBlog from "../Components/Home/LatestBlog";
 import BrowseByBrand from "../Components/Home/BrowseByBrand";
 import Newsletter from "../Components/Home/NewsLetter";
 import PartnerDiscount from "../Components/Home/PartnerDiscount";
+import { api } from '../Helpers/services';
+import axios from 'axios';
+
 
 class Home extends Component {
+
+  constructor() {
+    super();
+    let dashboard = this.state = {
+   
+    }
+  }
+
+
+  componentDidMount() {
+    axios.get(api.show, null)
+    .then(response => 
+      {
+     
+      this.setState({ dashboard: response.data.data })
+     
+      }
+      );
+}
+
+
+
+
+
   render() {
     return (
       <div className="App">
         <MainBanner />
-        <ShopByAge />
-        <HotSellers />
+        {this.state.dashboard && <ShopByAge data = {this.state.dashboard.shop_by_age } />}
+        {this.state.dashboard && <HotSellers data = {this.state.dashboard.hot_products } />}
         <ShopBanners />
-        <ShopCategories />
+        {this.state.dashboard && <ShopCategories data = {this.state.dashboard.shop_by_categories } />}
         <OnlineEducation />
-        <LatestProduct />
+        {this.state.dashboard && <LatestProduct data = {this.state.dashboard.latest_products } />}
         <SmallShopBanner />
-        <RecentlyViewed />
+        {this.state.dashboard && <RecentlyViewed data = {this.state.dashboard.recent_products } />}
         <SmallShopBanner2 />
-        <DealDay />
+        {this.state.dashboard && <DealDay data = {this.state.dashboard.deal_products } />}
         <SaleBanners />
         <GiftFinder />
         <LatestBlog />
-        <BrowseByBrand />
+        {this.state.dashboard && <BrowseByBrand data = {this.state.dashboard.shop_by_brands } />}
         <Newsletter />
-        <PartnerDiscount />
+        {this.state.dashboard && <PartnerDiscount data = {this.state.dashboard.shop_by_partners } />} 
+     {/* <PartnerDiscount  /> */}
+
       </div>
     );
   }

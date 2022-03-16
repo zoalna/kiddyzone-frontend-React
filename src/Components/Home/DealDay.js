@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "../../App.css";
 
-export default function DealDay() {
+export default function DealDay(props) {
   return (
     <section id="single-product" className="content card">
       <div className="container-fluid">
@@ -19,37 +19,37 @@ export default function DealDay() {
           <div className="preview col-md-6">
             <div className="preview-pic tab-content">
               <div className="tab-pane active" id="pic-1">
-                <img src="image/product/product-1.png" />
+                <img src={props.data[0].image_url} />
               </div>
               <div className="tab-pane" id="pic-2">
-                <img src="image/product/product-4.png" />
+                <img src={props.data[0].image_url} />
               </div>
               <div className="tab-pane" id="pic-3">
-                <img src="image/product/product-3.png" />
+                <img src={props.data[0].image_url} />
               </div>
               <div className="tab-pane" id="pic-4">
-                <img src="image/product/product-4.png" />
+                <img  src={props.data[0].image_url}/>
               </div>
             </div>
             <ul className="preview-thumbnail nav nav-tabs">
               <li className="active">
                 <a data-target="#pic-1" data-toggle="tab">
-                  <img src="image/product/product-1.png" />
+                  <img src={props.data[0].image_url} />
                 </a>
               </li>
               <li>
                 <a data-target="#pic-2" data-toggle="tab">
-                  <img src="image/product/product-4.png" />
+                  <img src={props.data[0].image_url} />
                 </a>
               </li>
               <li>
                 <a data-target="#pic-3" data-toggle="tab">
-                  <img src="image/product/product-3.png" />
+                  <img src={props.data[0].image_url}/>
                 </a>
               </li>
               <li>
                 <a data-target="#pic-4" data-toggle="tab">
-                  <img src="image/product/product-4.png" />
+                  <img src={props.data[0].image_url}/>
                 </a>
               </li>
             </ul>
@@ -77,18 +77,13 @@ export default function DealDay() {
                 <i className="fa fa-star-o fa-stack-2x"></i>
               </span>{" "}
             </div>
-            <h3 className="product-title" style={{textAlign:'left'}}>Aroma Mocha BabyToy</h3>
+            <h3 className="product-title" style={{textAlign:'left'}}>{props.data[0].name}</h3>
             <h4 className="price"  style={{textAlign:'left'}}>
-              <span>$50.00</span>
-              <del>$60.00</del>
+              <span>${props.data[0].price}</span>
+              <del>${props.data[0].price}</del>
             </h4>
             <p className="product-description"  style={{textAlign:'left', fontSize:'13px', marginBottom:'20px'}}>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-              erat, sed diam voluptua. At vero eos et accusam et justo duo
-              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-              sanctus est Lorem ipsum dolor sit amet, consetetur sadipscing
-              elitr, sed diam no
+             {props.data[0].description}
             </p>
 
             <h5 className="sizes"  style={{textAlign:'left'}}>
