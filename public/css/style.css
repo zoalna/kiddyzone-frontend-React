@@ -402,8 +402,8 @@ div#top-links {
 	left: 5%;
 	margin: 0;
 }
-#logo a img {
-    width: 230px !important;
+ img.img-responsive.logo{
+    width: 230px!important;
     position: relative;
   object-fit: contain;
     z-index: 1;
@@ -6108,4 +6108,24 @@ li.navbarActive:hover .nav__menu {
 .bottom__part > img{
  margin: 0px 5px;
  width: 100px;
+}
+div#brand_carousel {
+    display: flex;
+    margin-top: -42px;
+    margin-bottom: 25px;
+}
+.header__effect{
+	transition: .4s all;
+}
+.header__effect.active{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 999999999;
+}
+img.img-responsive.logo.active {
+    width: 14vmax!important;
+    top: 16px!important;
+    left: 20px!important;
 }
