@@ -179,35 +179,36 @@ export default function SignUp() {
                       </Grid>
                     </Grid>
                   </Box>
-                  <Box
-                    mb={2}
+                  <Grid
                     mt={2}
+                    container
+                    spacing={1}
                     display={'flex'}
-                    flexDirection={{ xs: 'column', md: 'row' }}
                     alignItems={'center'}
-                    justifyContent={'space-between'}
                   >
-                    <Button
-                      type="submit"
-                      sx={{
-                        background: '#e20025',
-                        fontSize: '15px',
-                        fontWeight: 'bold',
-                        width: { xs: '100%', md: '200px' },
-                        '&:hover': {
-                          background: '#e20025'
-                        }
-                      }}
-                      variant="contained"
-                    >
-                      create account
-                    </Button>
-                    <Box mt={{ xs: 2, md: 0 }}>
+                    <Grid item xs={12} md={12} lg={6}>
+                      <Button
+                        type="submit"
+                        sx={{
+                          background: '#e20025',
+                          fontSize: '12px',
+                          fontWeight: 'bold',
+                          '&:hover': {
+                            background: '#e20025'
+                          }
+                        }}
+                        variant="contained"
+                      >
+                        create account
+                      </Button>
+                    </Grid>
+                    <Grid item xs={12} md={12} lg={6}>
                       <Typography
                         sx={{
-                          fontSize: '20px',
+                          fontSize: '11px',
                           fontWeight: 'bold',
                           color: '#000',
+                          textAlign: 'end',
                           fontStyle: 'italic'
                         }}
                       >
@@ -221,8 +222,8 @@ export default function SignUp() {
                           Login
                         </span>
                       </Typography>
-                    </Box>
-                  </Box>
+                    </Grid>
+                  </Grid>
                 </form>
                 <Box mt={4}>
                   <Box display={'flex'} alignItems={'center'}>
