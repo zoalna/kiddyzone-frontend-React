@@ -6053,13 +6053,26 @@ div#headingFour {
 .nav__menu {
     width: 90vmax !important;
     display: flex;
-    height: 70vh;
+	visibility: hidden;
+    height: 85vh;
+	overflow: hidden;
     background: #fff;
     position: absolute;
-	justify-content: space-between;
+	flex-direction: column;
     left: -30vmax;
     top: 3vmax;
     z-index: 10000;
+}
+.top__part{
+	display: flex;
+	justify-content: space-between;
+}
+.bottom__part{
+	display: flex;
+	width: 70%;
+	margin: 0px 25px;
+	justify-content: flex-start;
+	overflow: hidden;
 }
 .first__varse {
     padding: 20px 40px;
@@ -6078,17 +6091,21 @@ a.baneer__items {
     margin-left: -7px;
     opacity: .8;
 	text-align: start;
+	transition: .4s all ease;
+}
+a.baneer__items:hover{
+	color: #00B3E3!important;
 }
 .d__flex{
 	display: flex;
 }
-.image__navbar {
-    position: absolute;
-    bottom: -17%;
-    left: -33%;
+li.navbarActive:hover .nav__menu {
+	visibility: visible;
 }
-.image__navbar > img {
-    width: 7%;
-    object-fit: contain;
-    margin: 5px 10px;
+.first__varse > img {
+    width: 70%;
+}
+.bottom__part > img{
+ margin: 0px 5px;
+ width: 100px;
 }

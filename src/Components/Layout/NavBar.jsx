@@ -26,12 +26,13 @@ function NavBar() {
                 <span className="nav__items">About Us</span>
               </Link>
             </li>
-            <li>
+            <li className="navbarActive">
               <a href="#" className="active parent">
                 Categories
               </a>
               <div className="nav__menu">
-                <div className="first__varse">
+                  <div className="top__part">
+                  <div className="first__varse">
                  <a href="#" className="banner__name">Bags</a>
                  <a href="#" className="baneer__items">Shop</a>
                  <a href="#" className="baneer__items">Shop</a>
@@ -43,14 +44,6 @@ function NavBar() {
                  <a href="#" className="baneer__items">Shop</a>
                  <a href="#" className="baneer__items">Shop</a>
                  <a href="#" className="banner__name">Popular Brands</a>
-                <div className="image__navbar">
-                <img src="image/header/marvel.png" />
-                 <img src="image/header/marvel.png" />
-                 <img src="image/header/marvel.png" />
-                 <img src="image/header/marvel.png" />
-                 <img src="image/header/marvel.png" />
-                 <img src="image/header/marvel.png" />
-                </div>
                  </div>
 
                  <div className="first__varse">
@@ -80,7 +73,16 @@ function NavBar() {
                  <div className="first__varse">
                    <img src="image/header/product2.jpg" />
                  </div>
-                 </div>
+                  </div>
+                  <div className="bottom__part">
+                    <img src="image/header/marvel.png" />
+                    <img src="image/header/smart.png" />
+                    <img src="image/header/marvel.png" />
+                    <img src="image/header/sparkle.png" />
+                    <img src="image/header/marvel.png" />
+                    <img src="image/header/marvel.png" />
+                  </div>
+                </div>
             </li>
             <li>
             <Link to="/AboutUs" className="parent link">
