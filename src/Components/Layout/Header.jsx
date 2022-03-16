@@ -79,10 +79,12 @@ export default function Header() {
             />
           </g>
         </svg>{" "} */}
-        <div className="main-upper-header">
-          <img src="image/truck-icon.svg" />
-          </div>
+       <div className="animation">
+       <div className="main-upper-header">
+          <img src="image/truck-icon.svg" style={{"fill":" #e20025",height:"23px"}} />
+        </div>
         <span>Free Shipping 99 QR</span>
+       </div>
       </div>
       <header>
         <div className="container-fluid">
@@ -157,13 +159,13 @@ export default function Header() {
                       <li className="account for-desktop">
                         <img src="image/header/user%20(1).svg" />
                         <Link to="/Login">
-                          <span>Login</span>
+                          <span style={{fontSize:"22px"}}>Login</span>
                         </Link>
 
                         <span className="account-ver-line">|</span>
 
                         <Link to="/SignUp">
-                          <span>Register</span>
+                          <span style={{fontSize:"22px"}}>Register</span>
                         </Link>
                       </li>
                       <li>
@@ -194,7 +196,7 @@ export default function Header() {
             <div id="logo">
               <a href="index.html">
                 <img
-                  src="image/logo.svg"
+                  src="image/header/logo.svg"
                   title="E-Commerce"
                   alt="E-Commerce"
                   className="img-responsive"
@@ -227,7 +229,7 @@ export default function Header() {
                 <input
                   type="text"
                   name="search"
-                  placeholder="Search Store"
+                  placeholder="Search products here"
                   className="form-control input-lg"
                   style={{ height: "123%" }}
                 />

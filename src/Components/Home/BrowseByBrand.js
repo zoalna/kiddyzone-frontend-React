@@ -6,10 +6,9 @@ export default function BrowseByBrand() {
   return (
     <section id="browse-brand">
       <div className="container-fluid">
-        <div className="heading">
-          <h2 style={{ fontSize:'16px'}}>
-            Browse By
-            <br /> Brand
+        <div className="heading brand">
+          <h2 style={{ fontSize:'1.7vmax'}}>
+            Browse By Brand
           </h2>
         </div>
         <div className="brand-logo">
