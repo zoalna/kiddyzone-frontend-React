@@ -208,6 +208,7 @@ export default function Header() {
             className="header-inner"
             style={{ paddingTop: 20, paddingBottom: 20 }}
           >
+            <div className="container">
             <div id="logo">
               <a href="index.html">
                 <img
@@ -279,6 +280,7 @@ export default function Header() {
                 </ul>
               </div>
             </div>
+          </div>
           </div>
         </div>
         <NavBar />
