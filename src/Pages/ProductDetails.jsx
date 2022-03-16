@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Carousel from "react-material-ui-carousel";
 import "../App.css";
 
 export default function ProductDetails() {
@@ -669,693 +670,1197 @@ export default function ProductDetails() {
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="item">
-                <div class="product-thumb">
-                  <div class="sale-tag">
-                    <div class="btn bg-blue">SALE</div>
-                    <div class="btn percent bg-yellow">20% OFF</div>
-                  </div>
-                  <div class="image product-imageblock">
-                    {" "}
+          <Carousel>
+
+          <div className="row">
+            <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div className="item">
+                <div className="product-thumb">
+                  {/* <div className="sale-tag">
+                   
+                  </div> */}
+                  <div className="image product-imageblock">
+                    <div className="btn new bg-red">20% OFF</div>
+                    <div className="btn percent bg-yellow">New</div>{" "}
                     <a href="product.html">
                       <img
                         src="image/product/toy-1.png"
                         alt="iPod Classic"
                         title="iPod Classic"
-                        class="img-responsive"
+                        className="img-responsive"
                       />
                     </a>
-                    <ul class="button-group">
+                    {/* <ul className="button-group">
                       <li>
                         <button
                           type="button"
-                          class="addtocart-btn bg-green"
+                          className="addtocart-btn bg-green"
                           title="Add to Cart"
                         >
                           {" "}
-                          <i class="fa fa-shopping-cart"></i>{" "}
+                          <i className="fa fa-shopping-cart"></i>{" "}
                         </button>
                       </li>
                       <li>
                         <button
                           type="button"
-                          class="wishlist bg-purple"
+                          className="wishlist bg-purple"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Add to Wish List"
                         >
-                          <i class="fa fa-heart-o"></i>
+                          <i className="fa fa-heart-o"></i>
                         </button>
                       </li>
                       <li>
                         <button
                           type="button"
-                          class="quick-view bg-blue"
+                          className="quick-view bg-blue"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Quick View"
                         >
-                          <i class="fa fa-eye"></i>
+                          <i className="fa fa-eye"></i>
                         </button>
                       </li>
-                    </ul>
+                    </ul> */}
                   </div>
-                  <div class="caption product-detail">
-                    <h4 class="product-name">
-                      <a href="#" title="Casual Shirt With Ruffle Hem">
+                  <div className="caption product-detail">
+                    <h4 className="product-name">
+                      <a href="#" title="Casual Shirt With Ruffle Hem"
+                      style={{
+                        fontSize: "1.6vmax",
+                      }}
+                      >
                         High Speed Magic Toy
                       </a>
                     </h4>
-                    <div class="rating">
+                    <div className="rating">
                       {" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
                     </div>
-                    <p class="price product-price">$122.00</p>
+
+                    <div
+                      className="price__box"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        className="discount"
+                        style={{
+                          fontSize: "1.4vmax",
+                          paddingRight: "10px",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        AED 200
+                      </p>
+                      <p
+                        className="price product-price"
+                        style={{ fontSize: "1.8vmax" }}
+                      >
+                        AED 122.00
+                      </p>
+                    </div>
+
+                    <div className="btn-shooping-cart">
+                      <button
+                        type="button"
+                        className="quick-view bg-blue"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Quick View"
+                      >
+                        <i className="fa fa-eye"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="wishlist bg-purple"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Add to Wish List"
+                      >
+                        <i className="fa fa-heart-o"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="addtocart-btn bg-green"
+                        title="Add to Cart"
+                      >
+                        {" "}
+                        <i className="fa fa-shopping-cart"></i>{" "}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="item">
-                <div class="product-thumb">
-                  {/* <div class="sale-tag">
-               
-                </div> */}
-                  <div class="image product-imageblock">
-                    {" "}
+            <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div className="item">
+                <div className="product-thumb">
+                  {/* <div className="sale-tag">
+                    <div className="btn bg-blue">SALE</div>
+                    <div className="btn percent bg-yellow">20% OFF</div>
+                  </div> */}
+                  <div className="image product-imageblock">
+                    <div className="btn new bg-red">20% OFF</div>
+                    <div className="btn percent bg-yellow">New</div>{" "}
                     <a href="product.html">
                       <img
                         src="image/product/toy-2.png"
                         alt="iPod Classic"
                         title="iPod Classic"
-                        class="img-responsive"
+                        className="img-responsive"
                       />
                     </a>
-                    <div class="btn bg-blue">SALE</div>
-                    <div class="btn percent bg-yellow">20% OFF</div>
-                    <ul class="button-group">
+                    {/* <ul className="button-group">
                       <li>
                         <button
                           type="button"
-                          class="addtocart-btn bg-green"
+                          className="addtocart-btn bg-green"
                           title="Add to Cart"
                         >
                           {" "}
-                          <i class="fa fa-shopping-cart"></i>{" "}
+                          <i className="fa fa-shopping-cart"></i>{" "}
                         </button>
                       </li>
                       <li>
                         <button
                           type="button"
-                          class="wishlist bg-purple"
+                          className="wishlist bg-purple"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Add to Wish List"
                         >
-                          <i class="fa fa-heart-o"></i>
+                          <i className="fa fa-heart-o"></i>
                         </button>
                       </li>
                       <li>
                         <button
                           type="button"
-                          class="quick-view bg-blue"
+                          className="quick-view bg-blue"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Quick View"
                         >
-                          <i class="fa fa-eye"></i>
+                          <i className="fa fa-eye"></i>
                         </button>
                       </li>
-                    </ul>
+                    </ul> */}
                   </div>
-                  <div class="caption product-detail">
-                    <h4 class="product-name">
-                      <a href="#" title="Casual Shirt With Ruffle Hem">
+                  <div className="caption product-detail">
+                    <h4 className="product-name">
+                      <a href="#" title="Casual Shirt With Ruffle Hem"
+                      style={{
+                        fontSize: "1.6vmax",
+                      }}
+                      >
                         High Speed Magic Toy
                       </a>
                     </h4>
-                    <div class="rating">
+                    <div className="rating">
                       {" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
                       </span>{" "}
                     </div>
-                    <p class="price product-price">$122.00</p>
+                    <div
+                      className="price__box"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        className="discount"
+                        style={{
+                          fontSize: "1.4vmax",
+                          paddingRight: "10px",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        AED 200
+                      </p>
+                      <p
+                        className="price product-price"
+                        style={{ fontSize: "1.8vmax" }}
+                      >
+                        AED 122.00
+                      </p>
+                    </div>
+                    <div className="btn-shooping-cart">
+                      <button
+                        type="button"
+                        className="quick-view bg-blue"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Quick View"
+                      >
+                        <i className="fa fa-eye"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="wishlist bg-purple"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Add to Wish List"
+                      >
+                        <i className="fa fa-heart-o"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="addtocart-btn bg-green"
+                        title="Add to Cart"
+                      >
+                        {" "}
+                        <i className="fa fa-shopping-cart"></i>{" "}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="item">
-                <div class="product-thumb">
-                  <div class="sale-tag">
-                    <div class="btn bg-blue">SALE</div>
-                    <div class="btn percent bg-yellow">20% OFF</div>
-                  </div>
-                  <div class="image product-imageblock">
-                    {" "}
+            <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div className="item">
+                <div className="product-thumb">
+                  {/* <div className="sale-tag">
+                    <div className="btn bg-blue">SALE</div>
+                    <div className="btn percent bg-yellow">20% OFF</div>
+                  </div> */}
+                  <div className="image product-imageblock">
+                    <div className="btn new bg-red">20% OFF</div>
+                    <div className="btn percent bg-yellow">New</div>{" "}
                     <a href="product.html">
                       <img
                         src="image/product/toy-3.png"
                         alt="iPod Classic"
                         title="iPod Classic"
-                        class="img-responsive"
+                        className="img-responsive"
                       />
                     </a>
-                    <ul class="button-group">
+                    {/* <ul className="button-group">
                       <li>
                         <button
                           type="button"
-                          class="addtocart-btn bg-green"
+                          className="addtocart-btn bg-green"
                           title="Add to Cart"
                         >
                           {" "}
-                          <i class="fa fa-shopping-cart"></i>{" "}
+                          <i className="fa fa-shopping-cart"></i>{" "}
                         </button>
                       </li>
                       <li>
                         <button
                           type="button"
-                          class="wishlist bg-purple"
+                          className="wishlist bg-purple"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Add to Wish List"
                         >
-                          <i class="fa fa-heart-o"></i>
+                          <i className="fa fa-heart-o"></i>
                         </button>
                       </li>
                       <li>
                         <button
                           type="button"
-                          class="quick-view bg-blue"
+                          className="quick-view bg-blue"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Quick View"
                         >
-                          <i class="fa fa-eye"></i>
+                          <i className="fa fa-eye"></i>
                         </button>
                       </li>
-                    </ul>
+                    </ul> */}
                   </div>
-                  <div class="caption product-detail">
-                    <h4 class="product-name">
-                      <a href="#" title="Casual Shirt With Ruffle Hem">
+                  <div className="caption product-detail">
+                    <h4 className="product-name">
+                      <a href="#" title="Casual Shirt With Ruffle Hem"
+                      style={{
+                        fontSize: "1.6vmax",
+                      }}
+                      >
                         High Speed Magic Toy
                       </a>
                     </h4>
-                    <div class="rating">
+                    <div className="rating">
                       {" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
                       </span>{" "}
                     </div>
-                    <p class="price product-price">$122.00</p>
+                    <div
+                      className="price__box"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        className="discount"
+                        style={{
+                          fontSize: "1.4vmax",
+                          paddingRight: "10px",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        AED 200
+                      </p>
+                      <p
+                        className="price product-price"
+                        style={{ fontSize: "1.8vmax" }}
+                      >
+                        AED 122.00
+                      </p>
+                    </div>
+                    <div className="btn-shooping-cart">
+                      <button
+                        type="button"
+                        className="quick-view bg-blue"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Quick View"
+                      >
+                        <i className="fa fa-eye"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="wishlist bg-purple"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Add to Wish List"
+                      >
+                        <i className="fa fa-heart-o"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="addtocart-btn bg-green"
+                        title="Add to Cart"
+                      >
+                        {" "}
+                        <i className="fa fa-shopping-cart"></i>{" "}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="item">
-                <div class="product-thumb">
-                  <div class="sale-tag">
-                    <div class="btn bg-blue">SALE</div>
-                    <div class="btn percent bg-yellow">20% OFF</div>
-                  </div>
-                  <div class="image product-imageblock">
-                    {" "}
+            <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div className="item">
+                <div className="product-thumb">
+                  {/* <div className="sale-tag">
+                    <div className="btn bg-blue">SALE</div>
+                    <div className="btn percent bg-yellow">20% OFF</div>
+                  </div> */}
+                  <div className="image product-imageblock">
+                    <div className="btn new bg-red">20% OFF</div>
+                    <div className="btn percent bg-yellow">New</div>{" "}
                     <a href="product.html">
                       <img
                         src="image/product/toy-4.png"
                         alt="iPod Classic"
                         title="iPod Classic"
-                        class="img-responsive"
+                        className="img-responsive"
                       />
                     </a>
-                    <ul class="button-group">
+                    {/* <ul className="button-group">
                       <li>
                         <button
                           type="button"
-                          class="addtocart-btn bg-green"
+                          className="addtocart-btn bg-green"
                           title="Add to Cart"
                         >
                           {" "}
-                          <i class="fa fa-shopping-cart"></i>{" "}
+                          <i className="fa fa-shopping-cart"></i>{" "}
                         </button>
                       </li>
                       <li>
                         <button
                           type="button"
-                          class="wishlist bg-purple"
+                          className="wishlist bg-purple"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Add to Wish List"
                         >
-                          <i class="fa fa-heart-o"></i>
+                          <i className="fa fa-heart-o"></i>
                         </button>
                       </li>
                       <li>
                         <button
                           type="button"
-                          class="quick-view bg-blue"
+                          className="quick-view bg-blue"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Quick View"
                         >
-                          <i class="fa fa-eye"></i>
+                          <i className="fa fa-eye"></i>
                         </button>
                       </li>
-                    </ul>
+                    </ul> */}
                   </div>
-                  <div class="caption product-detail">
-                    <h4 class="product-name">
-                      <a href="#" title="Casual Shirt With Ruffle Hem">
+                  <div className="caption product-detail">
+                    <h4 className="product-name">
+                      <a
+                        href="#"
+                        title="Casual Shirt With Ruffle Hem"
+                        style={{
+                          fontSize: "1.6vmax",
+                        }}
+                      >
                         High Speed Magic Toy
                       </a>
                     </h4>
-                    <div class="rating">
+                    <div className="rating">
                       {" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
                       </span>{" "}
                     </div>
-                    <p class="price product-price">$122.00</p>
+                    <div
+                      className="price__box"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        className="discount"
+                        style={{
+                          fontSize: "1.4vmax",
+                          paddingRight: "10px",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        AED 200
+                      </p>
+                      <p
+                        className="price product-price"
+                        style={{ fontSize: "1.8vmax" }}
+                      >
+                        AED 122.00
+                      </p>
+                    </div>
+                    <div className="btn-shooping-cart">
+                      <button
+                        type="button"
+                        className="quick-view bg-blue"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Quick View"
+                      >
+                        <i className="fa fa-eye"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="wishlist bg-purple"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Add to Wish List"
+                      >
+                        <i className="fa fa-heart-o"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="addtocart-btn bg-green"
+                        title="Add to Cart"
+                      >
+                        {" "}
+                        <i className="fa fa-shopping-cart"></i>{" "}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div className="viewmore">
+            <a
+              href="#"
+              className="btn"
+              style={{
+                backgroundColor: "#E20025",
+              }}
+            >
+              View All
+            </a>
           </div>
-          <div class="row">
-            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="item">
-                <div class="product-thumb">
-                  <div class="sale-tag">
-                    <div class="btn bg-blue">SALE</div>
-                    <div class="btn percent bg-yellow">20% OFF</div>
+          </div>
+          
+          <div className="row">
+            <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div className="item">
+                <div className="product-thumb">
+                  {/* <div className="sale-tag">
+                   
+                  </div> */}
+                  <div className="image product-imageblock">
+                    <div className="btn new bg-red">20% OFF</div>
+                    <div className="btn percent bg-yellow">New</div>{" "}
+                    <a href="product.html">
+                      <img
+                        src="image/product/toy-2.png"
+                        alt="iPod Classic"
+                        title="iPod Classic"
+                        className="img-responsive"
+                      />
+                    </a>
+                    {/* <ul className="button-group">
+                      <li>
+                        <button
+                          type="button"
+                          className="addtocart-btn bg-green"
+                          title="Add to Cart"
+                        >
+                          {" "}
+                          <i className="fa fa-shopping-cart"></i>{" "}
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          className="wishlist bg-purple"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Add to Wish List"
+                        >
+                          <i className="fa fa-heart-o"></i>
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          className="quick-view bg-blue"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Quick View"
+                        >
+                          <i className="fa fa-eye"></i>
+                        </button>
+                      </li>
+                    </ul> */}
                   </div>
-                  <div class="image product-imageblock">
-                    {" "}
+                  <div className="caption product-detail">
+                    <h4 className="product-name">
+                      <a href="#" title="Casual Shirt With Ruffle Hem"
+                      style={{
+                        fontSize: "1.6vmax",
+                      }}
+                      >
+                        High Speed Magic Toy
+                      </a>
+                    </h4>
+                    <div className="rating">
+                      {" "}
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
+                      </span>{" "}
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
+                      </span>{" "}
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
+                      </span>{" "}
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
+                      </span>{" "}
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
+                      </span>{" "}
+                    </div>
+
+                    <div
+                      className="price__box"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        className="discount"
+                        style={{
+                          fontSize: "1.4vmax",
+                          paddingRight: "10px",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        AED 200
+                      </p>
+                      <p
+                        className="price product-price"
+                        style={{ fontSize: "1.8vmax" }}
+                      >
+                        AED 122.00
+                      </p>
+                    </div>
+
+                    <div className="btn-shooping-cart">
+                      <button
+                        type="button"
+                        className="quick-view bg-blue"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Quick View"
+                      >
+                        <i className="fa fa-eye"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="wishlist bg-purple"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Add to Wish List"
+                      >
+                        <i className="fa fa-heart-o"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="addtocart-btn bg-green"
+                        title="Add to Cart"
+                      >
+                        {" "}
+                        <i className="fa fa-shopping-cart"></i>{" "}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div className="item">
+                <div className="product-thumb">
+                  {/* <div className="sale-tag">
+                    <div className="btn bg-blue">SALE</div>
+                    <div className="btn percent bg-yellow">20% OFF</div>
+                  </div> */}
+                  <div className="image product-imageblock">
+                    <div className="btn new bg-red">20% OFF</div>
+                    <div className="btn percent bg-yellow">New</div>{" "}
                     <a href="product.html">
                       <img
                         src="image/product/toy-1.png"
                         alt="iPod Classic"
                         title="iPod Classic"
-                        class="img-responsive"
+                        className="img-responsive"
                       />
                     </a>
-                    <ul class="button-group">
+                    {/* <ul className="button-group">
                       <li>
                         <button
                           type="button"
-                          class="addtocart-btn bg-green"
+                          className="addtocart-btn bg-green"
                           title="Add to Cart"
                         >
                           {" "}
-                          <i class="fa fa-shopping-cart"></i>{" "}
+                          <i className="fa fa-shopping-cart"></i>{" "}
                         </button>
                       </li>
                       <li>
                         <button
                           type="button"
-                          class="wishlist bg-purple"
+                          className="wishlist bg-purple"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Add to Wish List"
                         >
-                          <i class="fa fa-heart-o"></i>
+                          <i className="fa fa-heart-o"></i>
                         </button>
                       </li>
                       <li>
                         <button
                           type="button"
-                          class="quick-view bg-blue"
+                          className="quick-view bg-blue"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Quick View"
                         >
-                          <i class="fa fa-eye"></i>
+                          <i className="fa fa-eye"></i>
                         </button>
                       </li>
-                    </ul>
+                    </ul> */}
                   </div>
-                  <div class="caption product-detail">
-                    <h4 class="product-name">
-                      <a href="#" title="Casual Shirt With Ruffle Hem">
+                  <div className="caption product-detail">
+                    <h4 className="product-name">
+                      <a href="#" title="Casual Shirt With Ruffle Hem"
+                      style={{
+                        fontSize: "1.6vmax",
+                      }}
+                      >
                         High Speed Magic Toy
                       </a>
                     </h4>
-                    <div class="rating">
+                    <div className="rating">
                       {" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
                       </span>{" "}
                     </div>
-                    <p class="price product-price">$122.00</p>
+                    <div
+                      className="price__box"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        className="discount"
+                        style={{
+                          fontSize: "1.4vmax",
+                          paddingRight: "10px",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        AED 200
+                      </p>
+                      <p
+                        className="price product-price"
+                        style={{ fontSize: "1.8vmax" }}
+                      >
+                        AED 122.00
+                      </p>
+                    </div>
+                    <div className="btn-shooping-cart">
+                      <button
+                        type="button"
+                        className="quick-view bg-blue"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Quick View"
+                      >
+                        <i className="fa fa-eye"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="wishlist bg-purple"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Add to Wish List"
+                      >
+                        <i className="fa fa-heart-o"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="addtocart-btn bg-green"
+                        title="Add to Cart"
+                      >
+                        {" "}
+                        <i className="fa fa-shopping-cart"></i>{" "}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="item">
-                <div class="product-thumb">
-                  <div class="sale-tag">
-                    <div class="btn bg-blue">SALE</div>
-                    <div class="btn percent bg-yellow">20% OFF</div>
-                  </div>
-                  <div class="image product-imageblock">
-                    {" "}
-                    <a href="product.html">
-                      <img
-                        src="image/product/toy-2.png"
-                        alt="iPod Classic"
-                        title="iPod Classic"
-                        class="img-responsive"
-                      />
-                    </a>
-                    <ul class="button-group">
-                      <li>
-                        <button
-                          type="button"
-                          class="addtocart-btn bg-green"
-                          title="Add to Cart"
-                        >
-                          {" "}
-                          <i class="fa fa-shopping-cart"></i>{" "}
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          type="button"
-                          class="wishlist bg-purple"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Add to Wish List"
-                        >
-                          <i class="fa fa-heart-o"></i>
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          type="button"
-                          class="quick-view bg-blue"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Quick View"
-                        >
-                          <i class="fa fa-eye"></i>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="caption product-detail">
-                    <h4 class="product-name">
-                      <a href="#" title="Casual Shirt With Ruffle Hem">
-                        High Speed Magic Toy
-                      </a>
-                    </h4>
-                    <div class="rating">
-                      {" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
-                      </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
-                      </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
-                      </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
-                      </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                      </span>{" "}
-                    </div>
-                    <p class="price product-price">$122.00</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="item">
-                <div class="product-thumb">
-                  <div class="sale-tag">
-                    <div class="btn bg-blue">SALE</div>
-                    <div class="btn percent bg-yellow">20% OFF</div>
-                  </div>
-                  <div class="image product-imageblock">
-                    {" "}
-                    <a href="product.html">
-                      <img
-                        src="image/product/toy-3.png"
-                        alt="iPod Classic"
-                        title="iPod Classic"
-                        class="img-responsive"
-                      />
-                    </a>
-                    <ul class="button-group">
-                      <li>
-                        <button
-                          type="button"
-                          class="addtocart-btn bg-green"
-                          title="Add to Cart"
-                        >
-                          {" "}
-                          <i class="fa fa-shopping-cart"></i>{" "}
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          type="button"
-                          class="wishlist bg-purple"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Add to Wish List"
-                        >
-                          <i class="fa fa-heart-o"></i>
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          type="button"
-                          class="quick-view bg-blue"
-                          data-toggle="tooltip"
-                          data-placement="top"
-                          title="Quick View"
-                        >
-                          <i class="fa fa-eye"></i>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="caption product-detail">
-                    <h4 class="product-name">
-                      <a href="#" title="Casual Shirt With Ruffle Hem">
-                        High Speed Magic Toy
-                      </a>
-                    </h4>
-                    <div class="rating">
-                      {" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
-                      </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
-                      </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
-                      </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
-                      </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                      </span>{" "}
-                    </div>
-                    <p class="price product-price">$122.00</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <div class="item">
-                <div class="product-thumb">
-                  <div class="sale-tag">
-                    <div class="btn bg-blue">SALE</div>
-                    <div class="btn percent bg-yellow">20% OFF</div>
-                  </div>
-                  <div class="image product-imageblock">
-                    {" "}
+            <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div className="item">
+                <div className="product-thumb">
+                  {/* <div className="sale-tag">
+                    <div className="btn bg-blue">SALE</div>
+                    <div className="btn percent bg-yellow">20% OFF</div>
+                  </div> */}
+                  <div className="image product-imageblock">
+                    <div className="btn new bg-red">20% OFF</div>
+                    <div className="btn percent bg-yellow">New</div>{" "}
                     <a href="product.html">
                       <img
                         src="image/product/toy-4.png"
                         alt="iPod Classic"
                         title="iPod Classic"
-                        class="img-responsive"
+                        className="img-responsive"
                       />
                     </a>
-                    <ul class="button-group">
+                    {/* <ul className="button-group">
                       <li>
                         <button
                           type="button"
-                          class="addtocart-btn bg-green"
+                          className="addtocart-btn bg-green"
                           title="Add to Cart"
                         >
                           {" "}
-                          <i class="fa fa-shopping-cart"></i>{" "}
+                          <i className="fa fa-shopping-cart"></i>{" "}
                         </button>
                       </li>
                       <li>
                         <button
                           type="button"
-                          class="wishlist bg-purple"
+                          className="wishlist bg-purple"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Add to Wish List"
                         >
-                          <i class="fa fa-heart-o"></i>
+                          <i className="fa fa-heart-o"></i>
                         </button>
                       </li>
                       <li>
                         <button
                           type="button"
-                          class="quick-view bg-blue"
+                          className="quick-view bg-blue"
                           data-toggle="tooltip"
                           data-placement="top"
                           title="Quick View"
                         >
-                          <i class="fa fa-eye"></i>
+                          <i className="fa fa-eye"></i>
                         </button>
                       </li>
-                    </ul>
+                    </ul> */}
                   </div>
-                  <div class="caption product-detail">
-                    <h4 class="product-name">
-                      <a href="#" title="Casual Shirt With Ruffle Hem">
+                  <div className="caption product-detail">
+                    <h4 className="product-name">
+                      <a href="#" title="Casual Shirt With Ruffle Hem"
+                      style={{
+                        fontSize: "1.6vmax",
+                      }}
+                      >
                         High Speed Magic Toy
                       </a>
                     </h4>
-                    <div class="rating">
+                    <div className="rating">
                       {" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
-                        <i class="fa fa-star fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
                       </span>{" "}
-                      <span class="fa fa-stack">
-                        <i class="fa fa-star-o fa-stack-2x"></i>
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
                       </span>{" "}
                     </div>
-                    <p class="price product-price">$122.00</p>
+                    <div
+                      className="price__box"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        className="discount"
+                        style={{
+                          fontSize: "1.4vmax",
+                          paddingRight: "10px",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        AED 200
+                      </p>
+                      <p
+                        className="price product-price"
+                        style={{ fontSize: "1.8vmax" }}
+                      >
+                        AED 122.00
+                      </p>
+                    </div>
+                    <div className="btn-shooping-cart">
+                      <button
+                        type="button"
+                        className="quick-view bg-blue"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Quick View"
+                      >
+                        <i className="fa fa-eye"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="wishlist bg-purple"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Add to Wish List"
+                      >
+                        <i className="fa fa-heart-o"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="addtocart-btn bg-green"
+                        title="Add to Cart"
+                      >
+                        {" "}
+                        <i className="fa fa-shopping-cart"></i>{" "}
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div className="item">
+                <div className="product-thumb">
+                  {/* <div className="sale-tag">
+                    <div className="btn bg-blue">SALE</div>
+                    <div className="btn percent bg-yellow">20% OFF</div>
+                  </div> */}
+                  <div className="image product-imageblock">
+                    <div className="btn new bg-red">20% OFF</div>
+                    <div className="btn percent bg-yellow">New</div>{" "}
+                    <a href="product.html">
+                      <img
+                        src="image/product/toy-3.png"
+                        alt="iPod Classic"
+                        title="iPod Classic"
+                        className="img-responsive"
+                      />
+                    </a>
+                    {/* <ul className="button-group">
+                      <li>
+                        <button
+                          type="button"
+                          className="addtocart-btn bg-green"
+                          title="Add to Cart"
+                        >
+                          {" "}
+                          <i className="fa fa-shopping-cart"></i>{" "}
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          className="wishlist bg-purple"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Add to Wish List"
+                        >
+                          <i className="fa fa-heart-o"></i>
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          type="button"
+                          className="quick-view bg-blue"
+                          data-toggle="tooltip"
+                          data-placement="top"
+                          title="Quick View"
+                        >
+                          <i className="fa fa-eye"></i>
+                        </button>
+                      </li>
+                    </ul> */}
+                  </div>
+                  <div className="caption product-detail">
+                    <h4 className="product-name">
+                      <a
+                        href="#"
+                        title="Casual Shirt With Ruffle Hem"
+                        style={{
+                          fontSize: "1.6vmax",
+                        }}
+                      >
+                        High Speed Magic Toy
+                      </a>
+                    </h4>
+                    <div className="rating">
+                      {" "}
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
+                      </span>{" "}
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
+                      </span>{" "}
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
+                      </span>{" "}
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                        <i className="fa fa-star fa-stack-2x"></i>
+                      </span>{" "}
+                      <span className="fa fa-stack">
+                        <i className="fa fa-star-o fa-stack-2x"></i>
+                      </span>{" "}
+                    </div>
+                    <div
+                      className="price__box"
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <p
+                        className="discount"
+                        style={{
+                          fontSize: "1.4vmax",
+                          paddingRight: "10px",
+                          marginBottom: "20px",
+                        }}
+                      >
+                        AED 200
+                      </p>
+                      <p
+                        className="price product-price"
+                        style={{ fontSize: "1.8vmax" }}
+                      >
+                        AED 122.00
+                      </p>
+                    </div>
+                    <div className="btn-shooping-cart">
+                      <button
+                        type="button"
+                        className="quick-view bg-blue"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Quick View"
+                      >
+                        <i className="fa fa-eye"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="wishlist bg-purple"
+                        data-toggle="tooltip"
+                        data-placement="top"
+                        title="Add to Wish List"
+                      >
+                        <i className="fa fa-heart-o"></i>
+                      </button>
+
+                      <button
+                        type="button"
+                        className="addtocart-btn bg-green"
+                        title="Add to Cart"
+                      >
+                        {" "}
+                        <i className="fa fa-shopping-cart"></i>{" "}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="viewmore">
+            <a
+              href="#"
+              className="btn"
+              style={{
+                backgroundColor: "#E20025",
+              }}
+            >
+              View All
+            </a>
           </div>
+          </div>
+
+          </Carousel>
         </div>
       </section>
 
