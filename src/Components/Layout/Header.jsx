@@ -1,9 +1,24 @@
-import React, { Component } from "react";
+import React, { Component,useRef } from "react";
 
 import "../../App.css";
 import NavBar from "./NavBar";
 import { Link, useNavigate } from "react-router-dom";
 export default function Header() {
+
+  const switcherTab = useRef(null);
+  const imageTab = useRef(null);
+ 
+  window.addEventListener("scroll", () =>{
+    if(window.scrollY > 100){
+      document.querySelector(".header__effect").classList.add("active");
+      document.querySelector("img.img-responsive.logo").classList.add("active");
+    }
+    else{
+      document.querySelector(".header__effect").classList.remove("active");
+      document.querySelector("img.img-responsive.logo").classList.remove("active");
+    }
+  })
+
   return (
     <>
       {/* <div className="preloader loader" style={{ display: "block" }}>
@@ -86,7 +101,7 @@ export default function Header() {
         <span>Free Shipping 99 QR</span>
        </div>
       </div>
-      <header>
+      <header className="header__effect" useRef={switcherTab}>
         <div className="container-fluid">
           <div className="container-fluid" style={{ paddingTop: 20 }}>
             <div className="row">
@@ -199,7 +214,8 @@ export default function Header() {
                   src="image/header/logo.svg"
                   title="E-Commerce"
                   alt="E-Commerce"
-                  className="img-responsive"
+                  className="img-responsive logo"
+                  useRef={imageTab}
                 />
               </a>
             </div>

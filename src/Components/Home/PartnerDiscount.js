@@ -10,7 +10,7 @@ export default function PartnerDiscount(props) {
           Our Partners Discount
         </h2>
       </div>
-      <div id="brand_carouse" className="owl-carousel brand-logo">
+      <div id="brand_carousel" className="brand-logo">
 
         
       {
