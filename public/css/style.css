@@ -479,7 +479,7 @@ div#top-links {
   margin: 0;
 }
 #logo a img {
-  width: 230px !important;
+  /* width: 230px !important; */
   position: relative;
 }
  img.img-responsive.logo{
@@ -7116,6 +7116,11 @@ div#brand_carousel {
 	top: 0;
 	left: 0;
 	z-index: 999999999;
+}
+img.img-responsive.logo{
+  width: 17vmax!important;
+  top: 37px!important;
+  left: 20px!important;
 }
 img.img-responsive.logo.active {
     width: 14vmax!important;
