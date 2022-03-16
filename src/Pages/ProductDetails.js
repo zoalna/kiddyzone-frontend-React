@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Carousel from "react-material-ui-carousel";
 import "../App.css";
+import ProductDetailsBottom from "../Pages/ProductDetailsBottom"
 
 export default function ProductDetails() {
   return (
@@ -1922,6 +1923,7 @@ export default function ProductDetails() {
           </div>
         </div>
       </section>
+      <ProductDetailsBottom />
 
       {/* <section
         className="product-reviews content pt-100 pb-100"
