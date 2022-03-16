@@ -1,30 +1,30 @@
-import React, { Component } from "react";
-import logo from "./logo.svg";
+import React, { Component } from 'react'
+import logo from './logo.svg'
 
-import "./App.css";
-import Customers from "./Customers";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import Header from "./Components/Layout/Header";
+import './App.css'
+import Customers from './Customers'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Header from './Components/Layout/Header'
 
-import Footer from "./Components/Layout/Footer";
-import Login from "./Pages/Login";
-import Home from "./Pages/Home";
-import SignUp from "./Pages/SignUp";
-import ProductDetails from "./Pages/ProductDetails";
-import AboutUs from "./Pages/AboutUs";
-import GiftCards from "./Pages/GiftCards";
+import Footer from './Components/Layout/Footer'
+import Login from './Pages/Login'
+import Home from './Pages/Home'
+import SignUp from './Pages/SignUp'
+import ProductDetails from './Pages/ProductDetails'
+import AboutUs from './Pages/AboutUs'
+import GiftCards from './Pages/GiftCards'
 import StoreLocator from './Pages/StoreLocator'
-import ProductListing from "./Pages/ProductListing";
-import About from "./Pages/About";
-import Elarning from "./Pages/Elarning";
-import Dashboard from "./Pages/Dashboard";
-import Cart from "./Pages/Cart";
+import ProductListing from './Pages/ProductListing'
+import About from './Pages/About'
+import Elarning from './Pages/Elarning'
+import Dashboard from './Pages/Dashboard'
+import Cart from './Pages/Cart'
 import Checkout from './Pages/Checkout'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <>
         <BrowserRouter>
           <Header />
           <Routes>
@@ -41,7 +41,7 @@ class App extends Component {
             <Route exact path="/Dashboard" element={<Dashboard />} />
             <Route exact path="/Cart" element={<Cart />} />
             <Route exact path="/Checkout" element={<Checkout />} />
-            
+
             {/* <Route exact path="/" element={isSignIn ? <Home /> : <Home />} /> */}
             {/* <Route path="/signUp" element={<SignUp />} />
             <Route path="/login" element={<SignIn />} /> */}
@@ -53,9 +53,9 @@ class App extends Component {
           </Routes>
           <Footer />
         </BrowserRouter>
-      </div>
-    );
+      </>
+    )
   }
 }
 
-export default App;
+export default App
