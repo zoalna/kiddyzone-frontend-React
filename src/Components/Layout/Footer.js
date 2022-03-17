@@ -213,7 +213,8 @@ export default function Footer() {
           width:"30px",
           height:"30px",
           objectFit:"contain",
-          marginTop:"18%"
+          marginTop:"18%",
+          marginLeft:"18%"
         }}
         />
       </a>
