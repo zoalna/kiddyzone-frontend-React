@@ -10,42 +10,55 @@ export default function SignUp() {
     <Box>
       <Box
         sx={{
-          paddingLeft: { xs: 2, md: '319px' },
-          objectFit: 'cover',
-          backgroundImage: `url("/image/banners/signup-banner.jpg")`,
-          height: '160px',
-          width: '100%'
+          position: 'relative',
+          height: '190px',
+          width: '100%',
+          overflow: 'hidden'
         }}
       >
-        <Typography
+        <Box
           sx={{
-            fontSize: '24px',
-            color: '#FFFF'
+            paddingLeft: { xs: 2, md: '156px' },
+            position: 'absolute',
+            left: 0,
+            top: '50%',
+            transform: 'translate(30%, -50%)'
           }}
         >
-          Get 10 points free when you subscribe
-        </Typography>
-        <Typography
-          sx={{
-            color: '#fff',
-            fontWeight: 'bold',
-            fontSize: '46px'
-          }}
-        >
-          Sign Up
-        </Typography>
-        <Button
-          sx={{
-            color: '#ffffff',
-            backgroundColor: '#FED654',
-            padding: '8px 30px',
-            fontSize: '18px',
-            fontWeight: 700,
-            borderRadius: '50px'
-          }}
-        >
-          Refer a friend
-        </Button>
+          <Typography
+            sx={{
+              fontSize: '24px',
+              color: '#FFFF'
+            }}
+          >
+            Get 10 points free when you subscribe
+          </Typography>
+          <Typography
+            sx={{
+              color: '#fff',
+              fontWeight: 'bold',
+              fontSize: '46px'
+            }}
+          >
+            Sign Up
+          </Typography>
+          <Button
+            sx={{
+              '&:hover': {
+                background: '#E20025'
+              },
+              color: '#ffffff',
+              backgroundColor: '#FED654',
+              padding: '8px 30px',
+              fontSize: '18px',
+              fontWeight: 700,
+              borderRadius: '50px'
+            }}
+          >
+            Refer a friend
+          </Button>
+        </Box>
+        <img alt="" src="/image/banners/signup-banner.jpg" />
       </Box>
 
       <Box px={{ xs: 0, md: '312px' }} mt={8}>
@@ -205,7 +218,7 @@ export default function SignUp() {
                     <Grid item xs={12} md={12} lg={6}>
                       <Typography
                         sx={{
-                          fontSize: '11px',
+                          fontSize: '12px',
                           fontWeight: 'bold',
                           color: '#000',
                           textAlign: 'end',
