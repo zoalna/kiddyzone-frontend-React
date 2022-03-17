@@ -5631,6 +5631,7 @@ pull-right {
 }
 #dashboard-tab .row.tab-sidebar > div {
   width: 100%;
+  background: #D8F3FF;
 }
 .my-account .page-title {
   position: unset;
@@ -5663,7 +5664,7 @@ pull-right {
 .my-account-cont .nav > li > a {
   font-size: 18px;
   font-weight: 600;
-  color: #8e8b8b;
+  color: #28557B;
   padding: 10px 20px;
 }
 .info-content ul li span:nth-child(2) {
@@ -5688,11 +5689,11 @@ pull-right {
 }
 .my-account-cont .nav-sidebar .active a {
   cursor: default;
-  background-color: #eeeeee;
+  background-color: #fff;
   color: #e20025;
 }
 .my-account-cont .nav-sidebar a:hover {
-  color: #e20025;
+  background: #fff;
 }
 .my-account-cont .nav-sidebar .text-overflow a,
 .my-account-cont .nav-sidebar .text-overflow .media-body {
@@ -5779,10 +5780,27 @@ pull-right {
   border-radius: 18px;
 }
 .my-account-cont .table thead th:first-child {
-  border-radius: 18px 0 0 18px;
+  /* border: ; */
 }
 .my-account-cont .table thead th:last-child {
-  border-radius: 0 18px 18px 0;
+  /* border-radius: 0 18px 18px 0; */
+}
+table.table.table-striped {
+  border: 1px solid #00000029;
+}
+.my-account-cont .table tbody > tr{
+  border: 1px solid #00000029;
+}
+.my-account-cont .table tbody > tr > td{
+  border: 1px solid #00000029;
+}
+td.complete__green{
+  color: #00b353;
+}
+.eye__icon > a > img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
 }
 .my-account-cont .table tbody {
   text-align: center;
@@ -7126,4 +7144,30 @@ img.img-responsive.logo.active {
     width: 14vmax!important;
     top: 16px!important;
     left: 20px!important;
+}
+.dashboard__header {
+  width: 100%;
+  height: 8vmax;
+  background: #D8F3FF;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.dashboard__header__content {
+  padding: 0px 4%;
+}
+.dashboard__header__content > h1 {
+  font-size: 3vmax;
+  text-transform: capitalize;
+}
+.nav>li{
+  width: 110%;
+  margin: 5px 0px;
+}
+.tab-content {
+  padding: 0px 4%;
+}
+hr.dasboard__item{
+ padding: 0;
+ margin: 0;
 }
