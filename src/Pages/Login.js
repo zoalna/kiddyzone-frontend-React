@@ -19,25 +19,32 @@ export default function Login() {
       <Box>
         <Box
           sx={{
-            display: 'flex',
-            alignItems: 'center',
-            paddingLeft: { xs: 2, md: '319px' },
-            objectFit: 'cover',
-            backgroundImage: `url("/image/banners/listing.png")`,
-            textAlign: 'start',
+            position: 'relative',
             height: '160px',
-            width: '100%'
+            width: '100%',
+            overflow: 'hidden'
           }}
         >
-          <Typography
+          <Box
             sx={{
-              color: '#fff',
-              fontWeight: 'bold',
-              fontSize: '46px'
+              paddingLeft: { xs: 2, md: '209px' },
+              position: 'absolute',
+              left: 0,
+              top: '50%',
+              transform: 'translate(30%, -50%)'
             }}
           >
-            Sign In
-          </Typography>
+            <Typography
+              sx={{
+                color: '#fff',
+                fontWeight: 'bold',
+                fontSize: '46px'
+              }}
+            >
+              Sign In
+            </Typography>
+          </Box>
+          <img alt="" src="/image/banners/listing.png" />
         </Box>
 
         <Box px={{ xs: 0, md: '312px' }} mt={8}>
