@@ -1,4 +1,12 @@
-import { Box, Button, Grid, InputBase, Link, Typography } from '@mui/material'
+import {
+  Box,
+  Button,
+  Grid,
+  IconButton,
+  InputBase,
+  Link,
+  Typography
+} from '@mui/material'
 import React from 'react'
 import StyleInputField from '../Components/StyleInputField'
 import { useForm, Controller } from 'react-hook-form'
@@ -86,7 +94,7 @@ export default function Login() {
                       aliqua.
                     </Typography>
                   </Box>
-                  
+
                   <form onSubmit={handleSubmit((data) => console.log(data))}>
                     <Box mt={1}>
                       <Controller
@@ -128,51 +136,107 @@ export default function Login() {
                       </Link>
                     </Box>
 
-                    <Box
-                      mb={2}
-                      mt={1}
+                    <Grid
+                      container
+                      spacing={2}
                       display={'flex'}
-                      flexDirection={{ xs: 'column', md: 'row' }}
                       alignItems={'center'}
                       justifyContent={'space-between'}
                     >
-                      <Button
-                        type="submit"
-                        sx={{
-                          background: '#e20025',
-                          fontSize: '18px',
-                          fontWeight: 'bold',
-                          width: { xs: '100%', md: '200px' },
-                          '&:hover': {
-                            background: '#e20025'
-                          }
-                        }}
-                        variant="contained"
-                      >
-                        login
-                      </Button>
-                      <Box mt={{ xs: 2, md: 0 }}>
-                        <Typography
+                      <Grid item xs={12} md={12} lg={5}>
+                        <Button
+                          type="submit"
+                          fullWidth
                           sx={{
-                            fontSize: '20px',
+                            background: '#e20025',
+                            fontSize: '14px',
                             fontWeight: 'bold',
-                            color: '#000',
-                            fontStyle: 'italic'
+                            '&:hover': {
+                              background: '#e20025'
+                            }
                           }}
+                          variant="contained"
                         >
-                          Create An Account{' '}
-                          <span
-                            style={{
-                              cursor: 'pointer',
-                              color: '#00B353'
+                          login
+                        </Button>
+                      </Grid>
+                      <Grid item xs={12} md={12} lg={7}>
+                        <Box>
+                          <Typography
+                            sx={{
+                              fontSize: '13px',
+                              fontWeight: 'bold',
+                              color: '#000',
+                              textAlign: 'end',
+                              fontStyle: 'italic'
                             }}
                           >
-                            Sign up
-                          </span>
-                        </Typography>
-                      </Box>
-                    </Box>
+                            Create An Account{' '}
+                            <span
+                              style={{
+                                cursor: 'pointer',
+                                color: '#00B353'
+                              }}
+                            >
+                              Sign up
+                            </span>
+                          </Typography>
+                        </Box>
+                      </Grid>
+                    </Grid>
                   </form>
+                  <Box mt={2} display={'flex'} alignItems={'center'}>
+                    <Box>
+                      <Typography
+                        sx={{
+                          fontSize: '13px',
+                          fontWeight: 'bold',
+                          color: '#000',
+                          fontStyle: 'italic'
+                        }}
+                      >
+                        Login With :-
+                      </Typography>
+                    </Box>
+                    <Box
+                      display={'flex'}
+                      alignItems={'center'}
+                      flexWrap={'wrap'}
+                    >
+                      <IconButton>
+                        <img
+                          height={'100%'}
+                          width={'100%'}
+                          alt="fbIcon"
+                          scr="/image/fIcon.svg"
+                        />
+                      </IconButton>
+                      <IconButton>
+                        <img
+                          height={'100%'}
+                          width={'100%'}
+                          alt="gIcon"
+                          scr="/image/gIcon.svg"
+                        />
+                      </IconButton>
+                      <IconButton>
+                        <img
+                          height={'100%'}
+                          width={'100%'}
+                          alt="fbIcon"
+                          scr="/image/appleIcon.svg"
+                        />
+                      </IconButton>
+                      <IconButton>
+                        <img
+                          height={'100%'}
+                          width={'100%'}
+                          alt="tIcon"
+                          scr="/image/tIcon.svg"
+                        />
+                      </IconButton>
+                    </Box>
+                  </Box>
                 </Box>
               </Grid>
             </Grid>
