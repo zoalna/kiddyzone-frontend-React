@@ -261,70 +261,74 @@ export default function About() {
                   borderTop="2px solid rgba(0,0,0,.1)"
                 />
 
-                <FormControl>
-                  <FormLabel
-                    sx={{
-                      fontSize: '18px',
-                      fontWeight: 700,
-                      color: 'black'
-                    }}
-                  >
-                    Gender
-                  </FormLabel>
-                  <RadioGroup defaultValue="female" name="radio-buttons-group">
-                    <FormControlLabel
-                      value="female"
-                      control={<Radio />}
-                      label={
-                        <>
-                          <Typography
-                            sx={{
-                              fontSize: '16px',
-                              color: '#232323'
-                            }}
-                          >
-                            AED 20
-                          </Typography>{' '}
-                          <Typography
-                            sx={{
-                              fontSize: '16px',
-                              color: '#232323'
-                            }}
-                          >
-                            Flat Rate - Flat Rate Shipping
-                          </Typography>
-                        </>
-                      }
-                    />
-                    <Box my={1} />
+                <Box>
+                  <FormControl>
+                    <FormLabel
+                      sx={{
+                        fontSize: '18px',
+                        fontWeight: 700,
+                        color: 'black'
+                      }}
+                    >
+                      Gender
+                    </FormLabel>
+                    <RadioGroup
+                      defaultValue="female"
+                      name="radio-buttons-group"
+                    >
+                      <FormControlLabel
+                        value="female"
+                        control={<Radio />}
+                        label={
+                          <>
+                            <Typography
+                              sx={{
+                                fontSize: '16px',
+                                color: '#232323'
+                              }}
+                            >
+                              AED 20
+                            </Typography>{' '}
+                            <Typography
+                              sx={{
+                                fontSize: '16px',
+                                color: '#232323'
+                              }}
+                            >
+                              Flat Rate - Flat Rate Shipping
+                            </Typography>
+                          </>
+                        }
+                      />
+                      <Box my={1} />
 
-                    <FormControlLabel
-                      value="male"
-                      control={<Radio />}
-                      label={
-                        <>
-                          <Typography
-                            sx={{
-                              fontSize: '16px',
-                              color: '#232323'
-                            }}
-                          >
-                            AED 0
-                          </Typography>{' '}
-                          <Typography
-                            sx={{
-                              fontSize: '16px',
-                              color: '#232323'
-                            }}
-                          >
-                            Free shipping - Free shipping
-                          </Typography>
-                        </>
-                      }
-                    />
-                  </RadioGroup>
-                </FormControl>
-
+                      <FormControlLabel
+                        value="male"
+                        control={<Radio />}
+                        label={
+                          <>
+                            <Typography
+                              sx={{
+                                fontSize: '16px',
+                                color: '#232323'
+                              }}
+                            >
+                              AED 0
+                            </Typography>{' '}
+                            <Typography
+                              sx={{
+                                fontSize: '16px',
+                                color: '#232323'
+                              }}
+                            >
+                              Free shipping - Free shipping
+                            </Typography>
+                          </>
+                        }
+                      />
+                    </RadioGroup>
+                  </FormControl>
+                </Box>
                 <FormControl>
                   <FormLabel
                     sx={{
@@ -396,8 +400,9 @@ export default function About() {
                 <Button
                   sx={{
                     fontWeight: 600,
-                    padding: '10px',
-                    background: '#26a37c',
+
+                    padding: '15px 36px',
+                    background: '#00B353',
                     '&:hover': {
                       background: '#26a37c'
                     }
@@ -413,15 +418,15 @@ export default function About() {
         </Box>
       </Box>
 
-      <section id="create-account" class="checkout-account bg-yellow">
+      <section class="bg-yellow">
         <div class="container">
           <div class="row d-flex">
             <div class="col-md-6 left-col">
-              <div class="img-box">
+              <div>
                 <img src="image/checkout-gift-box.png" />
               </div>
             </div>
-            <div class="col-md-6 right-col">
+            <div id="create-account" class="col-md-6 right-col">
               <div class="text-center content-box">
                 <h2>Create Account</h2>
                 <p>Enjoy %10 by your first order</p>
