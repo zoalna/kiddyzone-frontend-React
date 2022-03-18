@@ -2609,7 +2609,7 @@ button .fa {
 .tab-content {
   overflow: hidden; }
   .tab-content img {
-    width: 90%;
+    width: 100%;
     -webkit-animation-name: opacity;
             animation-name: opacity;
     -webkit-animation-duration: .3s;
@@ -5155,6 +5155,7 @@ p.point-text {
   color: #fe6c6b;
   font-size: 16px;
   font-weight: 700;
+  padding-left: 5%;
 }
 .details .prod-row .price {
   font-size: 34px;
@@ -6865,6 +6866,7 @@ h3.product-title {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+  padding-left: 5%;
 }
 span.fa.fa-heart-o{
 	font-size: 2vmax;
@@ -6881,6 +6883,7 @@ span.fa.fa-heart-o{
 .price__box {
     display: flex;
 	margin: 0;
+  padding-left: 5%;
 	align-items: center;
 }
 span.share {
@@ -6889,6 +6892,7 @@ span.share {
     font-size: 1.9vmax;
     font-weight: 600;
     color: #000;
+    padding-left: 5%;
     opacity: .8;
 }
 svg.social{
@@ -6900,6 +6904,7 @@ svg.social{
 .social__box {
     display: flex;
     width: 100%;
+    padding-left: 5%;
 }
 svg.facebook{
 	fill: #3b5998;
@@ -6969,6 +6974,7 @@ svg.mailIcon{
 }
 .col-md-6.quantity {
     margin-top: 15px;
+    padding-left: 7%;
 }
 .col-md-6.color-opt{
     margin-top: 15px;
@@ -6981,6 +6987,7 @@ select.form-control {
 .col-md-12.cart__button {
     display: flex;
     margin-top: 20px;
+    margin-left: 5.5%;
 }
 button.add-to-cart {
     width: 45%;
@@ -7008,6 +7015,7 @@ button.buy-now{
     width: 100%;
     display: flex;
 	padding-top: 15px;
+  padding-left: 7.5%;
 }
 
 .color__box {
@@ -7020,6 +7028,7 @@ span.fa.fa-angle-down.rotate-icon {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 7%;
 }
 section.content{
 	/* padding-bottom: 5rem; */
@@ -7055,8 +7064,11 @@ section.content.hot-sellers.details__part {
     padding-bottom: 0rem;
 }
 hr.offer{
-	margin: 0!important;
+	margin-top: 0!important;
+  margin-bottom: 0!important;
+  margin-right: 0!important;
 	padding: 0!important;
+  margin-left: 7.5%!important;
 }
 div#headingFour {
     padding-top: 15px;
@@ -7102,7 +7114,6 @@ a.baneer__items {
     margin-left: -7px;
     opacity: .8;
 	text-align: start;
-	transition: .4s all ease;
 }
 a.baneer__items:hover{
 	color: #00B3E3!important;
@@ -7167,4 +7178,18 @@ img.img-responsive.logo.active {
 hr.dasboard__item{
  padding: 0;
  margin: 0;
+}
+.cms_banner {
+  padding: 20px 0;
+  position: relative;
+}
+.bannertext__education {
+  position: absolute;
+  top: 30%;
+  left: 6%;
+  text-align: start;
+}
+
+.bannertext__education > h2 {
+  font-size: 2vmax;
 }

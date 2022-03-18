@@ -17,7 +17,7 @@
     left: 10%!important;
   }
   .col-sm-12 {
-    margin-left: -0.7%;
+    margin-left: -2.7%;
     padding: 0% 5%;
   }
   .currency button strong,
@@ -47,7 +47,7 @@
     margin-bottom: -12px;
   }
   .col-sm-12 {
-    margin-left: 4.8%;
+    /* margin-left: 4.8%; */
     padding: 0% 5%;
   }
   .currency .btn-group .btn .down-arrow {

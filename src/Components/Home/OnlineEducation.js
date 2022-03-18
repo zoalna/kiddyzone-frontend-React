@@ -4,6 +4,7 @@ import "../../App.css";
 
 export default function OnlineEducation() {
   return (
+    <>
     <section id="online-education">
       <div className="container-fluid">
         <div className="row">
@@ -45,28 +46,23 @@ export default function OnlineEducation() {
             </div>
           </div>
         </div>
-        <div className="row kid-gallery">
-          <div className="cms_banner">
-            <div className="col-sm-12 problem__wala">
-              <div className="banner">
-                <a href="#">
-                  <img
-                    src="image/kid-winner-gallery.png"
-                    alt="Sub Banner2"
-                    className="img-responsive"
-                  />
-                </a>
-                <div className="bannertext">
-                  <h2 className="text-white">Kids Zone Winner Gallery</h2>
-                  <button className="btn bg-orange text-black">
-                    Learn more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
+     <div className="cms_banner">
+     <a href="#">
+       <img
+         src="image/kid-winner-gallery.png"
+         alt="Sub Banner2"
+         className="img-responsive"
+       />
+     </a>
+     <div className="bannertext__education">
+       <h2 className="text-white">Kids Zone Winner Gallery</h2>
+       <button className="btn bg-orange text-black">
+         Learn more
+       </button>
+     </div>
+</div>
+</>
   );
 }

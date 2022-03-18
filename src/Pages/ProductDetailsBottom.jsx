@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import "./ProductDetailsBottom.css"
 
 const ProductDetailsBottom = () => {
+
+  const switcherTab = useRef(null);
+    
+  window.addEventListener("scroll", () =>{
+    if(window.scrollY > 100){
+      document.querySelector(".details__box").classList.add("active");
+    }
+    else{
+      document.querySelector(".details__box").classList.remove("active");
+    }
+  })
+
+
   return (
-   <div className="details__box">
+   <div className="details__box" ref={switcherTab}>
        <div className="main__part d__flex">
            <div className="name d__flex">
                <span>AROMA MOCHA BABYTOY</span>

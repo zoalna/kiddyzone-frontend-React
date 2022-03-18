@@ -5,9 +5,16 @@
     align-items: center;
     position: fixed;
     bottom: 0;
+    visibility: hidden;
     height: 50px;
     background: #e5e5e5;
     z-index: 1000;
+}
+.details__box.active{
+    visibility: visible;
+}
+#gift-finder .finder-form h2{
+    padding-left: 1vmax;
 }
 .name{
     height: 40px;
