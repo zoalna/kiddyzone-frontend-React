@@ -1,4 +1,4 @@
-import React, { Component,useRef } from "react";
+import React, { Component, useRef, useState,useEffect } from "react";
 
 import "../../App.css";
 import NavBar from "./NavBar";
@@ -7,13 +7,31 @@ export default function Header() {
 
   const switcherTab = useRef(null);
   const imageTab = useRef(null);
- 
-  window.addEventListener("scroll", () =>{
-    if(window.scrollY > 100){
+  const [user, setuser] = useState(localStorage.getItem("user"))
+  const [username, setusername] = useState("")
+
+   useEffect(() => {
+        let usr =localStorage.getItem("user")
+        console.log(usr)
+        let username =  JSON.parse(usr)
+        setusername(username.user.username)
+        setuser(usr)
+  }, []);
+
+
+const logout = () => {
+
+  localStorage.removeItem("user");
+  setuser(null)
+}
+
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 100) {
       document.querySelector(".header__effect").classList.add("active");
       document.querySelector("img.img-responsive.logo").classList.add("active");
     }
-    else{
+    else {
       document.querySelector(".header__effect").classList.remove("active");
       document.querySelector("img.img-responsive.logo").classList.remove("active");
     }
@@ -94,12 +112,12 @@ export default function Header() {
             />
           </g>
         </svg>{" "} */}
-       <div className="animation">
-       <div className="main-upper-header">
-          <img src="image/truck-icon.svg" style={{"fill":" #e20025",height:"23px"}} />
+        <div className="animation">
+          <div className="main-upper-header">
+            <img src="image/truck-icon.svg" style={{ "fill": " #e20025", height: "23px" }} />
+          </div>
+          <span>Free Shipping 99 QR</span>
         </div>
-        <span>Free Shipping 99 QR</span>
-       </div>
       </div>
       <header className="header__effect" useRef={switcherTab}>
         <div className="container-fluid">
@@ -114,14 +132,14 @@ export default function Header() {
                           className="btn btn-link dropdown-toggle"
                           data-toggle="dropdown"
                         >
-                          <img src="image/header/united-arab-emirates.svg" style={{margin:"0px 10px"}} />{" "}
-                          <strong style={{margin:"0px 5px"}}>USD</strong>{" "}
+                          <img src="image/header/united-arab-emirates.svg" style={{ margin: "0px 10px" }} />{" "}
+                          <strong style={{ margin: "0px 5px" }}>USD</strong>{" "}
                           <img
                             className="down-arrow"
                             src="image/header/down-arrow.svg"
                             style={{
-                              margin:"0px 10px",
-                              marginTop:"-5px"
+                              margin: "0px 10px",
+                              marginTop: "-5px"
                             }}
                           />{" "}
                         </button>
@@ -173,15 +191,26 @@ export default function Header() {
                     <ul className="list-inline">
                       <li className="account for-desktop">
                         <img src="image/header/user%20(1).svg" />
-                        <Link to="/Login">
-                          <span style={{fontSize:"22px"}}>Login</span>
-                        </Link>
+                        {user ? (
+                          <>
+                            <Link to="/Login" onClick={() => logout()}>
+                              <span style={{ fontSize: "22px" }}>{username}  | Logout</span>
+                            </Link>
+                          </>
+                        ) : (
+                          <>
+                            <Link to="/Login">
+                              <span style={{ fontSize: "22px" }}>Login</span>
+                            </Link>
 
-                        <span className="account-ver-line">|</span>
+                            <span className="account-ver-line">|</span>
 
-                        <Link to="/SignUp">
-                          <span style={{fontSize:"22px"}}>Register</span>
-                        </Link>
+                            <Link to="/SignUp">
+                              <span style={{ fontSize: "22px" }}>Register</span>
+                            </Link>
+                          </>
+                        )}
+
                       </li>
                       <li>
                         <a href="#" id="shopping-cart" title="Wish List (0)">
@@ -193,11 +222,11 @@ export default function Header() {
                         <img src="image/header/bell.svg" />
                       </a>
                     </li> */}
-                    <li>
-                      <a href="#" id="wishlist-total" title="Wish List (0)">
-                        <img src="image/header/like.svg" />
-                      </a>
-                    </li>
+                      <li>
+                        <a href="#" id="wishlist-total" title="Wish List (0)">
+                          <img src="image/header/like.svg" />
+                        </a>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -209,78 +238,78 @@ export default function Header() {
             style={{ paddingTop: 20, paddingBottom: 20 }}
           >
             <div className="container">
-            <div id="logo">
-              <a href="index.html">
-                <img
-                  src="image/header/logo.svg"
-                  title="E-Commerce"
-                  alt="E-Commerce"
-                  className="img-responsive logo"
-                  useRef={imageTab}
-                />
-              </a>
-            </div>
-            <div className="col-sm-3 col-xs-12 header-left">
-              <div className="head-social-media for-mobile">
-                <a href="#">
-                  <img src="image/header/facebook.svg" />
-                </a>
-                <a href="#">
-                  <img src="image/header/instagram.svg" />
-                </a>
-                <a href="#">
-                  <img src="image/header/linkedin.svg" />
-                </a>
-                <a href="#">
-                  <img src="image/header/twitter.svg" />
+              <div id="logo">
+                <a href="index.html">
+                  <img
+                    src="image/header/logo.svg"
+                    title="E-Commerce"
+                    alt="E-Commerce"
+                    className="img-responsive logo"
+                    useRef={imageTab}
+                  />
                 </a>
               </div>
-            </div>
-            <div className="col-sm-9 col-xs-9 header-right">
-              <div className="top-left pull-left">
-                <button className="head-gift-btn">
-                  <img src="image/header/gift.svg" /> Gift Finder{" "}
-                </button>
+              <div className="col-sm-3 col-xs-12 header-left">
+                <div className="head-social-media for-mobile">
+                  <a href="#">
+                    <img src="image/header/facebook.svg" />
+                  </a>
+                  <a href="#">
+                    <img src="image/header/instagram.svg" />
+                  </a>
+                  <a href="#">
+                    <img src="image/header/linkedin.svg" />
+                  </a>
+                  <a href="#">
+                    <img src="image/header/twitter.svg" />
+                  </a>
+                </div>
               </div>
-              <div id="search" className="input-group">
-                <input
-                  type="text"
-                  name="search"
-                  placeholder="Search products here"
-                  className="form-control input-lg"
-                  style={{ height: "123%" }}
-                />
-                <span className="input-group-btn">
-                  <button
-                    type="button"
-                    className="btn btn-default btn-lg bg-yellow"
-                  >
-                    <span>
-                      <i className="fa fa-search"></i>
-                    </span>
+              <div className="col-sm-9 col-xs-9 header-right">
+                <div className="top-left pull-left">
+                  <button className="head-gift-btn">
+                    <img src="image/header/gift.svg" /> Gift Finder{" "}
                   </button>
-                </span>
-              </div>
+                </div>
+                <div id="search" className="input-group">
+                  <input
+                    type="text"
+                    name="search"
+                    placeholder="Search products here"
+                    className="form-control input-lg"
+                    style={{ height: "123%" }}
+                  />
+                  <span className="input-group-btn">
+                    <button
+                      type="button"
+                      className="btn btn-default btn-lg bg-yellow"
+                    >
+                      <span>
+                        <i className="fa fa-search"></i>
+                      </span>
+                    </button>
+                  </span>
+                </div>
 
-              <div className="helpful-text-links help-store-loc for-desktop">
-                <ul className="list-inline">
-                  <li>
-                  <Link to="/StoreLocator" className="parent link">
-                    <img src="image/header/location-pin.svg" />
-                <span style={{fontSize:"20px"}}>Store Locator</span>
-              </Link>
-        
-                  </li>
-                  <li>
-                    <a href="" style={{fontSize:"20px"}}>
-                      <img src="image/header/help.svg" />
-                      Help
-                    </a>
-                  </li>
-                </ul>
+                <div className="helpful-text-links help-store-loc for-desktop">
+                  <ul className="list-inline">
+                    <li>
+                      <Link to="/StoreLocator" className="parent link">
+                        <img src="image/header/location-pin.svg" />
+                        <span style={{ fontSize: "20px" }}>Store Locator</span>
+                      </Link>
+
+                    </li>
+                    <li>
+                      <a href="" style={{ fontSize: "20px" }}>
+                        <img src="image/header/help.svg" />
+                        Help
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
-          </div>
           </div>
         </div>
         <NavBar />

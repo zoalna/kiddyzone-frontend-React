@@ -7,15 +7,82 @@ import {
   Link,
   Typography
 } from '@mui/material'
-import React from 'react'
+import { React, useState } from 'react'
 import StyleInputField from '../Components/StyleInputField'
 import { useForm, Controller } from 'react-hook-form'
+import { useNavigate } from "react-router-dom";
+import ReactSnackBar from "react-js-snackbar";
+import axios from 'axios';
+import { api } from '../Helpers/services';
 
 export default function Login() {
+  let navigate = useNavigate();
   const { handleSubmit, control } = useForm()
+  const [show, setshow] = useState(false)
+  const [showing, setshowing] = useState(false)
+  const [error, seterror] = useState('')
+
+  const showerror = (value) => {
+    console.log(value)
+    if (showing) return;
+
+    seterror(value)
+    setshow(true);
+    setshowing(true);
+    setTimeout(() => {
+      setshow(false);
+      setshowing(false);
+    }, 2000);
+
+  };
+
+  const calllogin = (data) => {
+
+    console.log(data)
+    if (data.email == "" || data.password == "" || data.email == null || data.password == null) {
+
+      showerror('please provide complete information');
+      return;
+    }
+
+
+    axios.post(api.login, data)
+    .then(function (response)
+     {
+      if (response.data.success == false) {
+        showerror(response.data.message);
+        return
+      }
+      console.log(response.data)
+      showerror(response.data.message);
+      localStorage.setItem('user', JSON.stringify(response.data))
+      navigate("/");
+      window.location.reload(false);
+     }
+     
+     )
+    .catch(function (error) {
+      console.log(error)
+        console.log(error.response.data) // 401
+        //Please Authenticate or whatever returned from server
+      // if(error.response.status==401){
+        if (error.response.data.success == false) {
+          showerror(error.response.data.message);
+          return
+        }
+      // }
+    })
+
+
+
+  }
 
   return (
     <>
+      {show && <ReactSnackBar Show={true}
+      >
+        {error}
+      </ReactSnackBar>}
       <Box>
         <Box
           sx={{
@@ -102,11 +169,11 @@ export default function Login() {
                     </Typography>
                   </Box>
 
-                  <form onSubmit={handleSubmit((data) => console.log(data))}>
+                  <form onSubmit={handleSubmit((data) => calllogin(data))}>
                     <Box mt={1}>
                       <Controller
                         control={control}
-                        name="emailAddress"
+                        name="email"
                         render={({ field: { onChange, value } }) => (
                           <StyleInputField
                             inputValue={value}
