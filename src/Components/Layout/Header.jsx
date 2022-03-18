@@ -8,10 +8,13 @@ export default function Header() {
   const switcherTab = useRef(null);
   const imageTab = useRef(null);
   const [user, setuser] = useState(localStorage.getItem("user"))
+  const [username, setusername] = useState("")
 
    useEffect(() => {
         let usr =localStorage.getItem("user")
         console.log(usr)
+        let username =  JSON.parse(usr)
+        setusername(username.user.username)
         setuser(usr)
   }, []);
 
@@ -191,7 +194,7 @@ const logout = () => {
                         {user ? (
                           <>
                             <Link to="/Login" onClick={() => logout()}>
-                              <span style={{ fontSize: "22px" }}>Logout</span>
+                              <span style={{ fontSize: "22px" }}>{username}  | Logout</span>
                             </Link>
                           </>
                         ) : (
