@@ -17,7 +17,7 @@ export default function About() {
   const [showShippingField, setShowShippingField] = useState(false)
   return (
     <>
-      <Box px={{ xs: '30px', md: '77px' }}>
+      <Box mb={{ xs: '30px', md: 15 }} px={{ xs: '30px', md: '300px' }}>
         <ol class="breadcrumb">
           <li>
             <a href="#">Home</a>

@@ -193,7 +193,7 @@ export default function Login() {
                     </Grid>
                   </form>
                   <Box mt={2} display={'flex'} alignItems={'center'}>
-                    <Box>
+                    <Box pt={1}>
                       <Typography
                         sx={{
                           fontSize: '13px',
@@ -210,36 +210,64 @@ export default function Login() {
                       alignItems={'center'}
                       flexWrap={'wrap'}
                     >
-                      <IconButton>
-                        <img
-                          height={'100%'}
-                          width={'100%'}
-                          alt="fbIcon"
-                          scr="/image/fIcon.svg"
+                      <IconButton
+                        sx={{
+                          pr: 0
+                        }}
+                      >
+                        <Box
+                          component="img"
+                          sx={{
+                            height: '100%',
+                            width: '100%'
+                          }}
+                          alt="The house from the offer."
+                          src="/image/fIcon.svg"
                         />
                       </IconButton>
-                      <IconButton>
-                        <img
-                          height={'100%'}
-                          width={'100%'}
-                          alt="gIcon"
-                          scr="/image/gIcon.svg"
+                      <IconButton
+                        sx={{
+                          pr: 0
+                        }}
+                      >
+                        <Box
+                          component="img"
+                          sx={{
+                            height: '100%',
+                            width: '100%'
+                          }}
+                          alt="The house from the offer."
+                          src="/image/appleIcon.svg"
                         />
                       </IconButton>
-                      <IconButton>
-                        <img
-                          height={'100%'}
-                          width={'100%'}
-                          alt="fbIcon"
-                          scr="/image/appleIcon.svg"
+                      <IconButton
+                        sx={{
+                          pr: 0
+                        }}
+                      >
+                        <Box
+                          component="img"
+                          sx={{
+                            height: '100%',
+                            width: '100%'
+                          }}
+                          alt="The house from the offer."
+                          src="/image/gIcon.svg"
                         />
                       </IconButton>
-                      <IconButton>
-                        <img
-                          height={'100%'}
-                          width={'100%'}
-                          alt="tIcon"
-                          scr="/image/tIcon.svg"
+                      <IconButton
+                        sx={{
+                          pr: 0
+                        }}
+                      >
+                        <Box
+                          component="img"
+                          sx={{
+                            height: '100%',
+                            width: '100%'
+                          }}
+                          alt="The house from the offer."
+                          src="/image/tIcon.svg"
                         />
                       </IconButton>
                     </Box>
