@@ -1,6 +1,6 @@
 import React, { Component, useRef, useState,useEffect } from "react";
-
 import "../../App.css";
+import "./cart.css";
 import NavBar from "./NavBar";
 import { Link, useNavigate } from "react-router-dom";
 export default function Header() {
@@ -36,6 +36,28 @@ const logout = () => {
       document.querySelector("img.img-responsive.logo").classList.remove("active");
     }
   })
+
+  const handleSubmit = () =>{
+    let cart = document.querySelector("#shopping-cart");
+    let button = document.querySelector(".cart__box");
+      if(cart.click){
+        button.style.display = "block";
+      }
+      else{
+        button.style.display = "none";
+      }
+  }
+ 
+  const removeSubmit = () =>{
+    let button = document.querySelector(".cart__box");
+    let cross = document.querySelector(".cross__option")
+      if(cross.click){
+        button.style.display = "none";
+      }
+      else{
+        button.style.display = "block";
+      }
+  }
 
   return (
     <>
@@ -213,7 +235,7 @@ const logout = () => {
 
                       </li>
                       <li>
-                        <a href="#" id="shopping-cart" title="Wish List (0)">
+                        <a href="#" id="shopping-cart" title="Wish List (0)" onClick={handleSubmit} useRef={switcherTab}>
                           <img src="image/header/shopping-cart%20(1).svg" />
                         </a>
                       </li>
@@ -314,6 +336,206 @@ const logout = () => {
         </div>
         <NavBar />
       </header>
+
+           {/* sideCart option */}
+
+      <>
+        <div className="cart__box" useRef={switcherTab}>
+          <div className="header__box">
+            <div className="text__sidecart">
+              <h1>Shopping Cart (2)</h1>
+            </div>
+            <div className="cross__option" useRef={switcherTab} onClick={removeSubmit}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="29.383"
+                height="29.383"
+                viewBox="0 0 29.383 29.383"
+              >
+                <g
+                  id="Group_4317"
+                  data-name="Group 4317"
+                  transform="translate(-16305.379 367.621)"
+                >
+                  <line
+                    id="Line_43"
+                    data-name="Line 43"
+                    x2="25.14"
+                    y2="25.14"
+                    transform="translate(16307.5 -365.5)"
+                    fill="none"
+                    stroke="#707070"
+                    stroke-linecap="round"
+                    stroke-width="3"
+                  ></line>
+                  <line
+                    id="Line_44"
+                    data-name="Line 44"
+                    x1="25.14"
+                    y2="25.14"
+                    transform="translate(16307.5 -365.5)"
+                    fill="none"
+                    stroke="#707070"
+                    stroke-linecap="round"
+                    stroke-width="3"
+                  ></line>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          {/* Cart Items */}
+          <div className="cart__items">
+            <div className="singleProduct">
+
+              <div className="cartItem__box">
+                <div className="product__image__cart">
+                  <img
+                    src="https://www.toysrus.ca/dw/image/v2/BDFX_PRD/on/demandware.static/-/Sites-toys-master-catalog/default/dw864cd86b/images/746908DF_1.jpg?sw=100&sh=100&sm=fit"
+                    alt=""
+                  />
+                </div>
+                <div className="name__quantity__box">
+                      <span>Hight Speed Magic Toy</span>
+                      <span className='product__id'>Sku: 1254545</span>
+                      <div className="quanity__box__cart">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                      </div>
+                </div>
+                <div className="product__price__cart">
+                  <span>AED 123</span>
+                  <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="29.383"
+                height="29.383"
+                viewBox="0 0 29.383 29.383"
+              >
+                <g
+                  id="Group_4317"
+                  data-name="Group 4317"
+                  transform="translate(-16305.379 367.621)"
+                >
+                  <line
+                    id="Line_43"
+                    data-name="Line 43"
+                    x2="25.14"
+                    y2="25.14"
+                    transform="translate(16307.5 -365.5)"
+                    fill="none"
+                    stroke="#707070"
+                    stroke-linecap="round"
+                    stroke-width="3"
+                  ></line>
+                  <line
+                    id="Line_44"
+                    data-name="Line 44"
+                    x1="25.14"
+                    y2="25.14"
+                    transform="translate(16307.5 -365.5)"
+                    fill="none"
+                    stroke="#707070"
+                    stroke-linecap="round"
+                    stroke-width="3"
+                  ></line>
+                </g>
+              </svg>
+                </div>
+              </div>
+
+              <div className="cartItem__box">
+                <div className="product__image__cart">
+                  <img
+                    src="https://www.toysrus.ca/dw/image/v2/BDFX_PRD/on/demandware.static/-/Sites-toys-master-catalog/default/dw864cd86b/images/746908DF_1.jpg?sw=100&sh=100&sm=fit"
+                    alt=""
+                  />
+                </div>
+                <div className="name__quantity__box">
+                      <span>Hight Speed Magic Toy</span>
+                      <span className='product__id'>Sku: 1254545</span>
+                      <div className="quanity__box__cart">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                      </div>
+                </div>
+                <div className="product__price__cart">
+                  <span>AED 123</span>
+                  <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="29.383"
+                height="29.383"
+                viewBox="0 0 29.383 29.383"
+              >
+                <g
+                  id="Group_4317"
+                  data-name="Group 4317"
+                  transform="translate(-16305.379 367.621)"
+                >
+                  <line
+                    id="Line_43"
+                    data-name="Line 43"
+                    x2="25.14"
+                    y2="25.14"
+                    transform="translate(16307.5 -365.5)"
+                    fill="none"
+                    stroke="#707070"
+                    stroke-linecap="round"
+                    stroke-width="3"
+                  ></line>
+                  <line
+                    id="Line_44"
+                    data-name="Line 44"
+                    x1="25.14"
+                    y2="25.14"
+                    transform="translate(16307.5 -365.5)"
+                    fill="none"
+                    stroke="#707070"
+                    stroke-linecap="round"
+                    stroke-width="3"
+                  ></line>
+                </g>
+              </svg>
+                </div>
+              </div>
+
+              </div>
+
+              {/* shopping summary */}
+                 <div className="product__summary">
+                     <h1>Summary</h1>
+                     <div className="price__total__box">
+                       <div className="first__varse__cart">
+                        <span>Subtotal inc. tax</span>
+                        <span>$141.45</span>
+                        </div>
+                        <hr className='style' />
+                        <div className="first__varse__cart">
+                        <span>Shipping Dpd Curier</span>
+                        <span>$10.45</span>
+                        </div>
+                        <hr className='style' />
+                        <div className="first__varse__cart">
+                        <span>Payment (cash on delivery)</span>
+                        </div>
+                        <hr className='style' />
+                        <div className="first__varse__cart">
+                        <span className='strong'>Total inc. tax</span>
+                        <span className='strong'>$160.45</span>
+                        </div>
+                     </div>
+                     <div className="checkout__box">
+              <button>Continue Shopping</button>
+              <button>Go to Checkout</button>
+            </div>
+                 </div>             
+
+          </div>
+          
+        </div>
+      </>
+
     </>
   );
 }
