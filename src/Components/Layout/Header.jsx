@@ -1,29 +1,10 @@
-<<<<<<< HEAD
-import React, { Component, useRef } from 'react'
-import './cart.css'
-import '../../App.css'
-import NavBar from './NavBar'
-import { Link, useNavigate } from 'react-router-dom'
-=======
 import React, { Component, useRef, useState,useEffect } from "react";
->>>>>>> 543b1b960860ed534a5f2cd49a396b05145c9a3c
-
+import "../../App.css";
+import "./cart.css";
+import NavBar from "./NavBar";
+import { Link, useNavigate } from "react-router-dom";
 export default function Header() {
 
-<<<<<<< HEAD
-  const switcherTab = useRef(null)
-  const imageTab = useRef(null)
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-      document.querySelector('.header__effect').classList.add('active')
-      document.querySelector('img.img-responsive.logo').classList.add('active')
-    } else {
-      document.querySelector('.header__effect').classList.remove('active')
-      document
-        .querySelector('img.img-responsive.logo')
-        .classList.remove('active')
-=======
   const switcherTab = useRef(null);
   const imageTab = useRef(null);
   const [user, setuser] = useState(localStorage.getItem("user"))
@@ -53,10 +34,9 @@ const logout = () => {
     else {
       document.querySelector(".header__effect").classList.remove("active");
       document.querySelector("img.img-responsive.logo").classList.remove("active");
->>>>>>> 543b1b960860ed534a5f2cd49a396b05145c9a3c
     }
   })
-   
+
   const handleSubmit = () =>{
     let cart = document.querySelector("#shopping-cart");
     let button = document.querySelector(".cart__box");
@@ -85,14 +65,24 @@ const logout = () => {
         <img src="image/loader.gif" alt="#" />
       </div> */}
       <div className="announcements">
-        <div className="animation">
-          <div className="main-upper-header">
-            <img
-              src="image/truck-icon.svg"
-              style={{ fill: ' #e20025', height: '23px' }}
+        {/* <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="54.945"
+          height="47.477"
+          viewBox="0 0 54.945 47.477"
+        >
+          <g
+            id="shipping"
+            data-name="Group 2277"
+            transform="translate(-13.082 -1882.66)"
+          >
+            <path
+              id="Path_719"
+              data-name="Path 719"
+              d="M157.5,1917.64c-1.262-.61-2.522-1.224-3.785-1.83a10.061,10.061,0,0,0-3.376-1.114c-1.923-.183-2.886.616-3.131,2.553a19.376,19.376,0,0,0,.681,6.508,20.826,20.826,0,0,1,.4,2.295,16.371,16.371,0,0,1-2.69-5.188,8.694,8.694,0,0,1-.045-4.683,3.974,3.974,0,0,1,4.227-3.223c.381,0,.762,0,1.252,0-.49-.681-.965-1.277-1.37-1.917-1.295-2.045-.787-3.379,1.525-4.083.237-.072.471-.156.727-.241-1.7-1.8-1.659-2.963.218-4.561.873-.743,1.854-1.358,2.894-2.109-1.412-.118-2.719.026-4.014-.214-2.745-.511-3.809-1.675-3.867-4.407-.336-.163-.607.094-.891.175a3.216,3.216,0,0,1-4.066-1.7,13.89,13.89,0,0,1-1.12-3.813c-.528.879-.928,1.636-1.411,2.335-2.013,2.914-4.894,2.834-6.739-.194a14.039,14.039,0,0,1-1.833-5.194q.9,1.26,1.8,2.52a12.68,12.68,0,0,0,2.318,2.717c1.024.809,1.637.756,2.486-.232a14.214,14.214,0,0,0,2.185-3.965c.745-1.8,1.458-3.622,2.334-5.409.184,2.02.352,4.042.559,6.06a13.815,13.815,0,0,0,.911,4.138c.533,1.23,1.143,1.48,2.38.963a23.381,23.381,0,0,0,4.522-3.128,3.989,3.989,0,0,1,1.132-.662c-.5.916-.988,1.833-1.487,2.748a10.714,10.714,0,0,0-1.157,2.65,1.831,1.831,0,0,0,1.439,2.5,14.268,14.268,0,0,0,5.859.2c2.269-.266,4.523-.657,6.8-1-.032.359-.377.384-.586.512-2.637,1.62-5.287,3.218-7.928,4.831a8.288,8.288,0,0,0-1.8,1.452.76.76,0,0,0,.126,1.3,9.188,9.188,0,0,0,2.329,1.155c1.288.466,2.577.928,3.836,1.517-1.951.137-3.9.262-5.852.419a8.9,8.9,0,0,0-1.614.287c-.933.254-1.054.553-.571,1.377a15.561,15.561,0,0,0,1.892,2.448c1.518,1.7,3.05,3.39,4.577,5.085Z"
+              transform="translate(-95.137)"
+              fill="#e20025"
             />
-<<<<<<< HEAD
-=======
             <path
               id="Path_720"
               data-name="Path 720"
@@ -147,7 +137,6 @@ const logout = () => {
         <div className="animation">
           <div className="main-upper-header">
             <img src="image/truck-icon.svg" style={{ "fill": " #e20025", height: "23px" }} />
->>>>>>> 543b1b960860ed534a5f2cd49a396b05145c9a3c
           </div>
           <span>Free Shipping 99 QR</span>
         </div>
@@ -165,29 +154,16 @@ const logout = () => {
                           className="btn btn-link dropdown-toggle"
                           data-toggle="dropdown"
                         >
-<<<<<<< HEAD
-                          <img
-                            src="image/header/united-arab-emirates.svg"
-                            style={{ margin: '0px 10px' }}
-                          />{' '}
-                          <strong style={{ margin: '0px 5px' }}>USD</strong>{' '}
-=======
                           <img src="image/header/united-arab-emirates.svg" style={{ margin: "0px 10px" }} />{" "}
                           <strong style={{ margin: "0px 5px" }}>USD</strong>{" "}
->>>>>>> 543b1b960860ed534a5f2cd49a396b05145c9a3c
                           <img
                             className="down-arrow"
                             src="image/header/down-arrow.svg"
                             style={{
-<<<<<<< HEAD
-                              margin: '0px 10px',
-                              marginTop: '-5px'
-=======
                               margin: "0px 10px",
                               marginTop: "-5px"
->>>>>>> 543b1b960860ed534a5f2cd49a396b05145c9a3c
                             }}
-                          />{' '}
+                          />{" "}
                         </button>
                         <ul className="dropdown-menu">
                           <li>
@@ -211,12 +187,12 @@ const logout = () => {
                           data-toggle="dropdown"
                           aria-expanded="false"
                         >
-                          {' '}
+                          {" "}
                           <img
                             className="lang-flag"
                             src="image/header/640px-Flag_of_the_United_Kingdom.svg.png"
-                          />{' '}
-                          English{' '}
+                          />{" "}
+                          English{" "}
                           <img
                             className="down-arrow"
                             src="image/header/down-arrow.svg"
@@ -237,11 +213,6 @@ const logout = () => {
                     <ul className="list-inline">
                       <li className="account for-desktop">
                         <img src="image/header/user%20(1).svg" />
-<<<<<<< HEAD
-                        <Link to="/Login">
-                          <span style={{ fontSize: '22px' }}>Login</span>
-                        </Link>
-=======
                         {user ? (
                           <>
                             <Link to="/Login" onClick={() => logout()}>
@@ -253,7 +224,6 @@ const logout = () => {
                             <Link to="/Login">
                               <span style={{ fontSize: "22px" }}>Login</span>
                             </Link>
->>>>>>> 543b1b960860ed534a5f2cd49a396b05145c9a3c
 
                             <span className="account-ver-line">|</span>
 
@@ -263,12 +233,6 @@ const logout = () => {
                           </>
                         )}
 
-<<<<<<< HEAD
-                        <Link to="/SignUp">
-                          <span style={{ fontSize: '22px' }}>Register</span>
-                        </Link>
-=======
->>>>>>> 543b1b960860ed534a5f2cd49a396b05145c9a3c
                       </li>
                       <li>
                         <a href="#" id="shopping-cart" title="Wish List (0)" onClick={handleSubmit} useRef={switcherTab}>
@@ -326,11 +290,7 @@ const logout = () => {
               <div className="col-sm-9 col-xs-9 header-right">
                 <div className="top-left pull-left">
                   <button className="head-gift-btn">
-<<<<<<< HEAD
-                    <img src="image/header/gift.svg" /> Gift Finder{' '}
-=======
                     <img src="image/header/gift.svg" /> Gift Finder{" "}
->>>>>>> 543b1b960860ed534a5f2cd49a396b05145c9a3c
                   </button>
                 </div>
                 <div id="search" className="input-group">
@@ -339,11 +299,7 @@ const logout = () => {
                     name="search"
                     placeholder="Search products here"
                     className="form-control input-lg"
-<<<<<<< HEAD
-                    style={{ height: '123%' }}
-=======
                     style={{ height: "123%" }}
->>>>>>> 543b1b960860ed534a5f2cd49a396b05145c9a3c
                   />
                   <span className="input-group-btn">
                     <button
@@ -362,20 +318,12 @@ const logout = () => {
                     <li>
                       <Link to="/StoreLocator" className="parent link">
                         <img src="image/header/location-pin.svg" />
-<<<<<<< HEAD
-                        <span style={{ fontSize: '20px' }}>Store Locator</span>
-                      </Link>
-                    </li>
-                    <li>
-                      <a href="" style={{ fontSize: '20px' }}>
-=======
                         <span style={{ fontSize: "20px" }}>Store Locator</span>
                       </Link>
 
                     </li>
                     <li>
                       <a href="" style={{ fontSize: "20px" }}>
->>>>>>> 543b1b960860ed534a5f2cd49a396b05145c9a3c
                         <img src="image/header/help.svg" />
                         Help
                       </a>
@@ -389,7 +337,7 @@ const logout = () => {
         <NavBar />
       </header>
 
-      {/* sideCart option */}
+           {/* sideCart option */}
 
       <>
         <div className="cart__box" useRef={switcherTab}>
@@ -436,9 +384,9 @@ const logout = () => {
             </div>
           </div>
 
-          {/*side Cart option */}
-          <div className="cart__items">
-            <div className="singleProduct">
+          {/* Cart Items */}
+          <div className="cart__items"  useRef={switcherTab}>
+            <div className="singleProduct" useRef={switcherTab} onClick={removeSubmit}>
 
               <div className="cartItem__box">
                 <div className="product__image__cart">
@@ -584,10 +532,10 @@ const logout = () => {
                  </div>             
 
           </div>
-
-
+          
         </div>
       </>
+
     </>
-  )
+  );
 }

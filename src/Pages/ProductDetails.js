@@ -15,8 +15,6 @@ import savingIcon from '../image/product/gift-box.png'
 import gurrantyImage from '../image/product/gift-box (1).png'
 import callsupportImage from '../image/product/support.png'
 import trainImage from '../image/product/train-toy.png'
-import ReactImageMagnify from 'react-image-magnify'
-import ReactSlick from 'react-slick'
 
 export default function ProductDetails(props) {
   let { slug } = useParams()
@@ -71,23 +69,7 @@ export default function ProductDetails(props) {
                 <div className="preview-pic tab-content">
                  
                     <div className="tab-pane active" id="pic-1">
-                    <ReactImageMagnify
-                            {...{
-                                smallImage: {
-                                    alt: 'Wristwatch by Versace',
-                                    isFluidWidth: true,
-                                    src: `${api.images + product.media[0].file_name}`,
-                                    // srcSet: src.srcSet,
-                                },
-                                largeImage: {
-                                    src: `${api.images + product.media[0].file_name}`,
-                                    width: 1426,
-                                    height: 2000
-                                },
-                                // lensStyle: { backgroundColor: 'rgba(0,0,0,.6)' }
-                            }}
-                          
-                        />
+                    <img src={api.images + product.media[0].file_name} />
                     </div>
                
 
