@@ -385,8 +385,8 @@ const logout = () => {
           </div>
 
           {/* Cart Items */}
-          <div className="cart__items"  useRef={switcherTab}>
-            <div className="singleProduct" useRef={switcherTab} onClick={removeSubmit}>
+          <div className="cart__items">
+            <div className="singleProduct">
 
               <div className="cartItem__box">
                 <div className="product__image__cart">
