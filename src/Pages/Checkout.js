@@ -17,7 +17,7 @@ export default function About() {
   const [showShippingField, setShowShippingField] = useState(false)
   return (
     <>
-      <Box mb={{ xs: '30px', md: 15 }} px={{ xs: '30px', md: '300px' }}>
+      <Box mb={{ xs: '30px', md: 15 }} px={{ xs: '30px', md: '290px' }}>
         <ol class="breadcrumb">
           <li>
             <a href="#">Home</a>
@@ -31,14 +31,13 @@ export default function About() {
         </ol>
 
         <Box>
-          {/* //TODO: add function here to get form value */}
           <Typography
             sx={{ fontSize: '24px', fontWeight: 500, color: '#232323' }}
           >
             BILLING ADDRESS
           </Typography>
           <Grid container spacing={2}>
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={8}>
               <CheckoutForm />
 
               <Box display={'flex'} alignItems={'center'} my={2}>
@@ -74,7 +73,7 @@ export default function About() {
                 </>
               )}
             </Grid>
-            <Grid item xs={12} md={5}>
+            <Grid item xs={12} md={4}>
               <Box
                 sx={{
                   padding: '20px',
@@ -352,14 +351,6 @@ export default function About() {
                             }}
                           >
                             Cash On Delivery
-                          </Typography>{' '}
-                          <Typography
-                            sx={{
-                              fontSize: '16px',
-                              color: '#232323'
-                            }}
-                          >
-                            Cash On Delivery
                           </Typography>
                         </>
                       }
@@ -370,14 +361,6 @@ export default function About() {
                       control={<Radio />}
                       label={
                         <>
-                          <Typography
-                            sx={{
-                              fontSize: '16px',
-                              color: '#232323'
-                            }}
-                          >
-                            Money Transfer
-                          </Typography>{' '}
                           <Typography
                             sx={{
                               fontSize: '16px',
@@ -399,8 +382,8 @@ export default function About() {
               <Box mt={2} display={'flex'} justifyContent={'end'}>
                 <Button
                   sx={{
+                    fontSize: '13px',
                     fontWeight: 600,
-
                     padding: '15px 36px',
                     background: '#00B353',
                     '&:hover': {
@@ -409,7 +392,6 @@ export default function About() {
                   }}
                   variant="contained"
                 >
-                  {' '}
                   place order
                 </Button>
               </Box>

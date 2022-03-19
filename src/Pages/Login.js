@@ -1,22 +1,23 @@
 import {
+  Alert,
   Box,
   Button,
   Grid,
   IconButton,
-  InputBase,
   Link,
+  Snackbar,
   Typography
 } from '@mui/material'
 import { React, useState } from 'react'
 import StyleInputField from '../Components/StyleInputField'
 import { useForm, Controller } from 'react-hook-form'
-import { useNavigate } from "react-router-dom";
-import ReactSnackBar from "react-js-snackbar";
-import axios from 'axios';
-import { api } from '../Helpers/services';
+import { useNavigate } from 'react-router-dom'
+// import ReactSnackBar from "react-js-snackbar";
+import axios from 'axios'
+import { api } from '../Helpers/services'
 
 export default function Login() {
-  let navigate = useNavigate();
+  let navigate = useNavigate()
   const { handleSubmit, control } = useForm()
   const [show, setshow] = useState(false)
   const [showing, setshowing] = useState(false)
@@ -24,65 +25,57 @@ export default function Login() {
 
   const showerror = (value) => {
     console.log(value)
-    if (showing) return;
+    if (showing) return
 
     seterror(value)
-    setshow(true);
-    setshowing(true);
+    setshow(true)
+    setshowing(true)
     setTimeout(() => {
-      setshow(false);
-      setshowing(false);
-    }, 2000);
-
-  };
+      setshow(false)
+      setshowing(false)
+    }, 2000)
+  }
 
   const calllogin = (data) => {
-
     console.log(data)
-    if (data.email == "" || data.password == "" || data.email == null || data.password == null) {
-
-      showerror('please provide complete information');
-      return;
+    if (
+      data.email == '' ||
+      data.password == '' ||
+      data.email == null ||
+      data.password == null
+    ) {
+      showerror('please provide complete information')
+      return
     }
 
-
-    axios.post(api.login, data)
-    .then(function (response)
-     {
-      if (response.data.success == false) {
-        showerror(response.data.message);
-        return
-      }
-      console.log(response.data)
-      showerror(response.data.message);
-      localStorage.setItem('user', JSON.stringify(response.data))
-      navigate("/");
-      window.location.reload(false);
-     }
-     
-     )
-    .catch(function (error) {
-      console.log(error)
-        console.log(error.response.data) // 401
-        //Please Authenticate or whatever returned from server
-      // if(error.response.status==401){
-        if (error.response.data.success == false) {
-          showerror(error.response.data.message);
+    axios
+      .post(api.login, data)
+      .then(function (response) {
+        if (response.data.success == false) {
+          showerror(response.data.message)
           return
         }
-      // }
-    })
-
-
-
+        console.log(response.data)
+        showerror(response.data.message)
+        localStorage.setItem('user', JSON.stringify(response.data))
+        navigate('/')
+        window.location.reload(false)
+      })
+      .catch(function (error) {
+        console.log(error)
+        console.log(error.response.data) // 401
+        //Please Authenticate or whatever returned from server
+        // if(error.response.status==401){
+        if (error.response.data.success == false) {
+          showerror(error.response.data.message)
+          return
+        }
+        // }
+      })
   }
 
   return (
     <>
-      {show && <ReactSnackBar Show={true}
-      >
-        {error}
-      </ReactSnackBar>}
       <Box>
         <Box
           sx={{
@@ -345,6 +338,26 @@ export default function Login() {
           </Box>
         </Box>
       </Box>
+
+      {show && (
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'bottom',
+            horizontal: 'center'
+          }}
+          open={true}
+          autoHideDuration={6000}
+          message={
+            <Typography
+              sx={{
+                fontSize: '20px'
+              }}
+            >
+              {error}
+            </Typography>
+          }
+        />
+      )}
     </>
   )
 }
