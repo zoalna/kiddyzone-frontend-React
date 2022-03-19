@@ -1,101 +1,107 @@
-import { Box, Button, Checkbox, Grid, Link, Typography } from '@mui/material'
+import {
+  Alert,
+  Box,
+  Button,
+  Checkbox,
+  Grid,
+  Link,
+  Snackbar,
+  Typography
+} from '@mui/material'
 import React, { Component, useState } from 'react'
 
 import '../App.css'
 import StyleInputField from '../Components/StyleInputField'
 import { useForm, Controller } from 'react-hook-form'
-import { useNavigate } from "react-router-dom";
-import ReactSnackBar from "react-js-snackbar";
-import axios from 'axios';
-import { api } from '../Helpers/services';
-
-
-
+import { useNavigate } from 'react-router-dom'
+// import ReactSnackBar from "react-js-snackbar";
+import axios from 'axios'
+import { api } from '../Helpers/services'
 
 export default function SignUp() {
-
-
-  let navigate = useNavigate();
+  let navigate = useNavigate()
   const { handleSubmit, control } = useForm()
   const [show, setshow] = useState(false)
   const [showing, setshowing] = useState(false)
   const [error, seterror] = useState('')
   const showerror = (value) => {
     console.log(value)
-    if (showing) return;
+    if (showing) return
 
     seterror(value)
-    setshow(true);
-    setshowing(true);
+    setshow(true)
+    setshowing(true)
     setTimeout(() => {
-      setshow(false);
-      setshowing(false);
-    }, 2000);
+      setshow(false)
+      setshowing(false)
+    }, 2000)
+  }
 
-  };
-  
   const checkform = (obj) => {
     console.log(obj)
     for (var key in obj) {
-        if (obj[key] == null || obj[key] == "")
-            return true;
+      if (obj[key] == null || obj[key] == '') return true
     }
-    return false;
-  };
+    return false
+  }
 
-  
   const calllogin = (data) => {
-
     console.log(checkform(data))
 
-    
-    
     if (checkform(data)) {
-
-      showerror('please provide complete information');
-      return;
+      showerror('please provide complete information')
+      return
     }
 
-
-    axios.post(api.register, data)
+    axios
+      .post(api.register, data)
       .then(function (response) {
         if (response.data.success == false) {
-          showerror(response.data.message);
+          showerror(response.data.message)
           return
         }
         console.log(response.data)
-        showerror(response.data.message);
+        showerror(response.data.message)
         // localStorage.setItem('user', JSON.stringify(response.data))
-        navigate("/Login");
+        navigate('/Login')
         //   window.location.reload(false);
-      }
-
-      )
+      })
       .catch(function (error) {
         console.log(error)
         console.log(error.response.data) // 401
         //Please Authenticate or whatever returned from server
         // if(error.response.status==401){
         if (error.response.data.success == false) {
-          showerror(error.response.data.message);
+          showerror(error.response.data.message)
           return
         }
         // }
       })
-
-
-
   }
 
-
   return (
-
     <>
-
-      {show && <ReactSnackBar Show={true}
-      >
-        {error}
-      </ReactSnackBar>}
+      {show && (
+        <>
+          <Snackbar
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'center'
+            }}
+            open={true}
+            autoHideDuration={6000}
+            message={
+              <Typography
+                sx={{
+                  fontSize: '20px'
+                }}
+              >
+                {error}
+              </Typography>
+            }
+          />
+        </>
+      )}
 
       <Box>
         <Box
@@ -200,7 +206,8 @@ export default function SignUp() {
                         color: '#848484'
                       }}
                     >
-                      If you are new to our store, we glad to have you as member.
+                      If you are new to our store, we glad to have you as
+                      member.
                     </Typography>
                   </Box>
                   {/* //TODO: add function here to get form value */}
@@ -232,7 +239,8 @@ export default function SignUp() {
                                 inputType="text"
                                 onInputChange={(value) => onChange(value)}
                               />
-                            )}s
+                            )}
+                            s
                           />
                         </Grid>
                       </Grid>
@@ -384,7 +392,6 @@ export default function SignUp() {
           </Box>
         </Box>
       </Box>
-      
     </>
   )
-                        }
+}
