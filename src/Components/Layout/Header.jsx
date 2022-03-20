@@ -1,4 +1,4 @@
-import React, { Component, useRef, useState,useEffect } from "react";
+import React, { Component, useRef, useState, useEffect } from "react";
 import "../../App.css";
 import "./cart.css";
 import NavBar from "./NavBar";
@@ -8,22 +8,22 @@ export default function Header() {
   const switcherTab = useRef(null);
   const imageTab = useRef(null);
   const [user, setuser] = useState(localStorage.getItem("user"))
-  // const [username, setusername] = useState("")
+  const [username, setusername] = useState(null)
 
-   useEffect(() => {
-        let usr =localStorage.getItem("user")
-        console.log(usr)
-        let username =  JSON.parse(usr)
-        // setusername(username.user.username)
-        setuser(usr)
+  useEffect(() => {
+    let usr = localStorage.getItem("user")
+    console.log(usr)
+    let username = JSON.parse(usr)
+    setusername(username ? username.user.username : null)
+    setuser(usr)
   }, []);
 
 
-const logout = () => {    
+  const logout = () => {
 
-  localStorage.removeItem("user");
-  setuser(null)
-}
+    localStorage.removeItem("user");
+    setuser(null)
+  }
 
 
   window.addEventListener("scroll", () => {
@@ -37,26 +37,26 @@ const logout = () => {
     }
   })
 
-  const handleSubmit = () =>{
+  const handleSubmit = () => {
     let cart = document.querySelector("#shopping-cart");
     let button = document.querySelector(".cart__box");
-      if(cart.click){
-        button.style.display = "block";
-      }
-      else{
-        button.style.display = "none";
-      }
+    if (cart.click) {
+      button.style.display = "block";
+    }
+    else {
+      button.style.display = "none";
+    }
   }
- 
-  const removeSubmit = () =>{
+
+  const removeSubmit = () => {
     let button = document.querySelector(".cart__box");
     let cross = document.querySelector(".cross__option")
-      if(cross.click){
-        button.style.display = "none";
-      }
-      else{
-        button.style.display = "block";
-      }
+    if (cross.click) {
+      button.style.display = "none";
+    }
+    else {
+      button.style.display = "block";
+    }
   }
 
   return (
@@ -144,7 +144,7 @@ const logout = () => {
                         {user ? (
                           <>
                             <Link to="/Login" onClick={() => logout()}>
-                              <span style={{ fontSize: "22px" }}> Logout</span>
+                              <span style={{ fontSize: "22px" }}> {username} |  Logout</span>
                             </Link>
                           </>
                         ) : (
@@ -163,11 +163,15 @@ const logout = () => {
 
                       </li>
                       <li>
-                        <a href="#" id="shopping-cart" title="Wish List (0)" onClick={handleSubmit} useRef={switcherTab}>
+
+                        <Link to="/Cart">
                           <img src="image/header/shopping-cart%20(1).svg" />
-                        </a>
+                        </Link>
+                        {/* <a href="#" id="shopping-cart" title="Wish List (0)" onClick={handleSubmit} useRef={switcherTab}>
+                          <img src="image/header/shopping-cart%20(1).svg" />
+                        </a> */}
                       </li>
-                     
+
                       <li>
                         <a href="#" id="wishlist-total" title="Wish List (0)">
                           <img src="image/header/like.svg" />
@@ -261,7 +265,7 @@ const logout = () => {
         <NavBar />
       </header>
 
-           {/* sideCart option */}
+      {/* sideCart option */}
 
       <>
         <div className="cart__box" useRef={switcherTab}>
@@ -320,51 +324,51 @@ const logout = () => {
                   />
                 </div>
                 <div className="name__quantity__box">
-                      <span>Hight Speed Magic Toy</span>
-                      <span className='product__id'>Sku: 1254545</span>
-                      <div className="quanity__box__cart">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                      </div>
+                  <span>Hight Speed Magic Toy</span>
+                  <span className='product__id'>Sku: 1254545</span>
+                  <div className="quanity__box__cart">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                  </div>
                 </div>
                 <div className="product__price__cart">
                   <span>AED 123</span>
                   <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="29.383"
-                height="29.383"
-                viewBox="0 0 29.383 29.383"
-              >
-                <g
-                  id="Group_4317"
-                  data-name="Group 4317"
-                  transform="translate(-16305.379 367.621)"
-                >
-                  <line
-                    id="Line_43"
-                    data-name="Line 43"
-                    x2="25.14"
-                    y2="25.14"
-                    transform="translate(16307.5 -365.5)"
-                    fill="none"
-                    stroke="#707070"
-                    stroke-linecap="round"
-                    stroke-width="3"
-                  ></line>
-                  <line
-                    id="Line_44"
-                    data-name="Line 44"
-                    x1="25.14"
-                    y2="25.14"
-                    transform="translate(16307.5 -365.5)"
-                    fill="none"
-                    stroke="#707070"
-                    stroke-linecap="round"
-                    stroke-width="3"
-                  ></line>
-                </g>
-              </svg>
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="29.383"
+                    height="29.383"
+                    viewBox="0 0 29.383 29.383"
+                  >
+                    <g
+                      id="Group_4317"
+                      data-name="Group 4317"
+                      transform="translate(-16305.379 367.621)"
+                    >
+                      <line
+                        id="Line_43"
+                        data-name="Line 43"
+                        x2="25.14"
+                        y2="25.14"
+                        transform="translate(16307.5 -365.5)"
+                        fill="none"
+                        stroke="#707070"
+                        stroke-linecap="round"
+                        stroke-width="3"
+                      ></line>
+                      <line
+                        id="Line_44"
+                        data-name="Line 44"
+                        x1="25.14"
+                        y2="25.14"
+                        transform="translate(16307.5 -365.5)"
+                        fill="none"
+                        stroke="#707070"
+                        stroke-linecap="round"
+                        stroke-width="3"
+                      ></line>
+                    </g>
+                  </svg>
                 </div>
               </div>
 
@@ -376,87 +380,87 @@ const logout = () => {
                   />
                 </div>
                 <div className="name__quantity__box">
-                      <span>Hight Speed Magic Toy</span>
-                      <span className='product__id'>Sku: 1254545</span>
-                      <div className="quanity__box__cart">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                      </div>
+                  <span>Hight Speed Magic Toy</span>
+                  <span className='product__id'>Sku: 1254545</span>
+                  <div className="quanity__box__cart">
+                    <button>-</button>
+                    <span>1</span>
+                    <button>+</button>
+                  </div>
                 </div>
                 <div className="product__price__cart">
                   <span>AED 123</span>
                   <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="29.383"
-                height="29.383"
-                viewBox="0 0 29.383 29.383"
-              >
-                <g
-                  id="Group_4317"
-                  data-name="Group 4317"
-                  transform="translate(-16305.379 367.621)"
-                >
-                  <line
-                    id="Line_43"
-                    data-name="Line 43"
-                    x2="25.14"
-                    y2="25.14"
-                    transform="translate(16307.5 -365.5)"
-                    fill="none"
-                    stroke="#707070"
-                    stroke-linecap="round"
-                    stroke-width="3"
-                  ></line>
-                  <line
-                    id="Line_44"
-                    data-name="Line 44"
-                    x1="25.14"
-                    y2="25.14"
-                    transform="translate(16307.5 -365.5)"
-                    fill="none"
-                    stroke="#707070"
-                    stroke-linecap="round"
-                    stroke-width="3"
-                  ></line>
-                </g>
-              </svg>
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="29.383"
+                    height="29.383"
+                    viewBox="0 0 29.383 29.383"
+                  >
+                    <g
+                      id="Group_4317"
+                      data-name="Group 4317"
+                      transform="translate(-16305.379 367.621)"
+                    >
+                      <line
+                        id="Line_43"
+                        data-name="Line 43"
+                        x2="25.14"
+                        y2="25.14"
+                        transform="translate(16307.5 -365.5)"
+                        fill="none"
+                        stroke="#707070"
+                        stroke-linecap="round"
+                        stroke-width="3"
+                      ></line>
+                      <line
+                        id="Line_44"
+                        data-name="Line 44"
+                        x1="25.14"
+                        y2="25.14"
+                        transform="translate(16307.5 -365.5)"
+                        fill="none"
+                        stroke="#707070"
+                        stroke-linecap="round"
+                        stroke-width="3"
+                      ></line>
+                    </g>
+                  </svg>
                 </div>
               </div>
 
-              </div>
-
-              {/* shopping summary */}
-                 <div className="product__summary">
-                     <h1>Summary</h1>
-                     <div className="price__total__box">
-                       <div className="first__varse__cart">
-                        <span>Subtotal inc. tax</span>
-                        <span>$141.45</span>
-                        </div>
-                        <hr className='style' />
-                        <div className="first__varse__cart">
-                        <span>Shipping Dpd Curier</span>
-                        <span>$10.45</span>
-                        </div>
-                        <hr className='style' />
-                        <div className="first__varse__cart">
-                        <span>Payment (cash on delivery)</span>
-                        </div>
-                        <hr className='style' />
-                        <div className="first__varse__cart">
-                        <span className='strong'>Total inc. tax</span>
-                        <span className='strong'>$160.45</span>
-                        </div>
-                     </div>
-                     <div className="checkout__box">
-              <button>Continue Shopping</button>
-              <button>Go to Checkout</button>
             </div>
-                 </div>             
+
+            {/* shopping summary */}
+            <div className="product__summary">
+              <h1>Summary</h1>
+              <div className="price__total__box">
+                <div className="first__varse__cart">
+                  <span>Subtotal inc. tax</span>
+                  <span>$141.45</span>
+                </div>
+                <hr className='style' />
+                <div className="first__varse__cart">
+                  <span>Shipping Dpd Curier</span>
+                  <span>$10.45</span>
+                </div>
+                <hr className='style' />
+                <div className="first__varse__cart">
+                  <span>Payment (cash on delivery)</span>
+                </div>
+                <hr className='style' />
+                <div className="first__varse__cart">
+                  <span className='strong'>Total inc. tax</span>
+                  <span className='strong'>$160.45</span>
+                </div>
+              </div>
+              <div className="checkout__box">
+                <button>Continue Shopping</button>
+                <button>Go to Checkout</button>
+              </div>
+            </div>
 
           </div>
-          
+
         </div>
       </>
 
