@@ -1,8 +1,76 @@
-import { Box } from '@mui/material'
-import React, { Component } from 'react'
+import { Box, Snackbar, Alert, CircularProgress } from '@mui/material'
+import React, { Component, useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
+import { api } from '../Helpers/services';
 import CartViewBox from '../Components/CartViewBox'
 
 export default function Cart() {
+
+  const [cart, setcart] = useState([])
+  const [isloading, setloading] = useState(false)
+  const [showing, setshowing] = useState(false)
+  const [error, seterror] = useState('')
+  const [token, settoken] = useState(null)
+
+
+  const showerror = (value) => {
+    console.log(value)
+    if (showing) return;
+
+    seterror(value)
+    setshow(true);
+    setshowing(true);
+    setTimeout(() => {
+      setshow(false);
+      setshowing(false);
+    }, 2000);
+
+  };
+
+  const callcart = () => {
+
+    setloading(true)
+
+    axios.get(api.cart, { headers: { "Authorization": `Bearer ${token}` } })
+      .then(function (response) {
+        setloading(false)
+        if (response.data.data.length > 0) {
+          localStorage.setItem("cart", JSON.stringify(response.data.data))
+          setcart(response.data.data)
+        }
+      }
+
+      )
+      .catch(function (error) {
+        setloading(false)
+
+      })
+
+
+
+  }
+
+  useEffect(() => {
+    let usr = localStorage.getItem("user")
+    console.log(usr)
+    if (usr != null) {
+      console.log(JSON.parse(usr).auth_token)
+      let tkn = JSON.parse(usr)
+      settoken(tkn.auth_token, (n) => { });
+      callcart()
+    }
+    else {
+      let cart = localStorage.getItem("cart")
+      if (cart != null) {
+        setcart(JSON.parse(cart))
+      }
+    }
+  }, []);
+
+
+
+
   return (
     <>
       <Box className="container">
@@ -21,52 +89,67 @@ export default function Cart() {
           </li>
         </ol>
       </Box>
+      {isloading &&
 
-      <CartViewBox />
-      <section id="delivery-services" className="services-icons">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-3">
-              <div className="service one">
-                <img src="image/cart/truck.jpg" />
-                <span>
-                  <h2>Easy to buy & return</h2>
-                  <p>single click to buy & return</p>
-                </span>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="service two">
-                <img src="image/cart/payment-card.jpg" />
-                <span>
-                  <h2>Secure Payments</h2>
-                  <p>100% payment security</p>
-                </span>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="service three">
-                <img src="image/cart/support.jpg" />
-                <span>
-                  <h2>24x7 Support Available</h2>
-                  <p>support 24 hours a day</p>
-                </span>
-              </div>
-            </div>
-            <div className="col-md-3">
-              <div className="service four">
-                <img src="image/cart/mobile-app.jpg" />
-                <span>
-                  <h2>Shop with our App</h2>
-                  <p>Download app & get offers</p>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <CircularProgress />
 
-      <section id="similar-products" className="content hot-sellers ">
+
+      }
+
+      {
+
+      }
+      {cart.length > 0 ? (
+        <>
+          <CartViewBox cart={cart} />
+          <section id="delivery-services" className="services-icons">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-3">
+                  <div className="service one">
+                    <img src="image/cart/truck.jpg" />
+                    <span>
+                      <h2>Easy to buy & return</h2>
+                      <p>single click to buy & return</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="service two">
+                    <img src="image/cart/payment-card.jpg" />
+                    <span>
+                      <h2>Secure Payments</h2>
+                      <p>100% payment security</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="service three">
+                    <img src="image/cart/support.jpg" />
+                    <span>
+                      <h2>24x7 Support Available</h2>
+                      <p>support 24 hours a day</p>
+                    </span>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="service four">
+                    <img src="image/cart/mobile-app.jpg" />
+                    <span>
+                      <h2>Shop with our App</h2>
+                      <p>Download app & get offers</p>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </>
+      ) : (
+        <div>no items found in cart</div>
+      )}
+      {/* <section id="similar-products" className="content hot-sellers ">
         <div className="container">
           <div className="row">
             <div className="col-xs-12 col-md-12">
@@ -79,7 +162,7 @@ export default function Cart() {
 
             <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div className="item">
-                 <div className="product-thumb">
+                <div className="product-thumb">
                   <div className="image product-imageblock">
                     <div className="btn new bg-red">20% OFF</div>
                     <div className="btn percent bg-yellow">New</div>{" "}
@@ -91,14 +174,14 @@ export default function Cart() {
                         className="img-responsive"
                       />
                     </a>
-                 
+
                   </div>
                   <div className="caption product-detail">
                     <h4 className="product-name">
                       <a title="Casual Shirt With Ruffle Hem"
-                      style={{
-                        fontSize: "1.6vmax",
-                      }}
+                        style={{
+                          fontSize: "1.6vmax",
+                        }}
                       >
                         Configrable Product
                       </a>
@@ -191,7 +274,7 @@ export default function Cart() {
 
             <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div className="item">
-                 <div className="product-thumb">
+                <div className="product-thumb">
                   <div className="image product-imageblock">
                     <div className="btn new bg-red">20% OFF</div>
                     <div className="btn percent bg-yellow">New</div>{" "}
@@ -203,14 +286,14 @@ export default function Cart() {
                         className="img-responsive"
                       />
                     </a>
-                 
+
                   </div>
                   <div className="caption product-detail">
                     <h4 className="product-name">
                       <a title="Casual Shirt With Ruffle Hem"
-                      style={{
-                        fontSize: "1.6vmax",
-                      }}
+                        style={{
+                          fontSize: "1.6vmax",
+                        }}
                       >
                         Configrable Product
                       </a>
@@ -303,7 +386,7 @@ export default function Cart() {
 
             <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div className="item">
-                 <div className="product-thumb">
+                <div className="product-thumb">
                   <div className="image product-imageblock">
                     <div className="btn new bg-red">20% OFF</div>
                     <div className="btn percent bg-yellow">New</div>{" "}
@@ -315,14 +398,14 @@ export default function Cart() {
                         className="img-responsive"
                       />
                     </a>
-                 
+
                   </div>
                   <div className="caption product-detail">
                     <h4 className="product-name">
                       <a title="Casual Shirt With Ruffle Hem"
-                      style={{
-                        fontSize: "1.6vmax",
-                      }}
+                        style={{
+                          fontSize: "1.6vmax",
+                        }}
                       >
                         Configrable Product
                       </a>
@@ -414,7 +497,7 @@ export default function Cart() {
 
             <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div className="item">
-                 <div className="product-thumb">
+                <div className="product-thumb">
                   <div className="image product-imageblock">
                     <div className="btn new bg-red">20% OFF</div>
                     <div className="btn percent bg-yellow">New</div>{" "}
@@ -426,14 +509,14 @@ export default function Cart() {
                         className="img-responsive"
                       />
                     </a>
-                 
+
                   </div>
                   <div className="caption product-detail">
                     <h4 className="product-name">
                       <a title="Casual Shirt With Ruffle Hem"
-                      style={{
-                        fontSize: "1.6vmax",
-                      }}
+                        style={{
+                          fontSize: "1.6vmax",
+                        }}
                       >
                         Configrable Product
                       </a>
@@ -526,9 +609,9 @@ export default function Cart() {
           </div>
           <div className="row">
 
-          <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div className="item">
-                 <div className="product-thumb">
+                <div className="product-thumb">
                   <div className="image product-imageblock">
                     <div className="btn new bg-red">20% OFF</div>
                     <div className="btn percent bg-yellow">New</div>{" "}
@@ -540,14 +623,14 @@ export default function Cart() {
                         className="img-responsive"
                       />
                     </a>
-                 
+
                   </div>
                   <div className="caption product-detail">
                     <h4 className="product-name">
                       <a title="Casual Shirt With Ruffle Hem"
-                      style={{
-                        fontSize: "1.6vmax",
-                      }}
+                        style={{
+                          fontSize: "1.6vmax",
+                        }}
                       >
                         Configrable Product
                       </a>
@@ -640,7 +723,7 @@ export default function Cart() {
 
             <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div className="item">
-                 <div className="product-thumb">
+                <div className="product-thumb">
                   <div className="image product-imageblock">
                     <div className="btn new bg-red">20% OFF</div>
                     <div className="btn percent bg-yellow">New</div>{" "}
@@ -652,14 +735,14 @@ export default function Cart() {
                         className="img-responsive"
                       />
                     </a>
-                 
+
                   </div>
                   <div className="caption product-detail">
                     <h4 className="product-name">
                       <a title="Casual Shirt With Ruffle Hem"
-                      style={{
-                        fontSize: "1.6vmax",
-                      }}
+                        style={{
+                          fontSize: "1.6vmax",
+                        }}
                       >
                         Configrable Product
                       </a>
@@ -751,7 +834,7 @@ export default function Cart() {
 
             <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div className="item">
-                 <div className="product-thumb">
+                <div className="product-thumb">
                   <div className="image product-imageblock">
                     <div className="btn new bg-red">20% OFF</div>
                     <div className="btn percent bg-yellow">New</div>{" "}
@@ -763,14 +846,14 @@ export default function Cart() {
                         className="img-responsive"
                       />
                     </a>
-                 
+
                   </div>
                   <div className="caption product-detail">
                     <h4 className="product-name">
                       <a title="Casual Shirt With Ruffle Hem"
-                      style={{
-                        fontSize: "1.6vmax",
-                      }}
+                        style={{
+                          fontSize: "1.6vmax",
+                        }}
                       >
                         Configrable Product
                       </a>
@@ -862,7 +945,7 @@ export default function Cart() {
 
             <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div className="item">
-                 <div className="product-thumb">
+                <div className="product-thumb">
                   <div className="image product-imageblock">
                     <div className="btn new bg-red">20% OFF</div>
                     <div className="btn percent bg-yellow">New</div>{" "}
@@ -874,14 +957,14 @@ export default function Cart() {
                         className="img-responsive"
                       />
                     </a>
-                 
+
                   </div>
                   <div className="caption product-detail">
                     <h4 className="product-name">
                       <a title="Casual Shirt With Ruffle Hem"
-                      style={{
-                        fontSize: "1.6vmax",
-                      }}
+                        style={{
+                          fontSize: "1.6vmax",
+                        }}
                       >
                         Configrable Product
                       </a>
@@ -973,7 +1056,7 @@ export default function Cart() {
 
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   )
 }

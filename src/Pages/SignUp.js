@@ -1,11 +1,10 @@
-import { Box, Button, Checkbox, Grid, Link, Typography } from '@mui/material'
+import { Box, Button, Checkbox, Grid, Link, Typography,Snackbar,Alert,CircularProgress } from '@mui/material'
 import React, { Component, useState } from 'react'
 
 import '../App.css'
 import StyleInputField from '../Components/StyleInputField'
 import { useForm, Controller } from 'react-hook-form'
 import { useNavigate } from "react-router-dom";
-import ReactSnackBar from "react-js-snackbar";
 import axios from 'axios';
 import { api } from '../Helpers/services';
 
@@ -16,6 +15,7 @@ export default function SignUp() {
 
 
   let navigate = useNavigate();
+  const [isloading, setloading] = useState(false)
   const { handleSubmit, control } = useForm()
   const [show, setshow] = useState(false)
   const [showing, setshowing] = useState(false)
@@ -56,9 +56,10 @@ export default function SignUp() {
       return;
     }
 
-
+    setloading(true)
     axios.post(api.register, data)
       .then(function (response) {
+        setloading(false)
         if (response.data.success == false) {
           showerror(response.data.message);
           return
@@ -72,6 +73,7 @@ export default function SignUp() {
 
       )
       .catch(function (error) {
+        setloading(false)
         console.log(error)
         console.log(error.response.data) // 401
         //Please Authenticate or whatever returned from server
@@ -92,10 +94,14 @@ export default function SignUp() {
 
     <>
 
-      {show && <ReactSnackBar Show={true}
-      >
-        {error}
-      </ReactSnackBar>}
+{show &&
+
+<Snackbar open={true} autoHideDuration={4000} >
+  <Alert  severity="error" sx={{ width: '100%' }}   className="alert-show-msg">
+    {error}
+  </Alert>
+</Snackbar>
+}
 
       <Box>
         <Box
@@ -326,6 +332,14 @@ export default function SignUp() {
                           </span>
                         </Typography>
                       </Grid>
+
+                      {isloading &&
+                        <Grid item xs={12} md={12} lg={12}>
+                          <Box>
+                            <CircularProgress />
+                          </Box>
+                        </Grid>
+                      }
                     </Grid>
                   </form>
                   <Box mt={4}>
