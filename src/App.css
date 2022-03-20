@@ -30,3 +30,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+.alert-show-msg
+{
+  font-size: 20px !important; 
+}

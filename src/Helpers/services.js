@@ -8,5 +8,8 @@ export const api = {
   register: `${mainurl}register`,
   show: `${mainurl}show-all`,
   getProduct: `${mainurl}product/`,
-  reset_password: `${mainurl}reset_password`
+  reset_password: `${mainurl}reset_password`,
+  cart: `${mainurl}cart`,
+  remove_cart: `${mainurl}remove-cart`,
+  add_to_cart: `${mainurl}add-to-cart`,
 };
