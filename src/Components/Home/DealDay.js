@@ -9,7 +9,7 @@ export default function DealDay(props) {
         <div className="row">
           <div className="col-xs-12 col-md-12">
             <div className="heading">
-              <h2 style={{fontSize:'1.7vmax'}}>
+              <h2 style={{fontSize:'1.7vmax'}} className="deal__day">
                 Deal Of The Day
               </h2>
             </div>

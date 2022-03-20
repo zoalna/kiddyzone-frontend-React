@@ -6,6 +6,47 @@
   #browse-brand .brand-logo li img {
     width: 13.2vw;
   }
+  img.img-responsive.logo.active {
+    width: 11vmax !important;
+    top: 16px !important;
+    left: 20px !important;
+ }
+ .col-xs-12.col-md-12 {
+  margin-top: -1% !important;
+}
+#shop-categories .heading h2{
+  font-size: 1.2vmax!important;
+  left: 6%;
+}
+h2.latest__heading {
+  font-size: 1vmax!important;
+  left: 7.3%;
+}
+.heading.recently__viewed > h2 {
+  font-size: 1vmax!important;
+  margin-left: -1.8%!important;
+}
+h2.deal__day {
+  font-size: 1.4vmax!important;
+  left: 5.8%!important;
+}
+#latest-Blog .heading h2 {
+  font-size: 1.3vmax!important;
+  left: 5%;
+}
+.heading.brand > h2 {
+  font-size: 1.4vmax!important;
+}
+#browse-brand .heading h2 {
+  left: 4%!important;
+}
+#partners-discount .heading h2 {
+  font-size: 1.1vmax!important;
+  left: 4.2%;
+}
+ #shop-by-age .heading h2 {
+   left: 4.8%;
+ }
   #top-links .account {
     margin-left: -9%;
   }
@@ -17,9 +58,14 @@
     left: 10%!important;
   }
   .col-sm-12 {
-    margin-left: -2.7%;
+    margin-left: -14.7%;
     padding: 0% 5%;
-  }
+}
+img.img-responsive.logo {
+  width: 13vmax !important;
+  top: 37px !important;
+  left: 20px !important;
+}
   .currency button strong,
   .language .btn-group > .btn {
     font-size: 1.4vmax;
@@ -59,6 +105,15 @@
   #logo a img {
     top: 40px;
      left: 32%!important;
+  }
+  img.img-responsive.logo{
+    width: 15vmax!important;
+  }
+  .col-sm-12 {
+    margin-left: -2.3%!important;
+  }
+  img.img-responsive.logo.active {
+    width: 14vmax!important;
   }
   #top-links .account img {
     width: 20px;
@@ -157,6 +212,22 @@
   #top-links .account {
     margin-left: 0%;
   }
+  #shop-categories .heading h2 {
+    font-size: 1.4vmax!important;
+    left: 7%;
+  }
+  h2.latest__heading {
+    font-size: 1.3vmax!important;
+    left: 7.3%;
+  }
+  .heading.recently__viewed > h2 {
+    font-size: 1.2vmax!important;
+    margin-left: -1.8%!important;
+ }
+ #partners-discount .heading h2 {
+  font-size: 1.3vmax!important;
+  left: 5%;
+ }
   .css-1f8sh1y {
     height: 43vmax !important;
   }
@@ -302,6 +373,13 @@
   #logo-header {
     padding: 10px 30px;
   }
+  .col-sm-12 {
+    margin-left: -4.3%!important;
+}
+.heading.recently__viewed > h2 {
+  font-size: 1.3vmax!important;
+  margin-left: 0.2%!important;
+ }
   button.head-gift-btn img {
     width: 25px;
   }
@@ -629,9 +707,61 @@
 }
 
 @media screen and (max-width: 1080px) {
-  #browse-brand .brand-logo li img {
-    width: auto;
+  #logo a img {
+    left: -14%!important;
   }
+  .heading.brand > h2 {
+    font-size: 1.9vmax!important;
+}
+#latest-Blog .heading h2 {
+  font-size: 1.8vmax!important;
+  left: 5%;
+}
+#partners-discount .heading h2 {
+  font-size: 1.7vmax!important;
+  left: 6%;
+ }
+ img.img-responsive.logo.active {
+  width: 21vmax!important;
+}
+#hot-Sellers .heading h2 {
+  font-size: 2vmax!important;
+}
+#shop-by-age .heading h2 {
+  font-size: 2vmax!important;
+}
+#shop-categories .heading h2 {
+  font-size: 1.9vmax!important;
+  left: 10%;
+}
+.col-sm-9.col-xs-9.header-right {
+    margin: 5px -10px;
+ }
+ h2.latest__heading {
+  font-size: 1.8vmax!important;
+  left: 9%;
+}
+h2.deal__day {
+  font-size: 2vmax!important;
+  left: 7.8%!important;
+}
+.heading.recently__viewed > h2 {
+  font-size: 1.7vmax!important;
+  margin-left: 2%!important;
+}
+ #cards #subbanner1 {
+  height: 22vmax;
+ }
+.col-sm-12 {
+  margin-left: -2.3%!important;
+ }
+  img.img-responsive.logo{
+    width: 25vmax!important;
+  }
+  #logo {
+    position: absolute;
+    top: 0.1%;
+}
   .newslatter input {
     width: 320px !important;
   }
@@ -1192,6 +1322,28 @@
   .for-desktop {
     display: none;
   }
+  .heading {
+    position: relative;
+    margin-bottom: -60px!important;
+ }
+  #logo {
+    position: absolute;
+    top: -62.9%;
+  }
+  .head-social-media.for-mobile{
+    display: none;
+  }
+  .col-sm-9.col-xs-9.header-right {
+    display: none;
+ }
+ #logo a img {
+  left: -4%!important;
+  position: absolute;
+  top: 75%!important;
+}
+ #logo {
+  top: -195%;
+}
   .for-mobile {
     display: block;
   }
@@ -1220,7 +1372,6 @@
   }
   #logo {
     margin: 0;
-    width: 100%;
     text-align: left;
   }
   .head-social-media.for-mobile {
@@ -1369,8 +1520,28 @@
     padding: 30px;
     margin: 0 10px;
   }
+  .col-xs-12.age-block {
+    margin: 2vmax 0;
+    border-bottom: 1px solid #00000026;
+  }
+ .age-block img {
+  transition: 0.8s all;
+  width: 40%;
+ }
+ #hot-Sellers .heading h2 {
+  font-size: 2.8vmax!important;
+  left: 7%;
+  top: 38%!important;
+}
+.heading {
+  position: relative;
+  margin-bottom: -60px;
+ } 
+ section#hot-Sellers {
+  padding: 0% 5%;
+ }
   .shop-by-age .agebox {
-    margin: 0 10px;
+    margin: 8%;
   }
   #online-education {
     padding: 40px 10px 0;
@@ -1574,6 +1745,9 @@
     font-size: 16px;
     margin-left: -20px;
   }
+  section#our-latest-products {
+    padding: 0px 5%;
+}
   .newslatter {
     display: flex;
     justify-content: center;
@@ -1587,18 +1761,27 @@
     height: 140px;
   }
   #hot-Sellers .heading:after {
-    height: 170px;
-  }
+    height: 208px;
+ }
   #shop-categories .heading:after,
   #features .heading:after {
     height: 150px;
   }
   #our-latest-products .heading:after,
   #browse-brand .heading:after {
-    height: 160px;
+    height: 200px;
+  }
+  h2.latest__heading {
+    top: 35%!important;
+    left: 11%;
+    font-size: 2.2vmax!important;
   }
   #recently-veiw-products .heading:after {
-    height: 155px;
+    height: 200px;
+  }
+  .heading.recently__viewed > h2 {
+    font-size: 2.2vmax!important;
+    top: 38%!important;
   }
   #gift-finder .heading:after {
     height: 190px;
