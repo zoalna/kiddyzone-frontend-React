@@ -13,9 +13,6 @@
 .cart__box.active{
     display: block;
 }
-.cart__box.active.extra{
-    display: none;
-}
 .cart__box::before{
     content: "";
     width: 70%;

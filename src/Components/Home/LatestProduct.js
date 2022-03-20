@@ -11,7 +11,7 @@ export default function LatestProduct(props) {
         <div className="row">
           <div className="col-xs-12 col-md-12">
             <div className="heading">
-              <h2 style={{fontSize:'1.2vmax'}}>
+              <h2 style={{fontSize:'1.2vmax'}} className="latest__heading">
                 Our Latest Products
               </h2>
             </div>
