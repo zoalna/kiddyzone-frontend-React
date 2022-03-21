@@ -6,6 +6,9 @@
   #browse-brand .brand-logo li img {
     width: 13.2vw;
   }
+  .btn.new.bg-red {
+    width: 166px!important;
+  }
   img.img-responsive.logo.active {
     width: 11vmax !important;
     top: 16px !important;
@@ -1322,7 +1325,122 @@ h2.deal__day {
   .for-desktop {
     display: none;
   }
-  .heading {
+  .css-1f8sh1y{
+    height: auto!important;
+  }
+  .product-layout.product-grid.col-lg-3.col-md-3.col-sm-6.col-xs-12 {
+    padding: 0% 5%;
+ }
+ p.price.product-price {
+  font-size: 3vmax!important;
+ }
+ p.discount {
+  font-size: 2.8vmax!important;
+ }
+ .col-xs-12.age-block{
+   border: none!important;
+ }
+ .cms_banner {
+  margin: 15px 0;
+ }
+ #online-education .banner {
+  background: #fff;
+  box-shadow: 0px 0px 20px #c5c4c447;
+  min-height: 23.4vmax;
+  margin: 0;
+  display: table;
+  width: 100%;
+  margin: 10px 0;
+  padding: 30px;
+}
+#online-education .online-edu img {
+  margin: auto;
+}
+#latestProductBg{
+  background: #fff!important;
+}
+#cards .bg-green img, #cards .bg-red img {
+  margin-top: -4%;
+}
+#cards #subbanner1 {
+  height: 45vmax;
+}
+.cardtext {
+  text-align: center!important;
+}
+.cardtext > h2.text-white{
+  font-size: 3vmax!important;
+}
+#recentlyBg{
+  background: #fff!important;
+}
+.recent-products .viewmore .btn{
+  color: #fff!important;
+}
+h2.deal__day {
+  font-size: 3vmax!important;
+  left: 12.8%!important;
+  top: 45%!important;
+}
+div#subbanner1 {
+  margin: 20px 0;
+}
+#gift-finder .heading h2 {
+  font-size: 3.5vmax!important;
+  top: 45%;
+  left: 7%;
+}
+#latest-Blog .heading h2 {
+  font-size: 3vmax!important;
+  left: 12%;
+  top: 40%;
+}
+#latest-Blog .heading:after {
+  height: 160px!important;
+}
+#browse-brand .heading h2 {
+  font-size: 3vmax!important;
+  top: 37%;
+  left: 9%!important;
+}
+#partners-discount .heading h2 {
+  font-size: 2.5vmax!important;
+  left: 10%;
+  top: 38%;
+}
+#footer .ftr-logo{
+  margin-top: 15%;
+}
+.footer-block{
+  padding: 0% 2%;
+}
+h5.contact-title.footer-title::after{
+  top: 40px;
+}
+.qatar-logo{
+  display: none;
+}
+.copyright__message{
+  display: none;
+}
+#partners-discount .heading:after{
+  height: 170px!important;
+}
+#hotSellerId{
+  background: #fff!important;
+}
+.btn.new.bg-red{
+  font-size: 2vmax!important;
+}
+#shop-categories .heading h2 {
+  top: 45%;
+  left: 12%;
+  font-size: 2.3vmax!important;
+}
+.product-thumb .product-name a {
+  font-size: 3vmax!important;
+ }
+.heading {
     position: relative;
     margin-bottom: -60px!important;
  }
@@ -1945,6 +2063,60 @@ h2.deal__day {
     text-align: center;
     float: none;
   }
+  .shop-by-age .age-block {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #00000021!important;
+ }
+ h2.latest__heading {
+  top: 35%!important;
+  left: 16%;
+  font-size: 3vmax!important;
+}
+.bannertext__education > h2 {
+  font-size: 3vmax;
+}
+.btn.new.bg-red {
+  font-size: 2.8vmax!important;
+}
+ #logo a img{
+   top: 125%!important;
+ }
+ #top-links .account a, .currency button strong, .language .btn-group > .btn{
+   font-size: 20px!important;
+ }
+ .currency .btn-group .btn{
+   border-right: 2px solid #fff!important;
+ }
+ img.lang-flag {
+  display: none!important;
+  margin-right: 5px;
+}
+.currency .btn.btn-link.dropdown-toggle, .currency .btn.btn-link {
+  padding: 0px 5px 0px 10px;
+}
+.language .btn.btn-link.dropdown-toggle, .currency .btn.btn-link{
+  margin-left: 0!important;
+}
+img.down-arrow.responsive {
+  width: 12px;
+  margin-top: -8px;
+  margin-left: 7%;
+}
+.age-text a > span {
+  font-size: 3vmax!important;
+}
+.age-text a {
+  line-height: .8!important;
+ }
+ .age-block img {
+  transition: 0.8s all;
+  width: 80%;
+}
+#shop-categories .heading h2 {
+  font-size: 3.3vmax!important;
+  left: 18%!important;
+}
 }
 @media (max-width: 640px) {
   .newslatter .form-control {
@@ -1981,6 +2153,9 @@ h2.deal__day {
   #logo-header {
     padding: 10px;
   }
+  .product-layout.product-grid.col-lg-3.col-md-3.col-sm-6.col-xs-12 {
+    padding: 3% 5%;
+ }
   button.head-gift-btn {
     font-size: 14px;
     padding: 5px 10px 3px;
@@ -2113,6 +2288,34 @@ h2.deal__day {
   .header-right #search {
     margin: 10px 0px;
   }
+  h2.latest__heading {
+    left: 23%;
+  }
+  p.price.product-price {
+    font-size: 4vmax!important;
+  }
+  .product-thumb .product-name a {
+    font-size: 4vmax!important;
+  }
+  p.discount {
+    font-size: 3.8vmax!important;
+  }
+  #hot-Sellers .heading h2 {
+    font-size: 3.8vmax!important;
+    left: 14%;
+    top: 38%!important;
+  }
+  #shop-by-age .heading h2 {
+    font-size: 4vmax!important;
+    top: 46%;
+    left: 15%;
+  }
+  .age-text > h2 {
+    line-height: 0.7!important;
+ }
+ a.text-purple {
+  font-size: 2.5vmax;
+ }
   #content .product-grid .product-grid-item,
   .grid-list-wrapper .product-grid {
     width: 100%;

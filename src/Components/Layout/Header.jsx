@@ -122,7 +122,7 @@ const logout = () => {
                           />{" "}
                           English{" "}
                           <img
-                            className="down-arrow"
+                            className="down-arrow responsive"
                             src="image/header/down-arrow.svg"
                           />
                         </button>

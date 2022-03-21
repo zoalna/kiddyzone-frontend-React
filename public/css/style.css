@@ -1256,7 +1256,7 @@ button.proceed-checkout {
   border-bottom: 0;
 }
 .recent-products .viewmore .btn {
-  color: #000;
+  color: #fff;
 }
 .shop-by-age .age-block {
   width: 20%;
@@ -1873,6 +1873,7 @@ footer ul li {
   background: #fff;
   border-radius: 15px;
   border: 1px solid #b0b1d1;
+  height: 42vmax;
 }
 /*.product-thumb a img + img {
 	display: none;
@@ -2519,7 +2520,7 @@ button .fa {
 }
 #single-product .nav-tabs > li.active > a {
   background: transparent;
-  padding: 0;
+  padding: 5px;
   margin: 0;
   color: #fff;
   border: 3px solid #ca3099;
@@ -3435,8 +3436,6 @@ h4.price > span {
 .nav-tabs > li.active > a {
   /* background: #000; */
   padding: 10px 20px;
-  height: 9vmax;
-  margin: 0;
   color: #fff;
 }
 .productinfo-tab .tab-content {
@@ -4621,6 +4620,10 @@ div.dioprogress_size_l {
     margin-left: -20px;
     margin-right: 20px;
     border: 1px solid #00000021;
+}
+.product-thumb .image a img {
+  height: 25vmax;
+  object-fit: contain;
 }
 .categories-filter,
 .shopbyage-filter,

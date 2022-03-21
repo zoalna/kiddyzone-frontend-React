@@ -9,10 +9,6 @@ const [slug,setslug] = React.useState("/ProductDetail/" + props.item.slug);
 
   return (
 <>
-  
-           return (
-
-
             <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
               <div className="item">
 
@@ -133,7 +129,7 @@ const [slug,setslug] = React.useState("/ProductDetail/" + props.item.slug);
               </div>
             </div>
          
-         ) 
+         {/* )  */}
       
 
     </>
