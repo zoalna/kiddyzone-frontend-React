@@ -2596,6 +2596,10 @@ button .fa {
 .preview-thumbnail.nav-tabs li {
   width: 23%;
   margin-right: 2.5%;
+  height: 9vmax;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus, .nav-tabs>li>a:hover{
+  height: 100%;
 }
 .preview-thumbnail.nav-tabs li img {
   max-width: 100%;
