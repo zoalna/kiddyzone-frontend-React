@@ -17,7 +17,7 @@ export default function HotSellers(props) {
         </div>
 
       </div>
-      <div className="bg-blue" style={{ background: "#f7f7f7" }}>
+      <div className="bg-blue" style={{ background: "#f7f7f7" }} id="hotSellerId">
         <div className="container-fluid">
 
         {/* <div className="arrow__navigation" style={{
@@ -52,8 +52,6 @@ export default function HotSellers(props) {
             <span style={{color:"red",fontSize:"1.3vmax",marginTop:"5px",marginLeft:"5px"}}>▶</span>
           </div>
         </div> */}
-        
-        <Carousel>
 
           <div className="row">
           {
@@ -61,9 +59,9 @@ export default function HotSellers(props) {
           
            return (
             <ProductCard item = {item } />
-         
          ) 
         })}
+          
             <div className="viewmore">
             <a
               href="#"
@@ -76,9 +74,6 @@ export default function HotSellers(props) {
             </a>
           </div>
           </div>
-          
-
-          </Carousel>
         </div>
       </div>
     </section>

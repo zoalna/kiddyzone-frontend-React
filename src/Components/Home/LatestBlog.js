@@ -6,7 +6,7 @@ export default function LatestBlog() {
   return (
     <section id="latest-Blog">
       <div className="container-fluid">
-        <div className="content">
+        <div className="content blog">
           <div className="blog">
             <div className="heading" style={{
               marginBottom:"-93px"

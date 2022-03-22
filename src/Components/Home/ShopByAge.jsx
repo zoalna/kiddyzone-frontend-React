@@ -17,6 +17,7 @@ export default function ShopByAge(props) {
 
         
             <div className="row agebox">
+              
             {
         props.data.map((item, i) => {     
           

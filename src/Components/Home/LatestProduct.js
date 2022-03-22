@@ -19,10 +19,10 @@ export default function LatestProduct(props) {
         </div>
       </div>
       
-      <div className="bg-dark- " style={{background:'#f7f7f7'}}>
+      <div className="bg-dark- " style={{background:'#f7f7f7'}} id="latestProductBg">
     
         <div className="container-fluid">
-        <Carousel>
+        {/* <Carousel> */}
         <div className="row">
       {
         props.data.map((item, i) => {     
@@ -46,7 +46,7 @@ export default function LatestProduct(props) {
 
 
 
-</Carousel>
+{/* </Carousel> */}
 
         </div>
       </div>
