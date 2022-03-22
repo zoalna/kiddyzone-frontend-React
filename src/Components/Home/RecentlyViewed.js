@@ -20,10 +20,10 @@ export default function RecentlyViewed(props) {
         </div>
 
       </div>
-      <div className="bg-yellow" style={{background:'#f7f7f7'}}>
+      <div className="bg-yellow" style={{background:'#f7f7f7'}} id="recentlyBg">
  
         <div className="container-fluid">
-        <Carousel>
+        {/* <Carousel> */}
         <div className="row">
       {
         props.data.map((item, i) => {     
@@ -47,7 +47,7 @@ export default function RecentlyViewed(props) {
 
 
 
-</Carousel>
+{/* </Carousel> */}
                 
         </div>
       </div>

@@ -108,10 +108,8 @@ export default function ProductCard(props) {
 
 
   return (
+   
     <>
-
-      return (
-
 
       <div className="product-layout  product-grid  col-lg-3 col-md-3 col-sm-6 col-xs-12">
         <div className="item">
@@ -227,6 +225,9 @@ export default function ProductCard(props) {
                 </button>
               </div>
             </div>
+         
+         {/* )  */}
+      
           </div>
 
 
@@ -241,10 +242,6 @@ export default function ProductCard(props) {
           </Alert>
         </Snackbar>
       }
-
-      )
-
-
     </>
   );
 }
