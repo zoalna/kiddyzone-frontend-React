@@ -5,13 +5,14 @@ import {
   IconButton,
   InputBase,
   Link,
-  Typography
+  Typography,
+  Snackbar, Alert, CircularProgress
 } from '@mui/material'
+import '../App.css'
 import { React, useState } from 'react'
 import StyleInputField from '../Components/StyleInputField'
 import { useForm, Controller } from 'react-hook-form'
 import { useNavigate } from "react-router-dom";
-import ReactSnackBar from "react-js-snackbar";
 import axios from 'axios';
 import { api } from '../Helpers/services';
 
@@ -19,6 +20,7 @@ export default function Login() {
   let navigate = useNavigate();
   const { handleSubmit, control } = useForm()
   const [show, setshow] = useState(false)
+  const [isloading, setloading] = useState(false)
   const [showing, setshowing] = useState(false)
   const [error, seterror] = useState('')
 
@@ -45,45 +47,68 @@ export default function Login() {
       return;
     }
 
+    let cart = localStorage.getItem("cart")
+    if (cart != null)
+    {
+      data.cart_items = JSON.parse(cart);
+    }
 
-    axios.post(api.login, data)
-    .then(function (response)
-     {
-      if (response.data.success == false) {
+    
+    console.log(data)
+
+    setloading(true)
+    const headers = {
+      'Content-Type': 'application/json'
+    }
+    axios.post(api.login, data, {
+      headers: headers
+    })
+      .then(function (response) {
+        setloading(false)
+        if (response.data.success == false) {
+          showerror(response.data.message);
+          return
+        }
+        console.log(response.data)
         showerror(response.data.message);
-        return
+        localStorage.setItem('user', JSON.stringify(response.data))
+        navigate("/");
+        window.location.reload(false);
       }
-      console.log(response.data)
-      showerror(response.data.message);
-      localStorage.setItem('user', JSON.stringify(response.data))
-      navigate("/");
-      window.location.reload(false);
-     }
-     
-     )
-    .catch(function (error) {
-      console.log(error)
-        console.log(error.response.data) // 401
+
+      )
+      .catch(function (error) {
+        setloading(false)
+        //  console.log(error)
+        // console.log(error.response.data) // 401
         //Please Authenticate or whatever returned from server
-      // if(error.response.status==401){
+        // if(error.response.status==401){
         if (error.response.data.success == false) {
           showerror(error.response.data.message);
           return
         }
-      // }
-    })
+        // }
+      })
 
 
 
   }
 
+
+
   return (
     <>
-      {show && <ReactSnackBar Show={true}
-      >
-        {error}
-      </ReactSnackBar>}
+      {show &&
+
+        <Snackbar open={true} autoHideDuration={4000} >
+          <Alert severity="error" className="alert-show-msg">
+            {error}
+          </Alert>
+        </Snackbar>
+      }
+
       <Box>
+
         <Box
           sx={{
             position: 'relative',
@@ -257,6 +282,13 @@ export default function Login() {
                           </Typography>
                         </Box>
                       </Grid>
+                      {isloading &&
+                        <Grid item xs={12} md={12} lg={12}>
+                          <Box>
+                            <CircularProgress />
+                          </Box>
+                        </Grid>
+                      }
                     </Grid>
                   </form>
                   <Box mt={2} display={'flex'} alignItems={'center'}>
