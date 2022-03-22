@@ -3,20 +3,34 @@ import "../../App.css";
 import "./cart.css";
 import NavBar from "./NavBar";
 import { Link, useNavigate } from "react-router-dom";
+import Cart from '../../Pages/Cart'
 export default function Header() {
 
   const switcherTab = useRef(null);
   const imageTab = useRef(null);
   const [user, setuser] = useState(localStorage.getItem("user"))
   const [username, setusername] = useState(null)
-
+  const [cartcount, setcartcount] = useState(0)
+  const [sidemenu, setsidemenu] = useState(false)
+let tempcart = localStorage.getItem("cart");
   useEffect(() => {
+    alert('asdasdsad')
     let usr = localStorage.getItem("user")
+    let cart = localStorage.getItem("cart")
+    if(cart != null)
+    {
+      let count =  JSON.parse(cart)
+      setcartcount(count.length)
+    }
+    else
+    {
+      setcartcount(0)
+    }
     console.log(usr)
     let username = JSON.parse(usr)
     setusername(username ? username.user.username : null)
     setuser(usr)
-  }, []);
+  }, [tempcart]);
 
 
   const logout = () => {
@@ -37,7 +51,8 @@ export default function Header() {
     }
   })
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    setsidemenu(e)
     let cart = document.querySelector("#shopping-cart");
     let button = document.querySelector(".cart__box");
     if (cart.click) {
@@ -48,7 +63,8 @@ export default function Header() {
     }
   }
 
-  const removeSubmit = () => {
+  const removeSubmit = (e) => {
+    setsidemenu(e)
     let button = document.querySelector(".cart__box");
     let cross = document.querySelector(".cross__option")
     if (cross.click) {
@@ -166,10 +182,25 @@ export default function Header() {
 
                         <Link to="/Cart">
                           <img src="image/header/shopping-cart%20(1).svg" />
+                          {
+                            cartcount != 0 &&
+                            <span className="cartitm">{cartcount}</span>
+                          }
+                          
                         </Link>
                         {/* <a href="#" id="shopping-cart" title="Wish List (0)" onClick={handleSubmit} useRef={switcherTab}>
                           <img src="image/header/shopping-cart%20(1).svg" />
                         </a> */}
+                      </li>
+                      <li>
+
+                       <a href="#" id="shopping-cart" title="Wish List (0)" onClick={() => handleSubmit(true) } useRef={switcherTab}>
+                          <img src="image/header/shopping-cart%20(1).svg" />
+                          {
+                            cartcount != 0 &&
+                            <span className="cartitm">{cartcount}</span>
+                          }
+                        </a> 
                       </li>
 
                       <li>
@@ -271,9 +302,9 @@ export default function Header() {
         <div className="cart__box" useRef={switcherTab}>
           <div className="header__box">
             <div className="text__sidecart">
-              <h1>Shopping Cart (2)</h1>
+              <h1>Shopping Cart</h1>
             </div>
-            <div className="cross__option" useRef={switcherTab} onClick={removeSubmit}>
+            <div className="cross__option" useRef={switcherTab} onClick={() => removeSubmit(false) }>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="29.383"
@@ -312,8 +343,10 @@ export default function Header() {
             </div>
           </div>
 
+          <Cart sidecart = {true}  refresh={sidemenu}/>
+
           {/* Cart Items */}
-          <div className="cart__items">
+          {/* <div className="cart__items">
             <div className="singleProduct">
 
               <div className="cartItem__box">
@@ -430,36 +463,8 @@ export default function Header() {
 
             </div>
 
-            {/* shopping summary */}
-            <div className="product__summary">
-              <h1>Summary</h1>
-              <div className="price__total__box">
-                <div className="first__varse__cart">
-                  <span>Subtotal inc. tax</span>
-                  <span>$141.45</span>
-                </div>
-                <hr className='style' />
-                <div className="first__varse__cart">
-                  <span>Shipping Dpd Curier</span>
-                  <span>$10.45</span>
-                </div>
-                <hr className='style' />
-                <div className="first__varse__cart">
-                  <span>Payment (cash on delivery)</span>
-                </div>
-                <hr className='style' />
-                <div className="first__varse__cart">
-                  <span className='strong'>Total inc. tax</span>
-                  <span className='strong'>$160.45</span>
-                </div>
-              </div>
-              <div className="checkout__box">
-                <button>Continue Shopping</button>
-                <button>Go to Checkout</button>
-              </div>
-            </div>
-
-          </div>
+           
+    */}
 
         </div>
       </>
@@ -467,3 +472,7 @@ export default function Header() {
     </>
   );
 }
+
+
+
+
