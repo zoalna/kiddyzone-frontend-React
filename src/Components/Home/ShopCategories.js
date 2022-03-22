@@ -21,7 +21,7 @@ export default function ShopCategories(props) {
         props.data.map((item, i) => {     
           
            return (
-          <div className="col-xs-12 age-block">
+          <div className="col-xs-12 age-block borderNone">
             <img src={item.image_url} />
             <div className="age-text">
               <h2>
