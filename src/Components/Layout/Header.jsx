@@ -14,7 +14,6 @@ export default function Header() {
   const [sidemenu, setsidemenu] = useState(false)
 let tempcart = localStorage.getItem("cart");
   useEffect(() => {
-    alert('asdasdsad')
     let usr = localStorage.getItem("user")
     let cart = localStorage.getItem("cart")
     if(cart != null)
