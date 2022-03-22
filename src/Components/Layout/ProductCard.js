@@ -15,6 +15,10 @@ export default function ProductCard(props) {
 
 
   const add = (item) => {
+
+    
+
+
     let usr = localStorage.getItem("user")
     let cart = localStorage.getItem("cart")
     let cartitems = []

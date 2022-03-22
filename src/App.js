@@ -50,7 +50,7 @@ class App extends Component {
               <Route exact path="/About" element={<About />} />
               <Route exact path="/Elarning" element={<Elarning />} />
               <Route exact path="/Dashboard" element={<Dashboard />} />
-              <Route exact path="/Cart" element={<Cart />} />
+              <Route exact path="/Cart" element={<Cart  sidecart = {false} />} />
               <Route exact path="/Checkout" element={<Checkout />} />
 
               {/* <Route exact path="/" element={isSignIn ? <Home /> : <Home />} /> */}
