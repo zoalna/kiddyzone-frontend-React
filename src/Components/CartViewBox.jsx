@@ -5,15 +5,26 @@ import axios from 'axios';
 import { api } from '../Helpers/services';
 import trush from "../../src/image/cart/trash.png";
 import { width } from '@mui/system';
+import { useShared } from '../Helpers/GlobalStates';
 
 const CartViewBox = (props) => {
-  const [cart, setcart] = useState(props.cart)
+  const { changecartcounter, cartCounter,changecloseSide ,cart, setcart, changecart} = useShared();
+ // const [cart, setcart] = useState(props.cart)
   const [subtotal, setsubtotal] = useState(0)
   const [isloading, setloading] = useState(false)
   const [showing, setshowing] = useState(false)
   const [error, seterror] = useState('')
   const [token, settoken] = useState(null)
   const [sidecart, setsidecart] = useState(props.sidecart)
+  let navigate = useNavigate();
+
+  const view = () => {
+  
+   // changecloseSide(true)
+   // changecloseSide(false)
+    navigate(`/Cart`);
+  
+  }
 
   const add = (index, qty) => {
     let items = [...cart];
@@ -22,10 +33,12 @@ const CartViewBox = (props) => {
     item.product_subTotal = item.quantity * item.unit_price
     if (item.quantity == 0) return
     items[index] = item;
-    setcart(items);
+    changecart(items);
     const subtotal = items.reduce((prev, next) => prev + next.product_subTotal, 0);
     setsubtotal(subtotal)
     localStorage.setItem("cart", JSON.stringify(items))
+    changecartcounter(items)
+    reload()
     let usr = localStorage.getItem("user")
     if (usr != null) {
       let tkn = JSON.parse(usr)
@@ -40,7 +53,7 @@ const CartViewBox = (props) => {
       });
 
       console.log(data)
-
+    reload()
       axios.post(api.add_to_cart, data, {
         headers: headers
       })
@@ -48,7 +61,7 @@ const CartViewBox = (props) => {
 
           if (response.data.data.length > 0) {
             localStorage.setItem("cart", JSON.stringify(response.data.data))
-
+            changecartcounter(response.data.data)
           }
 
         })
@@ -57,19 +70,23 @@ const CartViewBox = (props) => {
   }
 
   const remove = (id) => {
+    debugger
     let cart = localStorage.getItem("cart")
     let cartitems = JSON.parse(cart)
     cartitems = cartitems.filter(function (item) {
       return item.product_id != id;
     });
-    setcart(cartitems)
+
+    changecart(cartitems)
     const subtotal = cartitems.reduce((prev, next) => prev + next.product_subTotal, 0);
     setsubtotal(subtotal)
     if (cartitems.length == 0) {
       localStorage.removeItem("cart");
+      changecartcounter(null)
     }
     else {
       localStorage.setItem("cart", JSON.stringify(cartitems))
+      changecartcounter(cartitems)
     }
     let usr = localStorage.getItem("user")
     if (usr != null) {
@@ -84,7 +101,7 @@ const CartViewBox = (props) => {
       });
 
       console.log(data)
-
+      
       axios.post(api.remove_cart, data, {
         headers: headers
       })
@@ -101,19 +118,25 @@ const CartViewBox = (props) => {
   }
 
   useEffect(() => {
-    setcart(props.cart);
+    changecart(props.cart);
     setsidecart(props.sidecart);
 
-  
+
 
   }, [props.cart]);
   useEffect(() => {
-  
+
 
     const subtotal = cart.reduce((prev, next) => prev + next.product_subTotal, 0);
     setsubtotal(subtotal)
 
   }, [cart]);
+
+  const reload = () => {
+
+   // navigate(`/Cart`);
+  }
+
 
 
   return (
@@ -124,7 +147,7 @@ const CartViewBox = (props) => {
       {
         sidecart ? (
           <>
-            
+
 
             <div className="singleProduct">
               {
@@ -148,46 +171,46 @@ const CartViewBox = (props) => {
                         </div>
                       </div>
                       <div className="product__price__cart">
-                  <span>AED 123</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="29.383"
-                    height="29.383"
-                    viewBox="0 0 29.383 29.383"
-                    onClick={e => remove(item.product_id)}
-                  >
-                    <g
-                      id="Group_4317"
-                      data-name="Group 4317"
-                      transform="translate(-16305.379 367.621)"
-                    >
-                      <line
-                        id="Line_43"
-                        data-name="Line 43"
-                        x2="25.14"
-                        y2="25.14"
-                        transform="translate(16307.5 -365.5)"
-                        fill="none"
-                        stroke="#707070"
-                        stroke-linecap="round"
-                        stroke-width="3"
-                      ></line>
-                      <line
-                        id="Line_44"
-                        data-name="Line 44"
-                        x1="25.14"
-                        y2="25.14"
-                        transform="translate(16307.5 -365.5)"
-                        fill="none"
-                        stroke="#707070"
-                        stroke-linecap="round"
-                        stroke-width="3"
-                      ></line>
-                    </g>
-                  </svg>
-                </div>
+                        <span>AED {item.product_subTotal}</span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="29.383"
+                          height="29.383"
+                          viewBox="0 0 29.383 29.383"
+                          onClick={e => remove(item.product_id)}
+                        >
+                          <g
+                            id="Group_4317"
+                            data-name="Group 4317"
+                            transform="translate(-16305.379 367.621)"
+                          >
+                            <line
+                              id="Line_43"
+                              data-name="Line 43"
+                              x2="25.14"
+                              y2="25.14"
+                              transform="translate(16307.5 -365.5)"
+                              fill="none"
+                              stroke="#707070"
+                              stroke-linecap="round"
+                              stroke-width="3"
+                            ></line>
+                            <line
+                              id="Line_44"
+                              data-name="Line 44"
+                              x1="25.14"
+                              y2="25.14"
+                              transform="translate(16307.5 -365.5)"
+                              fill="none"
+                              stroke="#707070"
+                              stroke-linecap="round"
+                              stroke-width="3"
+                            ></line>
+                          </g>
+                        </svg>
+                      </div>
                     </div>
-                    
+
 
                   )
                 })
@@ -220,7 +243,8 @@ const CartViewBox = (props) => {
                 </div>
               </div>
               <div className="checkout__box">
-                <button>Continue Shopping</button>
+                <button  onClick={e => view()}>View Cart</button>
+                {/* <button>Continue Shopping</button> */}
                 <button>Go to Checkout</button>
               </div>
             </div>
