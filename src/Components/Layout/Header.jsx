@@ -1,10 +1,15 @@
-import React, { Component, useRef, useState, useEffect } from "react";
+import React, { Component, useRef, useState, useEffect, useCallback } from "react";
 import "../../App.css";
 import "./cart.css";
 import NavBar from "./NavBar";
 import { Link, useNavigate } from "react-router-dom";
 import Cart from '../../Pages/Cart'
+import { useShared } from '../../Helpers/GlobalStates'
+
+
 export default function Header() {
+
+  const { userData, setuserData, changeuserData,cartCounter,closeSide } = useShared();
 
   const switcherTab = useRef(null);
   const imageTab = useRef(null);
@@ -12,29 +17,34 @@ export default function Header() {
   const [username, setusername] = useState(null)
   const [cartcount, setcartcount] = useState(0)
   const [sidemenu, setsidemenu] = useState(false)
-let tempcart = localStorage.getItem("cart");
+  let tempcart = localStorage.getItem("cart");
   useEffect(() => {
     let usr = localStorage.getItem("user")
     let cart = localStorage.getItem("cart")
-    if(cart != null)
-    {
-      let count =  JSON.parse(cart)
+    if (cart != null) {
+      let count = JSON.parse(cart)
       setcartcount(count.length)
     }
-    else
-    {
+    else {
       setcartcount(0)
     }
     console.log(usr)
     let username = JSON.parse(usr)
-    setusername(username ? username.user.username : null)
-    setuser(usr)
-  }, [tempcart]);
+    setusername(userData ? userData.user.username : null)
+    setuser(userData)
+  }, [tempcart, userData,cartCounter]);
 
+  useEffect(() => {
+
+   // if (closeSide == true)
+    //removeSubmit(false)
+
+  }, [closeSide]);
 
   const logout = () => {
 
     localStorage.removeItem("user");
+    changeuserData(null)
     setuser(null)
   }
 
@@ -179,27 +189,27 @@ let tempcart = localStorage.getItem("cart");
                       </li>
                       <li>
 
-                        <Link to="/Cart">
+                        {/* <Link to="/Cart">
                           <img src="image/header/shopping-cart%20(1).svg" />
                           {
                             cartcount != 0 &&
                             <span className="cartitm">{cartcount}</span>
                           }
-                          
-                        </Link>
+
+                        </Link> */}
                         {/* <a href="#" id="shopping-cart" title="Wish List (0)" onClick={handleSubmit} useRef={switcherTab}>
                           <img src="image/header/shopping-cart%20(1).svg" />
                         </a> */}
                       </li>
                       <li>
 
-                       <a href="#" id="shopping-cart" title="Wish List (0)" onClick={() => handleSubmit(true) } useRef={switcherTab}>
+                        <a href="#" id="shopping-cart" title="Wish List (0)" onClick={() => handleSubmit(true)} useRef={switcherTab}>
                           <img src="image/header/shopping-cart%20(1).svg" />
                           {
                             cartcount != 0 &&
                             <span className="cartitm">{cartcount}</span>
                           }
-                        </a> 
+                        </a>
                       </li>
 
                       <li>
@@ -303,7 +313,7 @@ let tempcart = localStorage.getItem("cart");
             <div className="text__sidecart">
               <h1>Shopping Cart</h1>
             </div>
-            <div className="cross__option" useRef={switcherTab} onClick={() => removeSubmit(false) }>
+            <div className="cross__option" useRef={switcherTab} onClick={() => removeSubmit(false)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="29.383"
@@ -342,7 +352,7 @@ let tempcart = localStorage.getItem("cart");
             </div>
           </div>
 
-          <Cart sidecart = {true}  refresh={sidemenu}/>
+          <Cart sidecart={true} refresh={sidemenu} />
 
           {/* Cart Items */}
           {/* <div className="cart__items">

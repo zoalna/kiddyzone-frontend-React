@@ -5,10 +5,12 @@ import axios from 'axios';
 import { api } from '../Helpers/services';
 import CartViewBox from '../Components/CartViewBox'
 import { SignalWifiStatusbarNullRounded } from '@mui/icons-material';
+import { useShared } from '../Helpers/GlobalStates'
 
 export default function Cart(props) {
 
-  const [cart, setcart] = useState([])
+  const { cart, setcart, changecart } = useShared();
+  //const [cart, setcart] = useState([])
   const [isloading, setloading] = useState(false)
   const [showing, setshowing] = useState(false)
   const [error, seterror] = useState('')
@@ -39,8 +41,11 @@ export default function Cart(props) {
         setloading(false)
         if (response.data.data.length > 0) {
           localStorage.setItem("cart", JSON.stringify(response.data.data))
-          setcart(response.data.data)
+          changecart(response.data.data)
         }
+        else{
+          changecart([])
+                }
       }
 
       )
@@ -54,7 +59,7 @@ export default function Cart(props) {
   }
 
   useEffect(() => {
-
+    debugger
     let usr = localStorage.getItem("user")
     console.log(usr)
     if (usr != null) {
@@ -66,8 +71,11 @@ export default function Cart(props) {
     else {
       let cart = localStorage.getItem("cart")
       if (cart != null) {
-        setcart(JSON.parse(cart))
+        changecart(JSON.parse(cart))
        
+      }
+      else{
+        changecart([])
       }
     }
   }, [props.refresh]);

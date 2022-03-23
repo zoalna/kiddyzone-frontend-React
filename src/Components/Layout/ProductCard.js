@@ -4,9 +4,12 @@ import { Snackbar, Alert } from '@mui/material'
 import axios from 'axios';
 import { api } from '../../Helpers/services';
 import "../../App.css";
+import { useShared } from '../../Helpers/GlobalStates';
 
 export default function ProductCard(props) {
 
+
+  const {changecartcounter } = useShared();
   const [item, setitem] = useState(props.item);
   const [slug, setslug] = useState("/ProductDetail/" + props.item.slug);
   const [show, setshow] = useState(false)
@@ -15,8 +18,6 @@ export default function ProductCard(props) {
 
 
   const add = (item) => {
-
-    
 
 
     let usr = localStorage.getItem("user")
@@ -73,6 +74,7 @@ export default function ProductCard(props) {
 
         )
       localStorage.setItem("cart", JSON.stringify(cartitems))
+      changecartcounter(cartitems)
     }
 
 
@@ -98,7 +100,7 @@ export default function ProductCard(props) {
 
           if (response.data.data.length > 0) {
             localStorage.setItem("cart", JSON.stringify(response.data.data))
-
+            changecartcounter(cartitems)
           }
 
         })

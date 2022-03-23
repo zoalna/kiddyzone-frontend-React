@@ -15,8 +15,14 @@ import { useForm, Controller } from 'react-hook-form'
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { api } from '../Helpers/services';
+import { useShared } from '../Helpers/GlobalStates';
+
 
 export default function Login() {
+
+  const {userData, setuserData, changeuserData } = useShared();
+
+
   let navigate = useNavigate();
   const { handleSubmit, control } = useForm()
   const [show, setshow] = useState(false)
@@ -72,8 +78,10 @@ export default function Login() {
         console.log(response.data)
         showerror(response.data.message);
         localStorage.setItem('user', JSON.stringify(response.data))
-        navigate("/");
-        window.location.reload(false);
+        changeuserData(response.data)
+        navigate(`/`);
+        //alert(JSON.stringify(userData))
+
       }
 
       )
