@@ -1,15 +1,14 @@
 import { Box, Snackbar, Alert, CircularProgress } from '@mui/material'
 import React, { Component, useState, useEffect } from 'react'
-import { useNavigate } from "react-router-dom";
-import axios from 'axios';
-import { api } from '../Helpers/services';
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { api } from '../Helpers/services'
 import CartViewBox from '../Components/CartViewBox'
-import { SignalWifiStatusbarNullRounded } from '@mui/icons-material';
+import { SignalWifiStatusbarNullRounded } from '@mui/icons-material'
 import { useShared } from '../Helpers/GlobalStates'
 
 export default function Cart(props) {
-
-  const { cart, setcart, changecart } = useShared();
+  const { cart, setcart, changecart } = useShared()
   //const [cart, setcart] = useState([])
   const [isloading, setloading] = useState(false)
   const [showing, setshowing] = useState(false)
@@ -17,168 +16,148 @@ export default function Cart(props) {
   const [token, settoken] = useState(null)
   const [sidecart, setsidecart] = useState(props.sidecart)
 
-
   const showerror = (value) => {
     console.log(value)
-    if (showing) return;
+    if (showing) return
 
     seterror(value)
-    setshow(true);
-    setshowing(true);
+    setshow(true)
+    setshowing(true)
     setTimeout(() => {
-      setshow(false);
-      setshowing(false);
-    }, 2000);
-
-  };
+      setshow(false)
+      setshowing(false)
+    }, 2000)
+  }
 
   const callcart = () => {
     console.log(sidecart)
     setloading(true)
 
-    axios.get(api.cart, { headers: { "Authorization": `Bearer ${token}` } })
+    axios
+      .get(api.cart, { headers: { Authorization: `Bearer ${token}` } })
       .then(function (response) {
         setloading(false)
         if (response.data.data.length > 0) {
-          localStorage.setItem("cart", JSON.stringify(response.data.data))
+          localStorage.setItem('cart', JSON.stringify(response.data.data))
           changecart(response.data.data)
-        }
-        else{
+        } else {
           changecart([])
-                }
-      }
-
-      )
+        }
+      })
       .catch(function (error) {
         setloading(false)
-
       })
-
-
-
   }
 
   useEffect(() => {
-    debugger
-    let usr = localStorage.getItem("user")
+    let usr = localStorage.getItem('user')
     console.log(usr)
     if (usr != null) {
       console.log(JSON.parse(usr).auth_token)
       let tkn = JSON.parse(usr)
-      settoken(tkn.auth_token, (n) => { });
+      settoken(tkn.auth_token, (n) => {})
       callcart()
-    }
-    else {
-      let cart = localStorage.getItem("cart")
+    } else {
+      let cart = localStorage.getItem('cart')
       if (cart != null) {
         changecart(JSON.parse(cart))
-       
-      }
-      else{
+      } else {
         changecart([])
       }
     }
-  }, [props.refresh]);
-
-
-
+  }, [props.refresh])
 
   if (isloading) {
-    return (
-      <CircularProgress />)
+    return <CircularProgress />
   }
-
 
   return (
     <>
-      {
-        cart.length > 0 ? (
-          <>
-
-            {
-              sidecart ?
-                (
-                  <>
-                    <div className="cart__items">
-                      <CartViewBox cart={cart} sidecart={true} />
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <Box className="container">
-                      <ol className="breadcrumb">
-                        <li>
-                          <a href="#">Home</a>
-                        </li>
-                        <li>
-                          <a href="#">Page</a>
-                        </li>
-                        <li>
-                          <a href="#">Shop</a>
-                        </li>
-                        <li className="active">
-                          <a href="#">Cart</a>
-                        </li>
-                      </ol>
-                    </Box>
-                    <CartViewBox cart={cart} sidecart={false} />
-                    <section id="delivery-services" className="services-icons">
-                      <div className="container">
-                        <div className="row">
-                          <div className="col-md-3">
-                            <div className="service one">
-                              <img src="image/cart/truck.jpg" />
-                              <span>
-                                <h2>Easy to buy & return</h2>
-                                <p>single click to buy & return</p>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-3">
-                            <div className="service two">
-                              <img src="image/cart/payment-card.jpg" />
-                              <span>
-                                <h2>Secure Payments</h2>
-                                <p>100% payment security</p>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-3">
-                            <div className="service three">
-                              <img src="image/cart/support.jpg" />
-                              <span>
-                                <h2>24x7 Support Available</h2>
-                                <p>support 24 hours a day</p>
-                              </span>
-                            </div>
-                          </div>
-                          <div className="col-md-3">
-                            <div className="service four">
-                              <img src="image/cart/mobile-app.jpg" />
-                              <span>
-                                <h2>Shop with our App</h2>
-                                <p>Download app & get offers</p>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
+      {cart.length > 0 ? (
+        <>
+          {sidecart ? (
+            <>
+              <div className="cart__items">
+                <CartViewBox
+                  cart={cart}
+                  sidecart={sidecart}
+                  setsidecart={setsidecart}
+                />
+              </div>
+            </>
+          ) : (
+            <>
+              <Box className="container">
+                <ol className="breadcrumb">
+                  <li>
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="#">Page</a>
+                  </li>
+                  <li>
+                    <a href="#">Shop</a>
+                  </li>
+                  <li className="active">
+                    <a href="#">Cart</a>
+                  </li>
+                </ol>
+              </Box>
+              <CartViewBox cart={cart} sidecart={false} />
+              <section id="delivery-services" className="services-icons">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-md-3">
+                      <div className="service one">
+                        <img src="image/cart/truck.jpg" />
+                        <span>
+                          <h2>Easy to buy & return</h2>
+                          <p>single click to buy & return</p>
+                        </span>
                       </div>
-                    </section>
-                  </>
-                )
-            }
-
-          </>
-        ) : (
-          <div>no items found in cart</div>
-        )
-      }
+                    </div>
+                    <div className="col-md-3">
+                      <div className="service two">
+                        <img src="image/cart/payment-card.jpg" />
+                        <span>
+                          <h2>Secure Payments</h2>
+                          <p>100% payment security</p>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="col-md-3">
+                      <div className="service three">
+                        <img src="image/cart/support.jpg" />
+                        <span>
+                          <h2>24x7 Support Available</h2>
+                          <p>support 24 hours a day</p>
+                        </span>
+                      </div>
+                    </div>
+                    <div className="col-md-3">
+                      <div className="service four">
+                        <img src="image/cart/mobile-app.jpg" />
+                        <span>
+                          <h2>Shop with our App</h2>
+                          <p>Download app & get offers</p>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </>
+          )}
+        </>
+      ) : (
+        <div>no items found in cart</div>
+      )}
     </>
   )
 }
 
-
-{/* <section id="similar-products" className="content hot-sellers ">
+{
+  /* <section id="similar-products" className="content hot-sellers ">
           <div className="container">
             <div className="row">
               <div className="col-xs-12 col-md-12">
@@ -1085,20 +1064,5 @@ export default function Cart(props) {
   
             </div>
           </div>
-        </section> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </section> */
+}

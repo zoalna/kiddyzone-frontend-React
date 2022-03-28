@@ -31,10 +31,8 @@
   }
 }
 
-
-.alert-show-msg
-{
-  font-size: 20px !important; 
+.alert-show-msg {
+  font-size: 20px !important;
 }
 
 .cartitm {
@@ -46,4 +44,20 @@
   right: 112px;
   /* width: 5px; */
   /* height: 15px; */
+}
+
+.img_size {
+  width: 25rem;
+  height: 15rem;
+  border-radius: 50%;
+  margin: auto;
+}
+.heading {
+  font-size: 1.6vmax;
+  position: absolute;
+  left: 2.5rem;
+  margin-bottom: 1.75rem;
+}
+.mb-25 {
+  margin-bottom: 1.75rem;
 }
