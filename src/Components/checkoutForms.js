@@ -1,13 +1,19 @@
+//libraries
 import { Box, Grid } from '@mui/material'
 import React from 'react'
 import { useForm, Controller } from 'react-hook-form'
+import { Tooltip } from '@material-ui/core'
 
-const CheckoutForm = (props) => {
-  const { isShipping } = props
+//components
+import InputFeild from './Layout/Input'
 
+const CheckoutForm = ({ handleChange, form, error, isShipping, showErr }) => {
   const { handleSubmit, control } = useForm()
+  const submitForm = (e) => {
+    e.preventDefault()
+  }
   return (
-    <form onSubmit={handleSubmit((data) => console.log(data))}>
+    <form onSubmit={submitForm}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={isShipping ? 12 : 6}>
           <Controller
@@ -22,17 +28,23 @@ const CheckoutForm = (props) => {
                     fontWeight: 600
                   }}
                 >
-                  First Name <span class="text-red">*</span>
+                  First Name
+                  {showErr && error?.first_name && (
+                    // <Tooltip title={`first_name is reuired`}>
+                    <span class="text-red">*</span>
+                    // </Tooltip>
+                  )}
                 </label>
-                <input
+                <InputFeild
                   style={{
                     padding: '10px'
                   }}
-                  value={value}
-                  onChange={(value) => onChange(value)}
+                  name={'first_name'}
+                  value={form?.first_name}
+                  handleChange={handleChange}
                   type="text"
-                  class="form-control"
-                  required
+                  className="form-control"
+                  required={true}
                 />
               </div>
             )}
@@ -51,17 +63,22 @@ const CheckoutForm = (props) => {
                     fontWeight: 600
                   }}
                 >
-                  last Name <span class="text-red">*</span>
+                  last Name
+                  {showErr && error?.last_name && (
+                    <span class="text-red">*</span>
+                  )}
                 </label>
-                <input
+
+                <InputFeild
                   style={{
                     padding: '10px'
                   }}
-                  value={value}
-                  onChange={(value) => onChange(value)}
+                  name={'last_name'}
+                  value={form?.last_name}
+                  handleChange={handleChange}
                   type="text"
-                  class="form-control"
-                  required
+                  className="form-control"
+                  required={true}
                 />
               </div>
             )}
@@ -81,17 +98,20 @@ const CheckoutForm = (props) => {
                   fontWeight: 600
                 }}
               >
-                Email <span class="text-red">*</span>
+                Email{' '}
+                {showErr && error?.email && <span class="text-red">*</span>}
               </label>
-              <input
+
+              <InputFeild
                 style={{
                   padding: '10px'
                 }}
-                value={value}
-                onChange={(value) => onChange(value)}
+                name={'email'}
+                value={form?.email}
+                handleChange={handleChange}
                 type="email"
-                class="form-control"
-                required
+                className="form-control"
+                required={true}
               />
             </div>
           )}
@@ -112,15 +132,21 @@ const CheckoutForm = (props) => {
                 }}
               >
                 GPS location
+                {showErr && error?.gps_location && (
+                  <span class="text-red">*</span>
+                )}
               </label>
-              <input
+
+              <InputFeild
                 style={{
                   padding: '10px'
                 }}
-                value={value}
-                onChange={(value) => onChange(value)}
+                name={'gps_location'}
+                value={form?.gps_location}
+                handleChange={handleChange}
                 type="text"
-                class="form-control"
+                className="form-control"
+                required={true}
               />
             </div>
           )}
@@ -150,17 +176,22 @@ const CheckoutForm = (props) => {
                   fontWeight: 600
                 }}
               >
-                Street address <span class="text-red">*</span>
+                Street Address
+                {showErr && error?.gps_location && (
+                  <span class="text-red">*</span>
+                )}
               </label>
-              <input
+
+              <InputFeild
                 style={{
                   padding: '10px'
                 }}
-                value={value}
-                onChange={(value) => onChange(value)}
-                type="email"
-                class="form-control"
-                required
+                name={'address'}
+                value={form?.address}
+                handleChange={handleChange}
+                type="text"
+                className="form-control"
+                required={true}
               />
             </div>
           )}
@@ -179,17 +210,19 @@ const CheckoutForm = (props) => {
                   fontWeight: 600
                 }}
               >
-                Zip/Postcode <span class="text-red">*</span>
+                Zip/Postcode
+                {showErr && error?.zip_code && <span class="text-red">*</span>}
               </label>
-              <input
+              <InputFeild
                 style={{
                   padding: '10px'
                 }}
-                value={value}
-                onChange={(value) => onChange(value)}
-                type="email"
-                class="form-control"
-                required
+                name={'zip_code'}
+                value={form?.zip_code}
+                handleChange={handleChange}
+                type="text"
+                className="form-control"
+                required={true}
               />
             </div>
           )}
@@ -208,17 +241,20 @@ const CheckoutForm = (props) => {
                   fontWeight: 600
                 }}
               >
-                City <span class="text-red">*</span>
+                city
+                {showErr && error?.city && <span class="text-red">*</span>}
               </label>
-              <input
+
+              <InputFeild
                 style={{
                   padding: '10px'
                 }}
-                value={value}
-                onChange={(value) => onChange(value)}
-                type="email"
-                class="form-control"
-                required
+                name={'city'}
+                value={form?.city}
+                handleChange={handleChange}
+                type="text"
+                className="form-control"
+                required={true}
               />
             </div>
           )}
@@ -237,17 +273,20 @@ const CheckoutForm = (props) => {
                   fontWeight: 600
                 }}
               >
-                State <span class="text-red">*</span>
+                State
+                {showErr && error?.state && <span class="text-red">*</span>}
               </label>
-              <input
+
+              <InputFeild
                 style={{
                   padding: '10px'
                 }}
-                value={value}
-                onChange={(value) => onChange(value)}
-                type="email"
-                class="form-control"
-                required
+                name={'state'}
+                value={form?.state}
+                handleChange={handleChange}
+                type="text"
+                className="form-control"
+                required={true}
               />
             </div>
           )}
@@ -266,17 +305,22 @@ const CheckoutForm = (props) => {
                   fontWeight: 600
                 }}
               >
-                Telephone <span class="text-red">*</span>
+                Telephone{' '}
+                {showErr && error?.phone_number && (
+                  <span class="text-red">*</span>
+                )}
               </label>
-              <input
+
+              <InputFeild
                 style={{
                   padding: '10px'
                 }}
-                value={value}
-                onChange={(value) => onChange(value)}
-                type="tel"
-                class="form-control"
-                required
+                name={'phone_number'}
+                value={form?.phone_number}
+                handleChange={handleChange}
+                type="number"
+                className="form-control"
+                required={true}
               />
             </div>
           )}

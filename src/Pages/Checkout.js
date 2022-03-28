@@ -1,3 +1,4 @@
+//libraries
 import {
   Box,
   Button,
@@ -10,11 +11,156 @@ import {
   RadioGroup,
   Typography
 } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import ClipLoader from 'react-spinners/ClipLoader'
+
+//components
 import CheckoutForm from '../Components/checkoutForms'
+import { SnackbarError } from '../Helpers/snackbar'
+
+//constants
+import useForm from '../Helpers/useForm'
+import { cartCheckout } from '../apis/checkout'
+import { getLocalData, LOCAL_STORAGE_KEYS } from '../Helpers/localStorage'
+import { eng_lang } from '../Helpers/constants'
+import { validateEmail } from '../Helpers/validations'
+
+//styles
+import { override } from '../Helpers/SpinnerStyle'
+import CartItem from '../Components/Checkout/CartItem'
 
 export default function About() {
   const [showShippingField, setShowShippingField] = useState(false)
+  const [showErr, setshowErr] = useState(false)
+  const [loading, setloading] = useState(false)
+  const [snackbar, setSnackBar] = useState(false)
+  const [errMsg, seterrMsg] = useState('Error')
+  const [sum, setsum] = useState(0)
+  const [tax, settax] = useState(0)
+  const [severity, setseverity] = useState('')
+  const initailState = {
+    email: '',
+    first_name: '',
+    last_name: '',
+    zip_code: '',
+    phone_number: '',
+    city: '',
+    state: '',
+    gps_location: '',
+    shipping: '',
+    payment_method: '',
+    address: '',
+    subTotal: ''
+  }
+  const initialError = {
+    email: true,
+    first_name: true,
+    last_name: true,
+    zip_code: true,
+    phone_number: true,
+    city: true,
+    state: true,
+    gps_location: true,
+    // shipping: true,
+    // payment_method: true,
+    address: true
+  }
+  const { handleChange, form, setForm, error, setError, resetForm } = useForm(
+    initailState,
+    initialError
+  )
+  const cardItems = JSON.parse(getLocalData(LOCAL_STORAGE_KEYS.cardItems))
+
+  useEffect(() => {
+    if (cardItems?.length > 0) {
+      let initial = 0
+      cardItems.map((item) => {
+        if (item?.unit_price && item?.quantity) {
+          initial += item?.unit_price * item?.quantity
+        }
+      })
+      setsum(initial)
+      settax(initial * 0.05)
+    }
+  }, [cardItems])
+
+  //this function will call api and place order
+  const placeOrder = async (e) => {
+    e.preventDefault()
+
+    //Email validation
+
+    let err = false
+    Object.values(error).map((item) => {
+      if (item) {
+        err = true
+      }
+      return 0
+    })
+
+    if (!cardItems === null || !cardItems || cardItems?.length < 1) {
+      setSnackBar(true)
+      setseverity('error')
+      seterrMsg(eng_lang.SNACKBAR_MESSAGE.EMPTY_CART)
+      setTimeout(() => {
+        setSnackBar(false)
+      }, 2000)
+      return
+    }
+    if (err) {
+      setshowErr(true)
+      setSnackBar(true)
+      seterrMsg(eng_lang.SNACKBAR_MESSAGE.ALL_FEILD_REQ)
+      setseverity('error')
+      setTimeout(() => {
+        setSnackBar(false)
+      }, 2000)
+
+      return
+    }
+
+    if (!validateEmail(form?.email)) {
+      setSnackBar(true)
+      setError({
+        ...error,
+        email: true
+      })
+      seterrMsg(eng_lang.SNACKBAR_MESSAGE.INVALID_EMAIL)
+      setseverity('error')
+      setTimeout(() => {
+        setSnackBar(false)
+      }, 2000)
+      return
+    }
+
+    const body = {
+      payment_reference_id: '2',
+      ...form
+    }
+    try {
+      setloading(true)
+      const response = await cartCheckout(body)
+      if (response) {
+        resetForm(initailState, initialError)
+        setloading(false)
+        setshowErr(false)
+        setSnackBar(true)
+        setseverity('success')
+        seterrMsg(response?.message)
+        setTimeout(() => {
+          setSnackBar(false)
+        }, 4000)
+      }
+    } catch (error) {
+      setSnackBar(true)
+      setloading(false)
+      seterrMsg(error.message)
+      setseverity('error')
+      setTimeout(() => {
+        setSnackBar(false)
+      }, 4000)
+    }
+  }
   return (
     <>
       <Box mb={{ xs: '30px', md: 15 }} px={{ xs: '30px', md: '300px' }}>
@@ -39,7 +185,13 @@ export default function About() {
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} md={7}>
-              <CheckoutForm />
+              <CheckoutForm
+                handleChange={handleChange}
+                error={error}
+                form={form}
+                showErr={showErr}
+                isShipping={false}
+              />
 
               <Box display={'flex'} alignItems={'center'} my={2}>
                 <Box>
@@ -121,40 +273,17 @@ export default function About() {
                   </Box>
                 </Box>
 
-                <Box
-                  marginTop="1rem"
-                  marginBottom="1rem"
-                  border={0}
-                  borderTop="2px solid rgba(0,0,0,.1)"
-                />
-
-                <Box
-                  display={'flex'}
-                  alignItems={'center'}
-                  justifyContent={'space-between'}
-                >
-                  <Box>
-                    <Typography
-                      sx={{
-                        fontSize: '17px',
-                        color: '#121212',
-                        fontWeight: 600
-                      }}
-                    >
-                      Sprit Toy
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Typography
-                      sx={{
-                        fontSize: '16px',
-                        color: '#121212'
-                      }}
-                    >
-                      AED 2,000
-                    </Typography>
-                  </Box>
-                </Box>
+                {cardItems?.length > 0 &&
+                  cardItems?.map((item, index) => {
+                    return (
+                      <CartItem
+                        key={index}
+                        name={item?.product_name}
+                        quantity={item?.quantity}
+                        unit_price={item?.unit_price}
+                      />
+                    )
+                  })}
 
                 <Box
                   marginTop="1rem"
@@ -186,7 +315,7 @@ export default function About() {
                         color: '#121212'
                       }}
                     >
-                      AED 2,000
+                      {sum > 0 ? 'AED ' + sum : 0}
                     </Typography>
                   </Box>
                 </Box>
@@ -204,7 +333,7 @@ export default function About() {
                         fontWeight: 600
                       }}
                     >
-                      Tax 0 %
+                      Tax 5 %
                     </Typography>
                   </Box>
                   <Box>
@@ -214,7 +343,7 @@ export default function About() {
                         color: '#121212'
                       }}
                     >
-                      AED 0
+                      {tax > 0 ? 'AED ' + tax : 0}
                     </Typography>
                   </Box>
                 </Box>
@@ -249,7 +378,7 @@ export default function About() {
                         color: '#121212'
                       }}
                     >
-                      AED 2,000
+                      {tax + sum > 0 ? `AED ${(tax + sum).toFixed(2)}` : 0}
                     </Typography>
                   </Box>
                 </Box>
@@ -270,7 +399,7 @@ export default function About() {
                         color: 'black'
                       }}
                     >
-                      Gender
+                      Shipping
                     </FormLabel>
                     <RadioGroup
                       defaultValue="female"
@@ -339,10 +468,10 @@ export default function About() {
                   >
                     Select Payment Method
                   </FormLabel>
-                  <RadioGroup defaultValue="female" name="radio-buttons-group">
+                  <RadioGroup defaultValue="female" name="payment_method">
                     <FormControlLabel
                       value="female"
-                      control={<Radio />}
+                      control={<Radio onChange={handleChange} />}
                       label={
                         <>
                           <Typography
@@ -353,21 +482,13 @@ export default function About() {
                           >
                             Cash On Delivery
                           </Typography>{' '}
-                          <Typography
-                            sx={{
-                              fontSize: '16px',
-                              color: '#232323'
-                            }}
-                          >
-                            Cash On Delivery
-                          </Typography>
                         </>
                       }
                     />
                     <Box my={1} />
                     <FormControlLabel
                       value="male"
-                      control={<Radio />}
+                      control={<Radio onChange={handleChange} />}
                       label={
                         <>
                           <Typography
@@ -378,14 +499,6 @@ export default function About() {
                           >
                             Money Transfer
                           </Typography>{' '}
-                          <Typography
-                            sx={{
-                              fontSize: '16px',
-                              color: '#232323'
-                            }}
-                          >
-                            Money Transfer
-                          </Typography>
                         </>
                       }
                     />
@@ -397,21 +510,43 @@ export default function About() {
                 </Box>
               </Box>
               <Box mt={2} display={'flex'} justifyContent={'end'}>
-                <Button
-                  sx={{
-                    fontWeight: 600,
+                {loading ? (
+                  <Button
+                    sx={{
+                      fontWeight: 600,
 
-                    padding: '15px 36px',
-                    background: '#00B353',
-                    '&:hover': {
-                      background: '#26a37c'
-                    }
-                  }}
-                  variant="contained"
-                >
-                  {' '}
-                  place order
-                </Button>
+                      padding: '15px 36px',
+                      background: '#00B353',
+                      '&:hover': {
+                        background: '#26a37c'
+                      }
+                    }}
+                    variant="contained"
+                  >
+                    <ClipLoader
+                      color={'white'}
+                      loading={true}
+                      css={override}
+                      size={20}
+                    />
+                  </Button>
+                ) : (
+                  <Button
+                    sx={{
+                      fontWeight: 600,
+                      padding: '15px 36px',
+                      background: '#00B353',
+                      '&:hover': {
+                        background: '#26a37c'
+                      }
+                    }}
+                    variant="contained"
+                    onClick={placeOrder}
+                  >
+                    {' '}
+                    place order
+                  </Button>
+                )}
               </Box>
             </Grid>
           </Grid>
@@ -481,6 +616,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      <SnackbarError open={snackbar} msg={errMsg} severity={severity} />
     </>
   )
 }

@@ -6,24 +6,26 @@ import {
   InputBase,
   Link,
   Typography,
-  Snackbar, Alert, CircularProgress
+  Snackbar,
+  Alert,
+  CircularProgress
 } from '@mui/material'
 import '../App.css'
 import { React, useState } from 'react'
 import StyleInputField from '../Components/StyleInputField'
 import { useForm, Controller } from 'react-hook-form'
-import { useNavigate } from "react-router-dom";
-import axios from 'axios';
-import { api } from '../Helpers/services';
-import { useShared } from '../Helpers/GlobalStates';
-
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { api } from '../Helpers/services'
+import { useShared } from '../Helpers/GlobalStates'
+//constants
+import { storeLocalData } from '../Helpers/localStorage'
+import { LOCAL_STORAGE_KEYS } from '../Helpers/localStorage'
 
 export default function Login() {
+  const { userData, setuserData, changeuserData } = useShared()
 
-  const {userData, setuserData, changeuserData } = useShared();
-
-
-  let navigate = useNavigate();
+  let navigate = useNavigate()
   const { handleSubmit, control } = useForm()
   const [show, setshow] = useState(false)
   const [isloading, setloading] = useState(false)
@@ -32,59 +34,58 @@ export default function Login() {
 
   const showerror = (value) => {
     console.log(value)
-    if (showing) return;
+    if (showing) return
 
     seterror(value)
-    setshow(true);
-    setshowing(true);
+    setshow(true)
+    setshowing(true)
     setTimeout(() => {
-      setshow(false);
-      setshowing(false);
-    }, 2000);
-
-  };
+      setshow(false)
+      setshowing(false)
+    }, 2000)
+  }
 
   const calllogin = (data) => {
-
     console.log(data)
-    if (data.email == "" || data.password == "" || data.email == null || data.password == null) {
-
-      showerror('please provide complete information');
-      return;
+    if (
+      data.email == '' ||
+      data.password == '' ||
+      data.email == null ||
+      data.password == null
+    ) {
+      showerror('please provide complete information')
+      return
     }
 
-    let cart = localStorage.getItem("cart")
-    if (cart != null)
-    {
-      data.cart_items = JSON.parse(cart);
+    let cart = localStorage.getItem('cart')
+    if (cart != null) {
+      data.cart_items = JSON.parse(cart)
     }
 
-    
     console.log(data)
 
     setloading(true)
     const headers = {
       'Content-Type': 'application/json'
     }
-    axios.post(api.login, data, {
-      headers: headers
-    })
+    axios
+      .post(api.login, data, {
+        headers: headers
+      })
       .then(function (response) {
         setloading(false)
         if (response.data.success == false) {
-          showerror(response.data.message);
+          showerror(response.data.message)
           return
         }
         console.log(response.data)
-        showerror(response.data.message);
+        showerror(response.data.message)
         localStorage.setItem('user', JSON.stringify(response.data))
+        storeLocalData(LOCAL_STORAGE_KEYS.authToken, response?.data?.auth_token)
         changeuserData(response.data)
-        navigate(`/`);
+        navigate(`/`)
         //alert(JSON.stringify(userData))
-
-      }
-
-      )
+      })
       .catch(function (error) {
         setloading(false)
         //  console.log(error)
@@ -92,31 +93,24 @@ export default function Login() {
         //Please Authenticate or whatever returned from server
         // if(error.response.status==401){
         if (error.response.data.success == false) {
-          showerror(error.response.data.message);
+          showerror(error.response.data.message)
           return
         }
         // }
       })
-
-
-
   }
-
-
 
   return (
     <>
-      {show &&
-
-        <Snackbar open={true} autoHideDuration={4000} >
+      {show && (
+        <Snackbar open={true} autoHideDuration={4000}>
           <Alert severity="error" className="alert-show-msg">
             {error}
           </Alert>
         </Snackbar>
-      }
+      )}
 
       <Box>
-
         <Box
           sx={{
             position: 'relative',
@@ -290,13 +284,13 @@ export default function Login() {
                           </Typography>
                         </Box>
                       </Grid>
-                      {isloading &&
+                      {isloading && (
                         <Grid item xs={12} md={12} lg={12}>
                           <Box>
                             <CircularProgress />
                           </Box>
                         </Grid>
-                      }
+                      )}
                     </Grid>
                   </form>
                   <Box mt={2} display={'flex'} alignItems={'center'}>

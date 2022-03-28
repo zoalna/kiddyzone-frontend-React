@@ -1,86 +1,87 @@
-import React, { Component, useRef, useState, useEffect, useCallback } from "react";
-import "../../App.css";
-import "./cart.css";
-import NavBar from "./NavBar";
-import { Link, useNavigate } from "react-router-dom";
+import React, {
+  Component,
+  useRef,
+  useState,
+  useEffect,
+  useCallback
+} from 'react'
+import '../../App.css'
+import './cart.css'
+import NavBar from './NavBar'
+import { Link, useNavigate } from 'react-router-dom'
 import Cart from '../../Pages/Cart'
 import { useShared } from '../../Helpers/GlobalStates'
-
+import { clearAllLocalData } from '../../Helpers/localStorage'
 
 export default function Header() {
+  const { userData, setuserData, changeuserData, cartCounter, closeSide } =
+    useShared()
 
-  const { userData, setuserData, changeuserData,cartCounter,closeSide } = useShared();
-
-  const switcherTab = useRef(null);
-  const imageTab = useRef(null);
-  const [user, setuser] = useState(localStorage.getItem("user"))
+  const switcherTab = useRef(null)
+  const imageTab = useRef(null)
+  const [user, setuser] = useState(localStorage.getItem('user'))
   const [username, setusername] = useState(null)
   const [cartcount, setcartcount] = useState(0)
   const [sidemenu, setsidemenu] = useState(false)
-  let tempcart = localStorage.getItem("cart");
+  let tempcart = localStorage.getItem('cart')
   useEffect(() => {
-    let usr = localStorage.getItem("user")
-    let cart = localStorage.getItem("cart")
+    let usr = localStorage.getItem('user')
+    let cart = localStorage.getItem('cart')
     if (cart != null) {
       let count = JSON.parse(cart)
       setcartcount(count.length)
-    }
-    else {
+    } else {
       setcartcount(0)
     }
     console.log(usr)
     let username = JSON.parse(usr)
     setusername(userData ? userData.user.username : null)
     setuser(userData)
-  }, [tempcart, userData,cartCounter]);
+  }, [tempcart, userData, cartCounter])
 
   useEffect(() => {
-
-   // if (closeSide == true)
+    // if (closeSide == true)
     //removeSubmit(false)
-
-  }, [closeSide]);
+  }, [closeSide])
 
   const logout = () => {
-
-    localStorage.removeItem("user");
+    localStorage.removeItem('user')
+    clearAllLocalData()
     changeuserData(null)
     setuser(null)
   }
 
-
-  window.addEventListener("scroll", () => {
+  window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-      document.querySelector(".header__effect").classList.add("active");
-      document.querySelector("img.img-responsive.logo").classList.add("active");
-    }
-    else {
-      document.querySelector(".header__effect").classList.remove("active");
-      document.querySelector("img.img-responsive.logo").classList.remove("active");
+      document.querySelector('.header__effect').classList.add('active')
+      document.querySelector('img.img-responsive.logo').classList.add('active')
+    } else {
+      document.querySelector('.header__effect').classList.remove('active')
+      document
+        .querySelector('img.img-responsive.logo')
+        .classList.remove('active')
     }
   })
 
   const handleSubmit = (e) => {
     setsidemenu(e)
-    let cart = document.querySelector("#shopping-cart");
-    let button = document.querySelector(".cart__box");
+    let cart = document.querySelector('#shopping-cart')
+    let button = document.querySelector('.cart__box')
     if (cart.click) {
-      button.style.display = "block";
-    }
-    else {
-      button.style.display = "none";
+      button.style.display = 'block'
+    } else {
+      button.style.display = 'none'
     }
   }
 
   const removeSubmit = (e) => {
     setsidemenu(e)
-    let button = document.querySelector(".cart__box");
-    let cross = document.querySelector(".cross__option")
+    let button = document.querySelector('.cart__box')
+    let cross = document.querySelector('.cross__option')
     if (cross.click) {
-      button.style.display = "none";
-    }
-    else {
-      button.style.display = "block";
+      button.style.display = 'none'
+    } else {
+      button.style.display = 'block'
     }
   }
 
@@ -89,7 +90,10 @@ export default function Header() {
       <div className="announcements">
         <div className="animation">
           <div className="main-upper-header">
-            <img src="image/truck-icon.svg" style={{ "fill": " #e20025", height: "23px" }} />
+            <img
+              src="image/truck-icon.svg"
+              style={{ fill: ' #e20025', height: '23px' }}
+            />
           </div>
           <span>Free Shipping 99 QR</span>
         </div>
@@ -107,16 +111,19 @@ export default function Header() {
                           className="btn btn-link dropdown-toggle"
                           data-toggle="dropdown"
                         >
-                          <img src="image/header/united-arab-emirates.svg" style={{ margin: "0px 10px" }} />{" "}
-                          <strong style={{ margin: "0px 5px" }}>USD</strong>{" "}
+                          <img
+                            src="image/header/united-arab-emirates.svg"
+                            style={{ margin: '0px 10px' }}
+                          />{' '}
+                          <strong style={{ margin: '0px 5px' }}>USD</strong>{' '}
                           <img
                             className="down-arrow"
                             src="image/header/down-arrow.svg"
                             style={{
-                              margin: "0px 10px",
-                              marginTop: "-5px"
+                              margin: '0px 10px',
+                              marginTop: '-5px'
                             }}
-                          />{" "}
+                          />{' '}
                         </button>
                         <ul className="dropdown-menu">
                           <li>
@@ -140,12 +147,12 @@ export default function Header() {
                           data-toggle="dropdown"
                           aria-expanded="false"
                         >
-                          {" "}
+                          {' '}
                           <img
                             className="lang-flag"
                             src="image/header/640px-Flag_of_the_United_Kingdom.svg.png"
-                          />{" "}
-                          English{" "}
+                          />{' '}
+                          English{' '}
                           <img
                             className="down-arrow responsive"
                             src="image/header/down-arrow.svg"
@@ -169,26 +176,27 @@ export default function Header() {
                         {user ? (
                           <>
                             <Link to="/Login" onClick={() => logout()}>
-                              <span style={{ fontSize: "22px" }}> {username} |  Logout</span>
+                              <span style={{ fontSize: '22px' }}>
+                                {' '}
+                                {username} | Logout
+                              </span>
                             </Link>
                           </>
                         ) : (
                           <>
                             <Link to="/Login">
-                              <span style={{ fontSize: "22px" }}>Login</span>
+                              <span style={{ fontSize: '22px' }}>Login</span>
                             </Link>
 
                             <span className="account-ver-line">|</span>
 
                             <Link to="/SignUp">
-                              <span style={{ fontSize: "22px" }}>Register</span>
+                              <span style={{ fontSize: '22px' }}>Register</span>
                             </Link>
                           </>
                         )}
-
                       </li>
                       <li>
-
                         {/* <Link to="/Cart">
                           <img src="image/header/shopping-cart%20(1).svg" />
                           {
@@ -202,13 +210,17 @@ export default function Header() {
                         </a> */}
                       </li>
                       <li>
-
-                        <a href="#" id="shopping-cart" title="Wish List (0)" onClick={() => handleSubmit(true)} useRef={switcherTab}>
+                        <a
+                          href="#"
+                          id="shopping-cart"
+                          title="Wish List (0)"
+                          onClick={() => handleSubmit(true)}
+                          useRef={switcherTab}
+                        >
                           <img src="image/header/shopping-cart%20(1).svg" />
-                          {
-                            cartcount != 0 &&
+                          {cartcount != 0 && (
                             <span className="cartitm">{cartcount}</span>
-                          }
+                          )}
                         </a>
                       </li>
 
@@ -229,7 +241,7 @@ export default function Header() {
           >
             <div className="container">
               <div id="logo">
-                <a href="index.html">
+                <a href="/">
                   <img
                     src="image/header/logo.svg"
                     title="E-Commerce"
@@ -258,7 +270,7 @@ export default function Header() {
               <div className="col-sm-9 col-xs-9 header-right">
                 <div className="top-left pull-left">
                   <button className="head-gift-btn">
-                    <img src="image/header/gift.svg" /> Gift Finder{" "}
+                    <img src="image/header/gift.svg" /> Gift Finder{' '}
                   </button>
                 </div>
                 <div id="search" className="input-group">
@@ -267,7 +279,7 @@ export default function Header() {
                     name="search"
                     placeholder="Search products here"
                     className="form-control input-lg"
-                    style={{ height: "123%" }}
+                    style={{ height: '123%' }}
                   />
                   <span className="input-group-btn">
                     <button
@@ -286,12 +298,11 @@ export default function Header() {
                     <li>
                       <Link to="/StoreLocator" className="parent link">
                         <img src="image/header/location-pin.svg" />
-                        <span style={{ fontSize: "20px" }}>Store Locator</span>
+                        <span style={{ fontSize: '20px' }}>Store Locator</span>
                       </Link>
-
                     </li>
                     <li>
-                      <a href="" style={{ fontSize: "20px" }}>
+                      <a href="" style={{ fontSize: '20px' }}>
                         <img src="image/header/help.svg" />
                         Help
                       </a>
@@ -313,7 +324,11 @@ export default function Header() {
             <div className="text__sidecart">
               <h1>Shopping Cart</h1>
             </div>
-            <div className="cross__option" useRef={switcherTab} onClick={() => removeSubmit(false)}>
+            <div
+              className="cross__option"
+              useRef={switcherTab}
+              onClick={() => removeSubmit(false)}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="29.383"
@@ -474,14 +489,8 @@ export default function Header() {
 
            
     */}
-
         </div>
       </>
-
     </>
-  );
+  )
 }
-
-
-
-
