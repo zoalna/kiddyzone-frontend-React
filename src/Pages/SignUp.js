@@ -1,4 +1,4 @@
-import { Box, Button, Checkbox, Grid, Link, Typography,Snackbar,Alert,CircularProgress } from '@mui/material'
+import { Box, Button, Checkbox, Grid, Link, Typography, Snackbar, Alert, CircularProgress } from '@mui/material'
 import React, { Component, useState } from 'react'
 
 import '../App.css'
@@ -33,23 +33,23 @@ export default function SignUp() {
     }, 2000);
 
   };
-  
+
   const checkform = (obj) => {
     console.log(obj)
     for (var key in obj) {
-        if (obj[key] == null || obj[key] == "")
-            return true;
+      if (obj[key] == null || obj[key] == "")
+        return true;
     }
     return false;
   };
 
-  
+
   const calllogin = (data) => {
 
     console.log(checkform(data))
 
-    
-    
+
+
     if (checkform(data)) {
 
       showerror('please provide complete information');
@@ -94,14 +94,14 @@ export default function SignUp() {
 
     <>
 
-{show &&
+      {show &&
 
-<Snackbar open={true} autoHideDuration={4000} >
-  <Alert  severity="error" sx={{ width: '100%' }}   className="alert-show-msg">
-    {error}
-  </Alert>
-</Snackbar>
-}
+        <Snackbar open={true} autoHideDuration={4000} >
+          <Alert severity="error" sx={{ width: '100%' }} className="alert-show-msg">
+            {error}
+          </Alert>
+        </Snackbar>
+      }
 
       <Box>
         <Box
@@ -238,7 +238,7 @@ export default function SignUp() {
                                 inputType="text"
                                 onInputChange={(value) => onChange(value)}
                               />
-                            )}s
+                            )} s
                           />
                         </Grid>
                       </Grid>
@@ -398,7 +398,7 @@ export default function SignUp() {
           </Box>
         </Box>
       </Box>
-      
+
     </>
   )
-                        }
+}

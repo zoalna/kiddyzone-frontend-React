@@ -7,9 +7,9 @@ export default function Dashboard() {
     <>
       <div className="dashboard__header">
         <div className='container'>
-        <div className="dashboard__header__content">
-          <h1>My Account</h1>
-        </div>
+          <div className="dashboard__header__content">
+            <h1>My Account</h1>
+          </div>
         </div>
       </div>
 
@@ -202,9 +202,9 @@ export default function Dashboard() {
                               <td>$136.00</td>
                               <td className="complete__green">Completed</td>
                               <td className="td-actions">
-                              <div className="eye__icon">
+                                <div className="eye__icon">
                                   <a href="#">
-                                  <img src="image/dashboard/Icon-awesome-eye.svg" />
+                                    <img src="image/dashboard/Icon-awesome-eye.svg" />
                                   </a>
                                 </div>
                               </td>
@@ -215,9 +215,9 @@ export default function Dashboard() {
                               <td>$136.00</td>
                               <td className="complete__green">Completed</td>
                               <td className="td-actions">
-                              <div className="eye__icon">
+                                <div className="eye__icon">
                                   <a href="#">
-                                  <img src="image/dashboard/Icon-awesome-eye.svg" />
+                                    <img src="image/dashboard/Icon-awesome-eye.svg" />
                                   </a>
                                 </div>
                               </td>
@@ -228,9 +228,9 @@ export default function Dashboard() {
                               <td>$136.00</td>
                               <td className="complete__green">Completed</td>
                               <td className="td-actions">
-                              <div className="eye__icon">
+                                <div className="eye__icon">
                                   <a href="#">
-                                  <img src="image/dashboard/Icon-awesome-eye.svg" />
+                                    <img src="image/dashboard/Icon-awesome-eye.svg" />
                                   </a>
                                 </div>
                               </td>
@@ -241,9 +241,9 @@ export default function Dashboard() {
                               <td>$136.00</td>
                               <td className="complete__green">Completed</td>
                               <td className="td-actions">
-                              <div className="eye__icon">
+                                <div className="eye__icon">
                                   <a href="#">
-                                  <img src="image/dashboard/Icon-awesome-eye.svg" />
+                                    <img src="image/dashboard/Icon-awesome-eye.svg" />
                                   </a>
                                 </div>
                               </td>

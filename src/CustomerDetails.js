@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import Panel from 'react-bootstrap/lib/Panel'
+import React, { Component } from 'react';
+// import Panel from 'react-bootstrap/lib/Panel'
 import axios from 'axios'
 
 //This Component is a child Component of Customers Component
@@ -27,7 +27,7 @@ export default class CustomerDetails extends Component {
   //Function to Load the customerdetails data from json.
   getCustomerDetails(id) {
     axios.get('assets/samplejson/customer' + id + '.json').then(response => {
-      this.setState({customerDetails: response})
+      this.setState({ customerDetails: response })
     })
   };
 
@@ -35,7 +35,7 @@ export default class CustomerDetails extends Component {
     if (!this.state.customerDetails)
       return (<p>Loading Data</p>)
     return (<div className="customerdetails">
-      <Panel bsStyle="info" className="centeralign">
+      {/* <Panel bsStyle="info" className="centeralign">
         <Panel.Heading>
           <Panel.Title componentClass="h3">{this.state.customerDetails.data.name}</Panel.Title>
         </Panel.Heading>
@@ -50,7 +50,7 @@ export default class CustomerDetails extends Component {
           <p>Job Profile : {this.state.customerDetails.data.jobProfile}</p>
           <p>Additional Info : {this.state.customerDetails.data.additionalInfo}</p>
         </Panel.Body>
-      </Panel>
+      </Panel> */}
     </div>)
   }
 }

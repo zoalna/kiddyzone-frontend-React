@@ -20,7 +20,7 @@ import { useShared } from '../Helpers/GlobalStates';
 
 export default function Login() {
 
-  const {userData, setuserData, changeuserData } = useShared();
+  const { userData, setuserData, changeuserData } = useShared();
 
 
   let navigate = useNavigate();
@@ -54,12 +54,11 @@ export default function Login() {
     }
 
     let cart = localStorage.getItem("cart")
-    if (cart != null)
-    {
+    if (cart != null) {
       data.cart_items = JSON.parse(cart);
     }
 
-    
+
     console.log(data)
 
     setloading(true)

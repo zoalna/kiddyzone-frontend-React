@@ -43,9 +43,9 @@ export default function Cart(props) {
           localStorage.setItem("cart", JSON.stringify(response.data.data))
           changecart(response.data.data)
         }
-        else{
+        else {
           changecart([])
-                }
+        }
       }
 
       )
@@ -72,9 +72,9 @@ export default function Cart(props) {
       let cart = localStorage.getItem("cart")
       if (cart != null) {
         changecart(JSON.parse(cart))
-       
+
       }
-      else{
+      else {
         changecart([])
       }
     }
